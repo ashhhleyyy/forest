@@ -28,6 +28,8 @@
 
   services.printing.enable = true;
 
+  hardware.bluetooth.enable = true;
+
   programs.steam.enable = true;
   nixpkgs.config.allowUnfree = true;
 
