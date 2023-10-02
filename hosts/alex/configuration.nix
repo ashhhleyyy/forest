@@ -2,6 +2,7 @@
   imports = [
     ../../common/generic.nix
     ../../common/generic-desktop.nix
+    ../../common/generic-grub.nix
     ./hardware-config.nix
   ];
 
