@@ -1,8 +1,8 @@
 { config, pkgs, ... }: {
   imports = [
-    ../../common/generic-qemu.nix
     ../../common/generic.nix
     ../../common/generic-desktop.nix
+    ./hardware-config.nix
   ];
 
   networking.hostName = "alex";
