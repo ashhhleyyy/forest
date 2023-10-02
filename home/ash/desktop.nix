@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     nerdfonts
     firefox
+    fluffychat
   ];
 
   programs.kitty = {
