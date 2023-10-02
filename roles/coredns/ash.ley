@@ -1,0 +1,49 @@
+$ORIGIN ash.ley.
+$TTL 5m
+
+; SOA
+@	SOA	kylie.ash.ley.	ash.ashhhleyyy.dev. (
+		2022051901	; serial number
+		28800		; refresh
+		7200		; Retry
+		864000		; Expire
+		60		; Min TTL
+		)
+;; --- SERVERS ---
+; Root (kylie, formerly maria)
+@	IN	A	100.123.36.114
+
+; maria is down and probably not coming back
+;maria	IN	A	100.119.182.22
+
+; Pi 4
+kylie		IN	A	100.123.36.114
+netdata.kylie	IN	CNAME	kylie.ash.ley.
+gitea.kylie	IN	CNAME	kylie.ash.ley.
+jellyfin.kylie	IN	CNAME	kylie.ash.ley.
+syncthing.kylie	IN	CNAME	kylie.ash.ley.
+
+; Pi Zero (School mode)
+ky	IN	A	100.80.161.44
+; Pi Zero (Camera mode)
+fumiko	IN	A	100.95.211.68
+
+; Pi (Radio)
+allison	IN	A	100.90.231.61
+
+; Pi (room sensor)
+ana	IN	A	100.99.239.100
+
+; arch VM
+chelsie	IN	A	100.110.143.52
+
+;; --- PERSONAL DEVICES ---
+; PC
+mary	IN	A	100.111.252.38
+
+; Phone
+lyra	IN	A	100.123.71.10
+
+;; --- OTHER ---
+nucleoid	IN	A	142.132.178.131
+
