@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
   home.packages = with pkgs; [
     nerdfonts
+    firefox
   ];
 
   programs.kitty = {
