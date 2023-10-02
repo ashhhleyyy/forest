@@ -3,6 +3,7 @@
     nerdfonts
     firefox
     fluffychat
+    git
   ];
 
   programs.kitty = {
