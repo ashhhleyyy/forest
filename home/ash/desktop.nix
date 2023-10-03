@@ -6,6 +6,8 @@
     fractal-next
   ];
 
+  programs.direnv.enable = true;
+
   programs.kitty = {
     enable = true;
     theme = "Catppuccin-Mocha";
