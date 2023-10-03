@@ -39,4 +39,9 @@
   users.mutableUsers = false;
 
   console.keyMap = "uk";
+
+  environment.systemPackages = with pkgs; [
+    git
+    helix
+  ];
 }

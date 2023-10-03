@@ -3,7 +3,7 @@
     nerdfonts
     firefox
     fluffychat
-    git
+    fractal-next
   ];
 
   programs.kitty = {
