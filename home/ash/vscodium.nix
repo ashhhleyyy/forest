@@ -48,7 +48,7 @@
           name = "rust-analyzer";
           publisher = "rust-lang";
           version = "0.4.1679";
-          sha256 = "sha256-MqaYZSU80MrNHGP8Tfj9Ky8DhCtRgajeVivjMGtvnS8=";
+          sha256 = "sha256-AlYyJ5QOx31O+geR+hAodx6pXQFJSH2tWuK+5rD7xOw=";
         }
         {
           name = "svelte-vscode";
@@ -60,7 +60,7 @@
           name = "ruby-lsp";
           publisher = "Shopify";
           version = "0.4.8";
-          sha256 = "sha256-Q7ZZs/81+VrHKs3rpMwMfE3+DOS9bDJaoHEpYHoRqoo=";
+          sha256 = "sha256-hfv9ndpQs7hFJixsqp9naWIQNPxmGPQG6MxC4wlPqcA=";
         }
         {
           name = "wgsl";

@@ -69,7 +69,7 @@
               fsh.homeModules.fsh
               ./home/ash
               ./home/ash/desktop.nix
-              # ./home/ash/vscodium.nix
+              ./home/ash/vscodium.nix
             ];
           };
         }
