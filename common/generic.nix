@@ -1,5 +1,7 @@
 { pkgs, ... }: rec {
-  imports = [ ];
+  imports = [
+    ./cachix.nix
+  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
