@@ -1,9 +1,10 @@
 { config, pkgs, ... }: {
+  services.flatpak.enable = true;
+
   home.packages = with pkgs; [
     nerdfonts
     firefox
     fluffychat
-    fractal-next
     cachix
     prismlauncher
   ];
