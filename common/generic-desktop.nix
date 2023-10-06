@@ -1,4 +1,6 @@
 { config, pkgs, ... }: {
+  services.flatpak.enable = true;
+
   services.resolved.enable = true;
   services.avahi = {
     enable = true;
