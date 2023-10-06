@@ -29,6 +29,6 @@
   programs.gpg = {
     enable = true;
     mutableKeys = true;
-    mutableTrust = rue;
+    mutableTrust = true;
   };
 }
