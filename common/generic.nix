@@ -6,6 +6,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot.tmp.cleanOnBoot = true;
+  boot.supportedFilesystems = [ "ntfs" ];
   nix.settings.auto-optimise-store = true;
 
   services.journald.extraConfig = ''

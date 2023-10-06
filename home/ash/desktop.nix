@@ -4,6 +4,8 @@
     firefox
     fluffychat
     fractal-next
+    cachix
+    prismlauncher
   ];
 
   programs.direnv.enable = true;

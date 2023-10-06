@@ -3,7 +3,7 @@
 
   programs.fish.enable = true;
   programs.fsh.enable = true;
-  services.ssh-agent.enable = true;
+#  services.ssh-agent.enable = true;
 
   home.packages = with pkgs; [
     wget
