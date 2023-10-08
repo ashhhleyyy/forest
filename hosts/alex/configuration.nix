@@ -3,6 +3,7 @@
     ../../common/generic.nix
     ../../common/generic-desktop.nix
     ../../common/generic-uefi.nix
+    ../../common/tpm.nix
     ./hardware-config.nix
   ];
 
