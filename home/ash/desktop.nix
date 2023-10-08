@@ -5,6 +5,7 @@
     fluffychat
     cachix
     prismlauncher
+    gnome.gnome-sudoku
   ];
 
   programs.direnv.enable = true;
