@@ -69,6 +69,7 @@
               fsh.homeModules.fsh
               ./home/ash
               ./home/ash/desktop.nix
+              ./home/ash/tpm-fido.nix
               ./home/ash/vscodium.nix
             ];
           };
