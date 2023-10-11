@@ -31,4 +31,12 @@
     mutableKeys = true;
     mutableTrust = true;
   };
+
+  services.gpg-agent = {
+    enable = true;
+    enableFishIntegration = true;
+    pinentryFlavor = "gnome3";
+    defaultCacheTtl = 31536000;
+    maxCacheTtl = 31536000;
+  };
 }
