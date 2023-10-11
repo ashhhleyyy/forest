@@ -20,7 +20,7 @@ in
   systemd.user.services.tpm-fido = {
     Unit = {
       Description = "tpm-fido virtual FIDO2 key";
-      StartLimitIntervalSec = 500;
+      StartLimitIntervalSec = 30;
       StartLimitBurst = 5;
       PartOf = [ "graphical-session.target" ];
       Wants = [ "xdg-desktop-autostart.target" ];
