@@ -5,6 +5,7 @@
     ../../common/generic-uefi.nix
     ../../common/tailscale.nix
     ../../common/tpm.nix
+    ../../roles/podman.nix
     ./hardware-config.nix
   ];
 
