@@ -6,6 +6,7 @@
     cachix
     prismlauncher
     gnome.gnome-sudoku
+    dino
   ];
 
   programs.direnv.enable = true;
