@@ -31,7 +31,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKGLHqRBcN584SXXa7snrOs89Wy5Jjvsq+GlFXTTBYfp ash@ash-pc"
     ];
     hashedPassword = "$y$j9T$YZw49GYsZi6pm5MH3W2gX1$BKPBL3g4jAWUJP0WY0lRrBLorxzcENVqGTG0dAly3v7";
-    extraGroups = [ "wheel" "audio" ];
+    extraGroups = [ "wheel" "audio" "dialout" ];
   };
 
   security.doas.enable = true;
