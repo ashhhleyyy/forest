@@ -22,13 +22,19 @@
       url = "github:ashhhleyyy/fsh";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
+
+    vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    }
   };
 
-  outputs = { self, nixpkgs-stable, nixpkgs-unstable, fsh, home-manager-unstable, nixos-generators, ... }:
+  outputs = { self, nixpkgs-stable, nixpkgs-unstable, fsh, home-manager-unstable, nixos-generators, vscode-extensions, ... }:
   let
     home-manager = home-manager-unstable;
     overlays = [
       fsh.overlays.default
+      vscode-extensions.overlays.default
     ];
     overlays-module = ({ nixpkgs, ... }: {
       nixpkgs.overlays = overlays;
@@ -68,6 +74,7 @@
             imports = [
               fsh.homeModules.fsh
               ./home/ash
+              ./home/ash/alex.nix
               ./home/ash/desktop.nix
               ./home/ash/tpm-fido.nix
               ./home/ash/vscodium.nix
