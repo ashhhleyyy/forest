@@ -30,7 +30,12 @@
     # xkbVariant = "";
   };
 
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [
+      hplip
+    ];
+  };
 
   hardware.bluetooth.enable = true;
 
