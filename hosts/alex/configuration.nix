@@ -41,6 +41,7 @@
 
   programs.steam.enable = true;
   nixpkgs.config.allowUnfree = true;
+  programs.calls.enable = true;
 
   system.stateVersion = "22.11";
 }
