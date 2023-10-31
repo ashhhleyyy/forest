@@ -35,6 +35,35 @@
     overlays = [
       fsh.overlays.default
       vscode-extensions.overlays.default
+      (final: prev: {
+        ndi = prev.ndi.overrideAttrs (self: super: {
+        version = "5.5.4";
+        src = prev.pkgs.requireFile rec {
+          name = "${self.installerName}.tar.gz";
+          sha256 = "sha256:7e5c54693d6aee6b6f1d6d49f48d4effd7281abd216d9ff601be2d55af12f7f5";
+          message = self.installerName;
+          };
+          unpackPhase = "unpackFile \${src}\necho y | ./${self.installerName}.sh\nsourceRoot=\"NDI SDK for Linux\";\n";
+          installPhase = ''
+          mkdir $out
+    mv bin/x86_64-linux-gnu $out/bin
+    for i in $out/bin/*; do
+      patchelf --set-interpreter "$(cat $NIX_CC/nix-support/dynamic-linker)" "$i"
+    done
+    patchelf --set-rpath "${prev.avahi}/lib:${prev.stdenv.cc.libc}/lib" $out/bin/ndi-record
+    mv lib/x86_64-linux-gnu $out/lib
+    for i in $out/lib/*; do
+      if [ -L "$i" ]; then continue; fi
+      patchelf --set-rpath "${prev.avahi}/lib:${prev.stdenv.cc.libc}/lib" "$i"
+    done
+    mv include examples $out/
+    mkdir -p $out/share/doc/${self.pname}-${self.version}
+    mv licenses $out/share/doc/${self.pname}-${self.version}/licenses
+    mv documentation/* $out/share/doc/${self.pname}-${self.version}/
+          '';
+          }
+          );
+      })
     ];
     overlays-module = ({ nixpkgs, ... }: {
       nixpkgs.overlays = overlays;
@@ -76,6 +105,7 @@
               ./home/ash
               ./home/ash/alex.nix
               ./home/ash/desktop.nix
+              ./home/ash/obs.nix
               ./home/ash/tpm-fido.nix
               ./home/ash/vscodium.nix
             ];
