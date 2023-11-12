@@ -16,7 +16,7 @@
       preLVM = true;
       allowDiscards = true;
     }
-  ]
+  ];
 
   networking.hostName = "alex";
   networking.firewall.enable = false;
