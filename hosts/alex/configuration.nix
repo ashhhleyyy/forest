@@ -9,6 +9,15 @@
     ./hardware-config.nix
   ];
 
+  boot.initrd.luks.devices = [
+    {
+      name = "root";
+      device = "/dev/disk/by-uuid/00f32b39-dfcb-4459-bf8e-aa68e2198466";
+      preLVM = true;
+      allowDiscards = true;
+    }
+  ]
+
   networking.hostName = "alex";
   networking.firewall.enable = false;
 
