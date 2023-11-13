@@ -7,6 +7,7 @@
     prismlauncher
     gnome.gnome-sudoku
     dino
+    thunderbird
   ];
 
   programs.direnv.enable = true;
