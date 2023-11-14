@@ -48,5 +48,6 @@
   environment.systemPackages = with pkgs; [
     git
     helix
+    lsof
   ];
 }
