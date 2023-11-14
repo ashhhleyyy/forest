@@ -20,6 +20,8 @@
     settings = {
       hide_kernel_threads = true;
       hide_userland_threads = true;
+      "screen:Main" = "PID USER PRIORITY NICE M_VIRT M_RESIDENT M_SHARE STATE PERCENT_CPU PERCENT_MEM TIME IO_RATE Command";
+      column_meters_1 = "Tasks LoadAverage Uptime DiskIO NetworkIO Systemd";
     };
   };
 
