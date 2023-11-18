@@ -9,4 +9,12 @@
     wget
     cachix
   ];
+  programs.helix = {
+    enable = true;
+    settings = {
+      theme = "catppuccin_mocha";
+      keys.normal."`" = "switch_to_lowercase";
+      keys.normal."C-`" = "switch_to_uppercase";
+    };
+  };
 }
