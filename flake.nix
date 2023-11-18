@@ -108,6 +108,7 @@
 #              ./home/ash/obs.nix
               ./home/ash/tpm-fido.nix
               ./home/ash/vscodium.nix
+              ./home/ash/zoom.nix
             ];
           };
         }
