@@ -37,6 +37,14 @@
     # xkbVariant = "";
   };
 
+  environment.systemPackages = with pkgs; [
+    gnomeExtensions.appindicator
+    gnomeExtensions.mpris-label
+  ];
+  services.udev.packages = with pkgs; [
+    gnome.gnome-settings-daemon
+  ];
+
   services.printing = {
     enable = true;
     drivers = with pkgs; [
