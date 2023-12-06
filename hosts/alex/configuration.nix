@@ -40,6 +40,7 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.appindicator
     gnomeExtensions.mpris-label
+    gnome.gnome-tweaks
   ];
   services.udev.packages = with pkgs; [
     gnome.gnome-settings-daemon
