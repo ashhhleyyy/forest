@@ -68,6 +68,12 @@
           version = "0.1.16";
           sha256 = "sha256-0EcV80N8u3eQB74TNedjM5xbQFY7avUu3A8HWi7eZLk=";
         }
+        {
+          name = "autodocstring";
+          publisher = "njpwerner";
+          version = "0.6.1";
+          sha256 = "sha256-NI0cbjsZPW8n6qRTRKoqznSDhLZRUguP7Sa/d0feeoc=";
+        }
       ];
     })
   ];
