@@ -1,7 +1,8 @@
 on:
   push:
 jobs:
-  tests:
+  cache:
+    name: Build and cache nix artifacts
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
