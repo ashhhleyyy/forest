@@ -14,4 +14,6 @@
     enable = true;
   };
   boot.initrd.systemd.enable = true;
+
+  programs.adb.enable = true;
 }
