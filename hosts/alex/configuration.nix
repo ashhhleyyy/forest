@@ -54,6 +54,13 @@
     ];
   };
 
+  services.gpsd = {
+    enable = true;
+    devices = [
+      "/dev/ttyACM0"
+    ];
+  };
+
   hardware.bluetooth.enable = true;
 
   programs.steam.enable = true;
