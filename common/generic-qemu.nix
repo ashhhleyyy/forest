@@ -1,5 +1,7 @@
 { modulesPath, ... }: {
-  imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
+  imports = [ (modulesPath + "/profiles/qemu-guest.nix") ./generic-grub.nix ];
+
+  boot.loader.grub.device = "/dev/sda";
 
   boot.initrd.availableKernelModules =
     [ "ata_piix" "uhci_hcd" "virtio_pci" "sr_mod" "virtio_blk" ];
