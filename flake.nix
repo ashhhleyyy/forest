@@ -105,6 +105,7 @@
               ./home/ash
               ./home/ash/alex.nix
               ./home/ash/desktop.nix
+              ./home/ash/emacs.nix
 #              ./home/ash/obs.nix
               ./home/ash/tpm-fido.nix
               ./home/ash/vscodium.nix
