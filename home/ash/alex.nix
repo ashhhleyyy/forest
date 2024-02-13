@@ -3,6 +3,7 @@
     jetbrains.gateway
     obsidian
     libresprite
+    plover.dev
   ];
   services.kdeconnect = {
     enable = true;
