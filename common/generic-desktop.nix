@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
   services.flatpak.enable = true;
 
+  networking.networkmanager.enable = true;
   services.resolved.enable = true;
   services.avahi = {
     enable = true;
