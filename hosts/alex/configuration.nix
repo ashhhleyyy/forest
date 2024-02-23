@@ -32,20 +32,23 @@
 
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
+#    displayManager.gdm.enable = true;
+#    desktopManager.gnome.enable = true;
+    
+    displayManager.sddm.enable = true;
+    desktopManager.plasma5.enable = true;
     layout = "gb";
     # xkbVariant = "";
   };
 
-  environment.systemPackages = with pkgs; [
-    gnomeExtensions.appindicator
-    gnomeExtensions.mpris-label
-    gnome.gnome-tweaks
-  ];
-  services.udev.packages = with pkgs; [
-    gnome.gnome-settings-daemon
-  ];
+  #environment.systemPackages = with pkgs; [
+  #  gnomeExtensions.appindicator
+  #  gnomeExtensions.mpris-label
+  #  gnome.gnome-tweaks
+  #];
+  #services.udev.packages = with pkgs; [
+  #  gnome.gnome-settings-daemon
+  #];
 
   services.printing = {
     enable = true;
@@ -65,7 +68,7 @@
 
   programs.steam.enable = true;
   nixpkgs.config.allowUnfree = true;
-  programs.calls.enable = true;
+  #programs.calls.enable = true;
 
   system.stateVersion = "22.11";
 }
