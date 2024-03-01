@@ -4,17 +4,17 @@
     obsidian
     libresprite
     plover.dev
-    libsForQt5.korganizer
-    libsForQt5.kdepim-runtime
-    libsForQt5.kaddressbook
-    libsForQt5.akonadi-notes
-    libsForQt5.akonadi-mime
-    libsForQt5.akonadi-search
-    libsForQt5.akonadi-contacts
-    libsForQt5.akonadi-calendar
-    libsForQt5.akonadi-import-wizard
-    libsForQt5.akonadiconsole
-    libsForQt5.akonadi
+    kdePackages.korganizer
+    kdePackages.kdepim-runtime
+    kdePackages.kaddressbook
+    kdePackages.akonadi-notes
+    kdePackages.akonadi-mime
+    kdePackages.akonadi-search
+    kdePackages.akonadi-contacts
+    kdePackages.akonadi-calendar
+    kdePackages.akonadi-import-wizard
+    kdePackages.akonadiconsole
+    kdePackages.akonadi
   ];
   services.kdeconnect = {
     enable = true;
