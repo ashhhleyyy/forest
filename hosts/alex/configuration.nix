@@ -70,5 +70,7 @@
   nixpkgs.config.allowUnfree = true;
   #programs.calls.enable = true;
 
+  virtualisation.waydroid.enable = true;
+
   system.stateVersion = "22.11";
 }
