@@ -16,5 +16,10 @@
   };
   boot.initrd.systemd.enable = true;
 
+  security.pam.services = {
+    login.u2fAuth = true;
+    sudo.u2fAuth = true;
+  };
+
   programs.adb.enable = true;
 }
