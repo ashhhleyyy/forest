@@ -17,4 +17,14 @@
       keys.normal."C-`" = "switch_to_uppercase";
     };
   };
+
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 }
