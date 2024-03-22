@@ -10,10 +10,12 @@
     ./hardware-config.nix
   ];
 
-  boot.initrd.luks.devices.root = {
-    device = "/dev/disk/by-uuid/00f32b39-dfcb-4459-bf8e-aa68e2198466";
-    preLVM = true;
-    allowDiscards = true;
+  boot.initrd.luks = {
+    devices.root = {
+      device = "/dev/disk/by-uuid/00f32b39-dfcb-4459-bf8e-aa68e2198466";
+      preLVM = true;
+      allowDiscards = true;
+    };
   };
 
   networking.hostName = "alex";
@@ -33,6 +35,7 @@
   security.pam.services = {
     kde.u2fAuth = true;
     sddm.u2fAuth = true;
+    doas.u2fAuth = true;
   };
 
   services.xserver = {
