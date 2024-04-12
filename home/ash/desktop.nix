@@ -41,4 +41,7 @@
     defaultCacheTtl = 31536000;
     maxCacheTtl = 31536000;
   };
+
+  services.ssh-agent.enable = true;
+  programs.ssh.forwardAgent = true;
 }
