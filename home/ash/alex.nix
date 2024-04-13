@@ -15,6 +15,7 @@
     kdePackages.akonadi-import-wizard
     kdePackages.akonadiconsole
     kdePackages.akonadi
+    rtl-sdr
   ];
   services.kdeconnect = {
     enable = true;
