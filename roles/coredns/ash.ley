@@ -37,6 +37,12 @@ ana	IN	A	100.99.239.100
 ; arch VM
 chelsie	IN	A	100.110.143.52
 
+; digital ocean vm (shorks.gay)
+amity	IN	A	100.72.219.75
+
+; New DB server
+lea	IN	A	100.122.202.61
+
 ;; --- PERSONAL DEVICES ---
 ; PC
 mary	IN	A	100.111.252.38
@@ -44,6 +50,8 @@ mary	IN	A	100.111.252.38
 ; Phone
 lyra	IN	A	100.123.71.10
 
+; Laptop (X250)
+alex	IN	A	100.92.96.145
+
 ;; --- OTHER ---
 nucleoid	IN	A	142.132.178.131
-
