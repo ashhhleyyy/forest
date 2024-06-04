@@ -113,6 +113,26 @@
       ];
     };
 
+    nixosConfigurations.amy = nixpkgs-stable.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        overlays-module
+        ./hosts/amy/configuration.nix
+        ./roles/postgres.nix
+        home-manager-stable.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.ash = { ... }: {
+            imports = [
+              fsh.homeModules.fsh
+              ./home/ash
+            ];
+          };
+        }
+      ];
+    };
+
     nixosConfigurations.emira = nixpkgs-unstable.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
