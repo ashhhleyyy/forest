@@ -33,12 +33,7 @@
 
   nix.settings.trusted-users = [ "@wheel" ];
 
-  users.users.ash = {
-    isNormalUser = true;
-    description = "Ashley";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-  };
+  users.users.ash.extraGroups = [ "networkmanager" ];
 
   nixpkgs.config.allowUnfree = true;
 
