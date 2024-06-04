@@ -1,7 +1,7 @@
 { ... }: {
   imports = [
     ./hardware-configuration.nix
-    ../common/generic.nix
+    ../../common/generic.nix
   ];
 
   zramSwap.enable = true;
