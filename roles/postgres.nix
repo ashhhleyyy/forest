@@ -35,4 +35,9 @@
       host all       all     ::1/128        scram-sha-256
     '';
   };
+
+  services.prometheus.exporters.postgres = {
+    enable = true;
+    runAsLocalSuperUser = true;
+  };
 }
