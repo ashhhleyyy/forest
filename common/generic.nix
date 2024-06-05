@@ -56,4 +56,9 @@
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
+
+  services.prometheus.exporters = {
+    systemd.enable = true;
+    node.enable = true;
+  };
 }
