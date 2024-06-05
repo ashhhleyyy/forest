@@ -4,7 +4,6 @@
   imports =
     [
       ./hardware-configuration.nix
-      ../../common/cachix.nix
       ../../common/generic.nix
       ../../common/server.nix
       ../../common/tailscale.nix
@@ -38,7 +37,6 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    helix
     smartmontools
   ];
 
