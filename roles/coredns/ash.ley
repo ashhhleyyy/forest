@@ -43,6 +43,9 @@ amity	IN	A	100.72.219.75
 ; New DB server
 lea	IN	A	100.122.202.61
 
+; New shorks.gay server
+amy	IN	A	100.93.214.57
+
 ;; --- PERSONAL DEVICES ---
 ; PC
 mary	IN	A	100.111.252.38
