@@ -23,7 +23,7 @@
     };
     ensureDatabases = [ "shorks-gay" ];
     enableTCPIP = true;
-    dataDir = "/data/postgresql/${config.services.postgresql.package.psqlSchema}";
+    dataDir = pkgs.lib.mkIf (config.networking.hostName == "lea") "/data/postgresql/${config.services.postgresql.package.psqlSchema}";
     authentication = pkgs.lib.mkOverride 10 ''
       #type database DBuser  auth-method
       local all      all     peer
