@@ -118,6 +118,8 @@
       modules = [
         overlays-module
         ./hosts/amy/configuration.nix
+        ./roles/coredns
+        ./roles/podman.nix
         ./roles/postgres.nix
         home-manager-stable.nixosModules.home-manager
         {

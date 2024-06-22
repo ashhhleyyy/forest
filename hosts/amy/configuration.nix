@@ -28,5 +28,18 @@
   services.openssh.enable = true;
   networking.firewall.allowedTCPPorts = [ 22 ];
 
+  networking = {
+    interfaces = {
+      ens18.ipv6.addresses = [{
+        address = "2a02:c202:2191:6731:0000:0000:0000:0001";
+        prefixLength = 64;
+      }];
+    };
+    defaultGateway6 = {
+      address = "fe80::1";
+      interface = "ens18";
+    };
+  };
+
   system.stateVersion = "23.11";
 }
