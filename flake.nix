@@ -92,6 +92,30 @@
       ];
     };
 
+    nixosConfigurations.loona = nixpkgs-unstable.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        overlays-module
+        ./hosts/loona/configuration.nix
+         home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.ash = { ... }: {
+            imports = [
+              fsh.homeModules.fsh
+              ./home/ash
+              ./home/ash/alex.nix
+              ./home/ash/desktop.nix
+              ./home/ash/emacs.nix
+              ./home/ash/vscodium.nix
+              ./home/ash/zoom.nix
+            ];
+          };
+        }
+      ];
+    };
+
     nixosConfigurations.lea = nixpkgs-stable.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [

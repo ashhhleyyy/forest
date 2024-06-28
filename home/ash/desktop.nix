@@ -1,6 +1,5 @@
 { config, pkgs, ... }: {
   home.packages = with pkgs; [
-    nerdfonts
     firefox
     fluffychat
     cachix
@@ -37,7 +36,7 @@
   services.gpg-agent = {
     enable = true;
     enableFishIntegration = true;
-    pinentryFlavor = "gnome3";
+    pinentryPackage = pkgs.pinentry-qt;
     defaultCacheTtl = 31536000;
     maxCacheTtl = 31536000;
   };

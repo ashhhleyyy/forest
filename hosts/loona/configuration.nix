@@ -1,24 +1,15 @@
-{ config, pkgs, ... }: {
+{ config, modulesPath, pkgs, ... }: {
   imports = [
+    (modulesPath + "/virtualisation/qemu-vm.nix")
     ../../common/generic.nix
     ../../common/generic-desktop.nix
-    ../../common/generic-uefi.nix
-    ../../common/tailscale.nix
+    ../../common/generic-uefi-zfs.nix
     ../../common/tpm.nix
-    ../../roles/kodi.nix
     ../../roles/podman.nix
     ./hardware-config.nix
   ];
 
-  boot.initrd.luks = {
-    devices.root = {
-      device = "/dev/disk/by-uuid/00f32b39-dfcb-4459-bf8e-aa68e2198466";
-      preLVM = true;
-      allowDiscards = true;
-    };
-  };
-
-  networking.hostName = "alex";
+  networking.hostName = "loona";
   networking.firewall.enable = false;
 
   sound.enable = true;
@@ -47,26 +38,10 @@
     desktopManager.plasma6.enable = true;
   };
 
-  #environment.systemPackages = with pkgs; [
-  #  gnomeExtensions.appindicator
-  #  gnomeExtensions.mpris-label
-  #  gnome.gnome-tweaks
-  #];
-  #services.udev.packages = with pkgs; [
-  #  gnome.gnome-settings-daemon
-  #];
-
   services.printing = {
     enable = true;
     drivers = with pkgs; [
       hplip
-    ];
-  };
-
-  services.gpsd = {
-    enable = true;
-    devices = [
-      "/dev/ttyACM0"
     ];
   };
 
@@ -76,7 +51,6 @@
 
   programs.steam.enable = true;
   nixpkgs.config.allowUnfree = true;
-  #programs.calls.enable = true;
 
   virtualisation.waydroid.enable = true;
 

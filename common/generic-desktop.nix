@@ -22,4 +22,9 @@
   };
 
   programs.adb.enable = true;
+
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    maple-mono-NF
+  ];
 }
