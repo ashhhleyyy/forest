@@ -1,15 +1,15 @@
 { config, modulesPath, pkgs, ... }: {
   imports = [
-    (modulesPath + "/virtualisation/qemu-vm.nix")
     ../../common/generic.nix
     ../../common/generic-desktop.nix
     ../../common/generic-uefi-zfs.nix
     ../../common/tpm.nix
     ../../roles/podman.nix
-    ./hardware-config.nix
+    ./hardware-configuration.nix
   ];
 
   networking.hostName = "loona";
+  networking.hostId = "df9469a3";
   networking.firewall.enable = false;
 
   sound.enable = true;
