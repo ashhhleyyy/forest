@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs-stable = {
-      url = "github:NixOS/nixpkgs/nixos-23.11";
+      url = "github:NixOS/nixpkgs/nixos-24.05";
     };
 
     nixpkgs-unstable = {
@@ -9,7 +9,7 @@
     };
 
     home-manager-stable = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
