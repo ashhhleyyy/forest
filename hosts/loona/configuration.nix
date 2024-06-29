@@ -3,6 +3,7 @@
     ../../common/generic.nix
     ../../common/generic-desktop.nix
     ../../common/generic-uefi-zfs.nix
+    ../../common/tailscale.nix
     ../../common/tpm.nix
     ../../roles/podman.nix
     ./hardware-configuration.nix
