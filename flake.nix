@@ -108,6 +108,7 @@
               ./home/ash/alex.nix
               ./home/ash/desktop.nix
               ./home/ash/emacs.nix
+              ./home/ash/intellij.nix
               ./home/ash/vscodium.nix
               ./home/ash/zoom.nix
             ];
