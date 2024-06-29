@@ -143,6 +143,7 @@
       modules = [
         overlays-module
         ./hosts/amy/configuration.nix
+        ./roles/conduit.nix
         ./roles/coredns
         ./roles/iceshrimp.nix
         ./roles/podman.nix
