@@ -15,6 +15,7 @@
     kdePackages.akonadi-import-wizard
     kdePackages.akonadiconsole
     kdePackages.akonadi
+    kdePackages.plasma-browser-integration
     rtl-sdr
   ];
   services.kdeconnect = {
