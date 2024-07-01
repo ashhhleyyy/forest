@@ -26,7 +26,7 @@
   nixpkgs.config.allowUnfree = true;
 
   services.openssh.enable = true;
-  networking.firewall.allowedTCPPorts = [ 22 ];
+#  networking.firewall.allowedTCPPorts = [ 22 ];
 
   networking = {
     interfaces = {
