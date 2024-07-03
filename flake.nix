@@ -32,9 +32,11 @@
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    agenix.url = "github:ryantm/agenix";
   };
 
-  outputs = { self, nixpkgs-stable, nixpkgs-unstable, fsh, home-manager-stable, home-manager-unstable, nixos-generators, vscode-extensions, ... }:
+  outputs = { self, nixpkgs-stable, nixpkgs-unstable, fsh, home-manager-stable, home-manager-unstable, nixos-generators, vscode-extensions, agenix, ... }:
   let
     home-manager = home-manager-unstable;
     overlays = [
@@ -142,10 +144,12 @@
       system = "x86_64-linux";
       modules = [
         overlays-module
+        agenix.nixosModules.default
         ./hosts/amy/configuration.nix
         ./roles/conduit.nix
         ./roles/coredns
         ./roles/iceshrimp.nix
+        ./roles/keycloak.nix
         ./roles/podman.nix
         ./roles/postgres.nix
         home-manager-stable.nixosModules.home-manager
@@ -167,6 +171,7 @@
       modules = [
         overlays-module
         ./hosts/emira/configuration.nix
+        agenix.nixosModules.default
         ./common/generic-qemu.nix
       ];
     };
@@ -180,6 +185,17 @@
         ];
         format = "qcow";
       };
+    };
+
+    devShells.x86_64-linux.default = let
+      pkgs = import nixpkgs-unstable {
+        system = "x86_64-linux";
+      };
+    in
+      pkgs.mkShell {
+      nativeBuildInputs = with pkgs; [
+        agenix.packages.${system}.default
+      ];
     };
   };
 }
