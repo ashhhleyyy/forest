@@ -16,6 +16,7 @@
     kdePackages.akonadiconsole
     kdePackages.akonadi
     kdePackages.plasma-browser-integration
+    kdePackages.qtwebengine
     rtl-sdr
   ];
   services.kdeconnect = {
