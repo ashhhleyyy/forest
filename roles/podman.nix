@@ -4,4 +4,5 @@
   environment.systemPackages = with pkgs; [
     podman-compose
   ];
+  networking.firewall.trustedInterfaces = ["podman0"];
 }

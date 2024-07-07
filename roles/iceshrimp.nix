@@ -2,7 +2,7 @@
   services.redis.servers.iceshrimp = {
     enable = true;
     port = 6380;
-    bind = "100.93.214.57";
+    bind = "0.0.0.0";
     settings.protected-mode = "no";
   };
 

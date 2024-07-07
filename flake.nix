@@ -152,6 +152,7 @@
         ./roles/keycloak.nix
         ./roles/podman.nix
         ./roles/postgres.nix
+        ./roles/zulip.nix
         home-manager-stable.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;

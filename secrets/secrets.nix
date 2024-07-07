@@ -8,4 +8,6 @@ let
 in
 {
   "keycloakPostgres.age".publicKeys = users ++ systems;
+  "zulip-redis.age".publicKeys = users ++ systems;
+  "zulip-env.age".publicKeys = users ++ systems;
 }
