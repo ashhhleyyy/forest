@@ -5,6 +5,7 @@
     ../../common/generic-uefi-zfs.nix
     ../../common/tailscale.nix
     ../../common/tpm.nix
+    ../../roles/libvirt.nix
     ../../roles/podman.nix
     ./hardware-configuration.nix
   ];
@@ -52,6 +53,22 @@
 
   programs.steam.enable = true;
   nixpkgs.config.allowUnfree = true;
+
+  nixpkgs.config.packageOverrides = pkgs: {
+    intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
+  };
+  hardware.graphics = {
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # LIBVA_DRIVER_NAME=iHD
+      intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+      libvdpau-va-gl
+    ];
+  };
+
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
+
+  boot.extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
 
   virtualisation.waydroid.enable = true;
 

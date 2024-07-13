@@ -7,6 +7,7 @@
     gnome.gnome-sudoku
     dino
     thunderbird
+#    zed-editor
   ];
 
   programs.direnv.enable = true;

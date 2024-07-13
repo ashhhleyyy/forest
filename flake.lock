@@ -315,6 +315,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-zed": {
+      "locked": {
+        "lastModified": 1720763479,
+        "narHash": "sha256-7D4KeRoBKiSrjhKjCjkkNtdh4fUDmBVubdQMZokLQJE=",
+        "owner": "GaetanLepage",
+        "repo": "nixpkgs",
+        "rev": "f62f4aa5819324640d60158f38c8ed333b4de18f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "GaetanLepage",
+        "ref": "zed",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -324,6 +340,7 @@
         "nixos-generators": "nixos-generators",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "nixpkgs-zed": "nixpkgs-zed",
         "vscode-extensions": "vscode-extensions"
       }
     },

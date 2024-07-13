@@ -8,6 +8,10 @@
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
 
+    nixpkgs-zed = {
+      url = "github:GaetanLepage/nixpkgs/zed";
+    };
+
     home-manager-stable = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -36,12 +40,18 @@
     agenix.url = "github:ryantm/agenix";
   };
 
-  outputs = { self, nixpkgs-stable, nixpkgs-unstable, fsh, home-manager-stable, home-manager-unstable, nixos-generators, vscode-extensions, agenix, ... }:
+  outputs = { self, nixpkgs-stable, nixpkgs-unstable, nixpkgs-zed, fsh, home-manager-stable, home-manager-unstable, nixos-generators, vscode-extensions, agenix, ... }:
   let
     home-manager = home-manager-unstable;
+    zed-overlay = final: prev: {
+      # Inherit the changes into the overlay
+      inherit (nixpkgs-zed.legacyPackages.${prev.system})
+        zed-editor;
+    };
     overlays = [
       fsh.overlays.default
       vscode-extensions.overlays.default
+      zed-overlay
     ];
     overlays-module = ({ nixpkgs, ... }: {
       nixpkgs.overlays = overlays;
@@ -111,6 +121,7 @@
               ./home/ash/desktop.nix
               ./home/ash/emacs.nix
               ./home/ash/intellij.nix
+              ./home/ash/lutris.nix
               ./home/ash/vscodium.nix
               ./home/ash/zoom.nix
             ];
