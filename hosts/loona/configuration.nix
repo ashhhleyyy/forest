@@ -36,7 +36,10 @@
       enable = true;
       xkb.layout = "gb";
     };
-    displayManager.sddm.enable = true;
+    displayManager.sddm = {
+      enable = true;
+      theme = "catppuccin-mocha";
+    };
     desktopManager.plasma6.enable = true;
   };
 
@@ -67,6 +70,11 @@
   };
 
   environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
+  environment.systemPackages = with pkgs; [
+    (catppuccin-sddm.override {
+      flavor = "mocha";
+    })
+  ];
 
   boot.extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
 

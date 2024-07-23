@@ -13,6 +13,8 @@
 
   boot.plymouth = {
     enable = true;
+    themePackages = [(pkgs.catppuccin.override { variant = "mocha"; accent = "mauve"; })];
+    theme = "catppuccin-mocha";
   };
   boot.initrd.systemd.enable = true;
 
