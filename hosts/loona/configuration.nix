@@ -53,6 +53,7 @@
   hardware.bluetooth.enable = true;
   hardware.rtl-sdr.enable = true;
   users.users.ash.extraGroups = ["plugdev"];
+  hardware.usb-modeswitch.enable = true;
 
   programs.steam.enable = true;
   nixpkgs.config.allowUnfree = true;
