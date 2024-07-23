@@ -27,6 +27,7 @@
         catppuccin.catppuccin-vsc
         catppuccin.catppuccin-vsc-icons
         ziglang.vscode-zig
+        redhat.java
       ]);
     })
   ];
