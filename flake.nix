@@ -120,6 +120,7 @@
               ./home/ash/alex.nix
               ./home/ash/desktop.nix
               ./home/ash/emacs.nix
+              ./home/ash/obs.nix
               ./home/ash/intellij.nix
               ./home/ash/lutris.nix
               ./home/ash/vscodium.nix
