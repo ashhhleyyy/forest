@@ -4,6 +4,7 @@
       vscode = vscodium;
       vscodeExtensions = with pkgs.vscode-extensions; [
         ms-python.python
+        ms-python.debugpy
         ms-vscode.hexeditor
         ms-dotnettools.csharp
       ] ++ (with pkgs.vscode-marketplace; [
@@ -28,6 +29,9 @@
         catppuccin.catppuccin-vsc-icons
         ziglang.vscode-zig
         redhat.java
+        vue.volar
+        editorconfig.editorconfig
+        arcanis.vscode-zipfs
       ]);
     })
   ];
