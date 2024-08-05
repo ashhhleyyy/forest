@@ -8,8 +8,14 @@
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
 
-    nixpkgs-zed = {
-      url = "github:GaetanLepage/nixpkgs/zed";
+    lix-module-stable = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.90.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
+
+    lix-module-unstable = {
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.90.0.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     home-manager-stable = {
@@ -40,18 +46,12 @@
     agenix.url = "github:ryantm/agenix";
   };
 
-  outputs = { self, nixpkgs-stable, nixpkgs-unstable, nixpkgs-zed, fsh, home-manager-stable, home-manager-unstable, nixos-generators, vscode-extensions, agenix, ... }:
+  outputs = { self, nixpkgs-stable, nixpkgs-unstable, lix-module-stable, lix-module-unstable, fsh, home-manager-stable, home-manager-unstable, nixos-generators, vscode-extensions, agenix, ... }:
   let
     home-manager = home-manager-unstable;
-    zed-overlay = final: prev: {
-      # Inherit the changes into the overlay
-      inherit (nixpkgs-zed.legacyPackages.${prev.system})
-        zed-editor;
-    };
     overlays = [
       fsh.overlays.default
       vscode-extensions.overlays.default
-      zed-overlay
     ];
     overlays-module = ({ nixpkgs, ... }: {
       nixpkgs.overlays = overlays;
@@ -109,7 +109,8 @@
       modules = [
         overlays-module
         ./hosts/loona/configuration.nix
-         home-manager.nixosModules.home-manager
+        home-manager.nixosModules.home-manager
+        lix-module-unstable.nixosModules.default
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
