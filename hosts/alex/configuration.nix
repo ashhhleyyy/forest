@@ -7,6 +7,7 @@
     ../../common/tpm.nix
     ../../roles/kodi.nix
     ../../roles/libvirt.nix
+    ../../roles/niri.nix
     ../../roles/podman.nix
     ./hardware-config.nix
   ];
@@ -22,7 +23,6 @@
   networking.hostName = "alex";
   networking.firewall.enable = false;
 
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -45,7 +45,6 @@
       xkb.layout = "gb";
     };
     displayManager.sddm.enable = true;
-    desktopManager.plasma6.enable = true;
   };
 
   #environment.systemPackages = with pkgs; [

@@ -99,6 +99,7 @@
       system = "x86_64-linux";
       modules = [
         overlays-module
+        niri-flake.nixosModules.niri
         ./hosts/alex/configuration.nix
         home-manager.nixosModules.home-manager
         {
@@ -112,6 +113,7 @@
               ./home/ash/desktop.nix
               ./home/ash/emacs.nix
 #              ./home/ash/obs.nix
+              ./home/ash/niri.nix
               ./home/ash/tpm-fido.nix
               ./home/ash/vscodium.nix
               ./home/ash/zoom.nix
@@ -142,6 +144,7 @@
               ./home/ash/obs.nix
               ./home/ash/intellij.nix
               ./home/ash/lutris.nix
+
               ./home/ash/vscodium.nix
               ./home/ash/zoom.nix
             ];
@@ -205,6 +208,28 @@
         ./hosts/emira/configuration.nix
         agenix.nixosModules.default
         ./common/generic-qemu.nix
+      ];
+    };
+
+    nixosConfigurations.em = nixpkgs-unstable.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        overlays-module
+        niri-flake.nixosModules.niri
+        ./hosts/em/configuration.nix
+        home-manager-unstable.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.ash = { ... }: {
+            imports = [
+              fsh.homeModules.fsh
+              ./home/ash
+              ./home/ash/niri.nix
+              ./home/ash/desktop.nix
+            ];
+          };
+        }
       ];
     };
 
