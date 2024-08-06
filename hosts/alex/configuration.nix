@@ -6,6 +6,7 @@
     ../../common/tailscale.nix
     ../../common/tpm.nix
     ../../roles/kodi.nix
+    ../../roles/libvirt.nix
     ../../roles/podman.nix
     ./hardware-config.nix
   ];
