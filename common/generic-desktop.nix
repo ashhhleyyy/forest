@@ -7,6 +7,7 @@
     enable = true;
     openFirewall = true;
   };
+  users.users.ash.extraGroups = [ "networkmanager" ];
 
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.utf8";

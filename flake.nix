@@ -44,9 +44,26 @@
     };
 
     agenix.url = "github:ryantm/agenix";
+
+    niri-flake = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs-stable.follows = "nixpkgs-stable";
+    };
   };
 
-  outputs = { self, nixpkgs-stable, nixpkgs-unstable, lix-module-stable, lix-module-unstable, fsh, home-manager-stable, home-manager-unstable, nixos-generators, vscode-extensions, agenix, ... }:
+  outputs = {
+    self,
+    nixpkgs-stable, nixpkgs-unstable,
+    lix-module-stable, lix-module-unstable,
+    home-manager-stable, home-manager-unstable,
+    nixos-generators,
+    fsh,
+    vscode-extensions,
+    agenix,
+    niri-flake,
+    ...
+  }:
   let
     home-manager = home-manager-unstable;
     overlays = [
@@ -108,6 +125,7 @@
       system = "x86_64-linux";
       modules = [
         overlays-module
+        niri-flake.nixosModules.niri
         ./hosts/loona/configuration.nix
         home-manager.nixosModules.home-manager
         lix-module-unstable.nixosModules.default
