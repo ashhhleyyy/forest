@@ -3,6 +3,7 @@
     settings = {
       input = {
         focus-follows-mouse.enable = true;
+        keyboard.xkb.layout = "gb";
       };
       layout = {
         gaps = 8;
@@ -163,7 +164,7 @@
         # "custom/music"
       ];
       "modules-right" = [
-        "pulseaudio"
+        "wireplumber"
         "backlight"
         "battery"
         "clock"
@@ -195,8 +196,8 @@
       "clock" = {
           "timezone" = "Europe/London";
           "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          "format-alt" = " {:%d/%m/%Y}";
-          "format" = " {:%H:%M}";
+          "format-alt" = " {:%d/%m/%Y}";
+          "format" = "󰥔 {:%H:%M}";
       };
       "backlight" = {
           "device" = "intel_backlight";
@@ -209,19 +210,21 @@
               "critical" = 15;
           };
           "format" = "{icon}";
-          "format-charging" = "";
-          "format-plugged" = "";
+          "format-charging" = "{icon} 󰚥";
+          "format-plugged" = "󰐧";
           "format-alt" = "{icon}";
-          "format-icons" = ["" ""  "" "" "" "" "" "" "" "" "" ""];
+          "format-icons" = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ""];
       };
-      "pulseaudio" = {
+      "wireplumber" = {
           # "scroll-step" = 1, # %, can be a float
           "format" = "{icon} {volume}%";
-          "format-muted" = "";
+          "format-muted" = " {volume}%";
           "format-icons" = {
               "default" = ["" "" " "];
           };
-          "on-click" = "pavucontrol";
+      };
+      "wireplumber#source" = {
+        format = " {source}";
       };
       "custom/lock" = {
           "tooltip" = false;
@@ -230,7 +233,7 @@
       };
       "custom/power" = {
           "tooltip" = false;
-          "on-click" = "wlogout &";
+          "on-click" = "niri msg action quit";
           "format" = "Logout";
       };
     }];
@@ -245,12 +248,27 @@
     Unit = {
       Description = "swaybg";
       PartOf = ["graphical-session.target"];
-      After = ["graphical-session.target"];
+      After = ["niri.service"];
       Requisite = ["graphical-session.target"];
     };
     Service = {
-      ExecStart = "${pkgs.swaybg}/bin/swaybg -i $HOME/wallpaper.png";
+      ExecStart = "${pkgs.swaybg}/bin/swaybg -i /home/ash/wallpaper.png";
       Restart = "on-failure";
+    };
+  };
+
+  systemd.user.services."pam_kwallet_init" = {
+    Unit = {
+      Description = "Unlock kwallet on login";
+      PartOf = ["graphical-session.target"];
+      Requisite = ["graphical-session.target"];
+      After = ["niri.service"];
+    };
+    Service = {
+      ExecStart = "${pkgs.kwallet-pam}/libexec/pam_kwallet_init";
+      Type = "simple";
+      Restart = "no";
+      Slice = "background.slice";
     };
   };
 }

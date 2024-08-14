@@ -10,5 +10,8 @@
     };
   };
   programs.niri.enable = true;
+  services.gnome.gnome-keyring.enable = lib.mkForce false;
   hardware.graphics.enable = true;
+
+  programs.nm-applet.enable = true;
 }

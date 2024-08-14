@@ -6,6 +6,7 @@
     ../../common/tailscale.nix
     ../../common/tpm.nix
     ../../roles/libvirt.nix
+    ../../roles/niri.nix
     ../../roles/podman.nix
     ./hardware-configuration.nix
   ];
@@ -54,6 +55,10 @@
   hardware.rtl-sdr.enable = true;
   users.users.ash.extraGroups = ["plugdev"];
   hardware.usb-modeswitch.enable = true;
+  services.udev.packages = with pkgs; [
+    platformio-core
+    openocd
+  ];
 
   programs.steam.enable = true;
   nixpkgs.config.allowUnfree = true;
