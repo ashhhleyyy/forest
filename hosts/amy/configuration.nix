@@ -8,16 +8,16 @@
 
   zramSwap.enable = true;
   networking.hostName = "amy";
-  networking.domain = "serv.ashhhleyyy.dev";
+  networking.domain = "net.isnt-a.top";
 
   time.timeZone = "Europe/London";
 
   i18n.defaultLocale = "en_GB.UTF-8";
 
-  services.xserver = {
-    layout = "gb";
-    xkbVariant = "";
-  };
+  #services.xserver = {
+  #  layout = "gb";
+  #  xkbVariant = "";
+  #};
 
   console.keyMap = "uk";
 

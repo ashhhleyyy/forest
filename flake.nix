@@ -185,6 +185,7 @@
         ./roles/coredns
         ./roles/iceshrimp.nix
         ./roles/keycloak.nix
+        ./roles/mc-proxy.nix
         ./roles/podman.nix
         ./roles/postgres.nix
         ./roles/zulip.nix
