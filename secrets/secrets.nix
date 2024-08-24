@@ -10,4 +10,5 @@ in
   "keycloakPostgres.age".publicKeys = users ++ systems;
   "zulip-redis.age".publicKeys = users ++ systems;
   "zulip-env.age".publicKeys = users ++ systems;
+  "gts-sandbox.age".publicKeys = users ++ systems;
 }

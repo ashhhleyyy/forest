@@ -183,6 +183,7 @@
         ./hosts/amy/configuration.nix
         ./roles/conduit.nix
         ./roles/coredns
+        ./roles/gts-sandbox.nix
         ./roles/iceshrimp.nix
         ./roles/keycloak.nix
         ./roles/mc-proxy.nix
