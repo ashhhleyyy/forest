@@ -59,6 +59,7 @@
     platformio-core
     openocd
   ];
+  services.usbmuxd.enable = true;
 
   programs.steam.enable = true;
   nixpkgs.config.allowUnfree = true;
