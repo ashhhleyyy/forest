@@ -15,4 +15,5 @@
     };
   };
   users.users.ash.extraGroups = ["libvirtd"];
+  virtualisation.spiceUSBRedirection.enable = true;
 }

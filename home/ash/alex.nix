@@ -18,6 +18,7 @@
     kdePackages.plasma-browser-integration
     kdePackages.qtwebengine
     rtl-sdr
+    signal-desktop
   ];
   services.kdeconnect = {
     enable = true;

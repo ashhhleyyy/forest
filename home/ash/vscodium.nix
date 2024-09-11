@@ -32,6 +32,9 @@
         vue.volar
         editorconfig.editorconfig
         arcanis.vscode-zipfs
+        jakebecker.elixir-ls
+        phoenixframework.phoenix
+        bradlc.vscode-tailwindcss
       ]);
     })
   ];
