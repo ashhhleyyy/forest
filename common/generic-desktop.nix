@@ -29,5 +29,6 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     maple-mono-NF
+    atkinson-hyperlegible
   ];
 }

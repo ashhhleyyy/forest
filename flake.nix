@@ -114,6 +114,7 @@
               ./home/ash/emacs.nix
 #              ./home/ash/obs.nix
               ./home/ash/niri.nix
+              ./home/ash/syncthing.nix
               ./home/ash/tpm-fido.nix
               ./home/ash/vscodium.nix
               ./home/ash/zoom.nix
@@ -145,6 +146,7 @@
               ./home/ash/obs.nix
               ./home/ash/intellij.nix
               ./home/ash/lutris.nix
+              ./home/ash/syncthing.nix
 
               ./home/ash/vscodium.nix
               ./home/ash/zoom.nix
@@ -189,6 +191,7 @@
         ./roles/mc-proxy.nix
         ./roles/podman.nix
         ./roles/postgres.nix
+        ./roles/youtrack.nix
         ./roles/zulip.nix
         home-manager-stable.nixosModules.home-manager
         {

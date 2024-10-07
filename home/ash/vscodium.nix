@@ -35,6 +35,7 @@
         jakebecker.elixir-ls
         phoenixframework.phoenix
         bradlc.vscode-tailwindcss
+        myriad-dreamin.tinymist
       ]);
     })
   ];
