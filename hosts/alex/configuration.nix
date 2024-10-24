@@ -80,5 +80,7 @@
 
   virtualisation.waydroid.enable = true;
 
+  services.logind.lidSwitch = "ignore";
+
   system.stateVersion = "22.11";
 }

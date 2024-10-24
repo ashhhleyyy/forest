@@ -30,5 +30,18 @@
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     maple-mono-NF
     atkinson-hyperlegible
+    liberation_ttf
+    ocr-a
+    (pkgs.stdenv.mkDerivation {
+      pname = "libre-barcode";
+      version = "1.008";
+      src = pkgs.fetchzip {
+        url = "https://github.com/graphicore/librebarcode/releases/download/v1.008/LibreBarcode_v1.008.zip";
+        hash = "sha256-2Tqpjb+wBrfawgdRdrL+rfJeYLsnwMhfDkwIBt2HWkE=";
+      };
+      installPhase = ''
+      install -D -m 0644 $src/LibreBarcode39-Regular.ttf $out/share/fonts/truetype/LibreBarcode39-Regular.ttf
+      '';
+    })
   ];
 }

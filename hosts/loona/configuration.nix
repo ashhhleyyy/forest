@@ -15,7 +15,7 @@
   networking.hostId = "df9469a3";
   networking.firewall.enable = false;
 
-  boot.kernelPackages = pkgs.linuxPackages_6_8;
+  #boot.kernelPackages = pkgs.linuxPackages_6_8;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {

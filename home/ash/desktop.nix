@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
   home.packages = with pkgs; [
     firefox
-    fluffychat
+#    fluffychat
     cachix
     prismlauncher
     gnome.gnome-sudoku
@@ -14,7 +14,7 @@
 
   programs.kitty = {
     enable = true;
-    theme = "Catppuccin-Mocha";
+    themeFile = "Catppuccin-Mocha";
     font.name = "JetBrainsMono Nerd Font";
   };
 
