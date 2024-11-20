@@ -43,6 +43,7 @@
       interface = "ens18";
     };
   };
+  services.resolved.enable = true;
 
   system.stateVersion = "23.11";
 }
