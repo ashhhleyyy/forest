@@ -51,6 +51,7 @@
     git
     helix
     lsof
+    tmux
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
