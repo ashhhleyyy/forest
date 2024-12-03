@@ -10,4 +10,12 @@
       };
     };
   };
+
+  services.caddy.virtualHosts."matrix.shorks.gay".extraConfig = ''
+    reverse_proxy 127.0.0.1:6167
+
+    log {
+      output file /var/log/caddy/matrix.shorks.gay-access.log
+    }
+  '';
 }

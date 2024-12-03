@@ -35,23 +35,33 @@
     }
     '';
 
-    virtualHosts."shorks.gay".extraConfig = ''
-      root * /var/www/shorks-gay
-      file_server
-      respond /.git/* 404
-      respond /cat "nya"
-      reverse_proxy /.well-known/webfinger 127.0.0.1:3000
-      header /.well-known/matrix/* Content-Type application/json
-      header /.well-known/matrix/* Access-Control-Allow-Origin *
-      redir /authorize_interaction https://fedi.shorks.gay{uri}
+    virtualHosts = {
+      "shorks.gay".extraConfig = ''
+        root * /var/www/shorks-gay
+        file_server
+        respond /.git/* 404
+        respond /cat "nya"
+        reverse_proxy /.well-known/webfinger 127.0.0.1:3000
+        header /.well-known/matrix/* Content-Type application/json
+        header /.well-known/matrix/* Access-Control-Allow-Origin *
+        redir /authorize_interaction https://fedi.shorks.gay{uri}
 
-      log {
-        output file /var/log/caddy/shorks.gay-access.log
-      }
+        log {
+          output file /var/log/caddy/shorks.gay-access.log
+        }
 
-      import blockbots
-      import errors
-    '';
+        import blockbots
+        import errors
+      '';
+
+      "gerrit.shorks.gay".extraConfig = ''
+        reverse_proxy 100.123.36.114:8082
+
+        log {
+          output file /var/log/caddy/gerrit.shorks.gay-access.log
+        }
+      '';
+    };
   };
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
