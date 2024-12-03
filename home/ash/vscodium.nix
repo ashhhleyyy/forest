@@ -36,6 +36,8 @@
         phoenixframework.phoenix
         bradlc.vscode-tailwindcss
         myriad-dreamin.tinymist
+        haskell.haskell
+        justusadam.language-haskell
       ]);
     })
   ];
