@@ -48,6 +48,7 @@
     enable = true;
     drivers = with pkgs; [
       hplip
+      samsung-unified-linux-driver
     ];
   };
 
