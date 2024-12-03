@@ -191,6 +191,7 @@
         ./roles/mc-proxy.nix
         ./roles/podman.nix
         ./roles/postgres.nix
+        ./roles/shorks-web.nix
         ./roles/youtrack.nix
         ./roles/zulip.nix
         home-manager-stable.nixosModules.home-manager
