@@ -44,6 +44,11 @@
       header /.well-known/matrix/* Content-Type application/json
       header /.well-known/matrix/* Access-Control-Allow-Origin *
       redir /authorize_interaction https://fedi.shorks.gay{uri}
+
+      log {
+        output file /var/log/caddy/shorks.gay-access.log
+      }
+
       import blockbots
       import errors
     '';
