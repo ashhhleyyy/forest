@@ -29,14 +29,14 @@ in
       example = "postgresql_15";
     };
     databases = mkOption {
-      type = types.listOf types.string;
+      type = types.listOf types.str;
       default = [];
       description = ''
       List of databases to perform the vacuuming on. Must not be empty if enable is set to true.
       '';
     };
     frequency = mkOption {
-      type = types.string;
+      type = types.str;
       default = "1d";
       description = ''
       The interval between vacuum runs, '1d' is the recommended value.
@@ -61,10 +61,10 @@ in
         Type = "oneshot";
         User = "postgres";
         Group = "postgres";
+        ExecStart = ''
+          ${vacuumScript} ${utils.escapeSystemdExecArgs cfg.databases}
+        '';
       };
-      ExecStart = ''
-        ${vacuumScript} ${utils.escapeSystemdExecArgs cfg.databases}
-      '';
     };
   };
 }
