@@ -42,4 +42,6 @@
       import blockbots
     '';
   };
+
+  services.pg-vacuum.databases = [ "shorks-gay" ];
 }

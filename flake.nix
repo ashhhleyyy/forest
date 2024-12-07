@@ -182,6 +182,8 @@
       modules = [
         overlays-module
         agenix.nixosModules.default
+        ./modules
+
         ./hosts/amy/configuration.nix
         ./roles/conduit.nix
         ./roles/coredns

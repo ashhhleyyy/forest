@@ -1,0 +1,5 @@
+{ ... }: {
+  imports = [
+    ./pg-vacuum.nix
+  ];
+}
