@@ -40,7 +40,6 @@
   services.pg-vacuum = {
     enable = true;
     package = pkgs.postgresql_14;
-    frequency = "1d";
   };
 
   services.prometheus.exporters.postgres = {
