@@ -20,4 +20,13 @@
     };
     #environmentFile = config.age.secrets.gts-sandbox.path;
   };
+
+  services.caddy.virtualHosts."sandbox.isnt-a.top".extraConfig = ''
+    encode zstd gzip
+    reverse_proxy 127.0.0.1:3001
+
+    log {
+      output file /var/log/caddy/sandbox.isnt-a.top-access.log
+    }
+  '';
 }
