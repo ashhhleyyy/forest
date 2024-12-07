@@ -35,11 +35,11 @@ in
       List of databases to perform the vacuuming on. Must not be empty if enable is set to true.
       '';
     };
-    frequency = mkOption {
+    onCalendar = mkOption {
       type = types.str;
-      default = "1d";
+      default = "*-*-* 4:00:00";
       description = ''
-      The interval between vacuum runs, '1d' is the recommended value.
+      The interval between vacuum runs, the default value runs the vacuum job every day at 4am.
 
       The format is described in systemd.time(7).
       '';
@@ -64,6 +64,16 @@ in
         ExecStart = ''
           ${vacuumScript} ${utils.escapeSystemdExecArgs cfg.databases}
         '';
+      };
+    };
+
+    systemd.timers.pg-vacuum = {
+      description = "Vacuum PostgreSQL databases";
+      wantedBy = ["timers.target"];
+      timerConfig = {
+        Unit = "pg-vacuum.service";
+        OnCalendar = cfg.onCalendar;
+        Persistent = true;
       };
     };
   };
