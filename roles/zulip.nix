@@ -74,4 +74,18 @@
       "/var/lib/zulip:/data"
     ];
   };
+
+  services.caddy.virtualHosts."chat.shorks.gay".extraConfig = ''
+    log {
+      output file /var/log/caddy/chat.shorks.gay-access.log
+    }
+
+    reverse_proxy 127.0.0.1:8080 {
+      transport http {
+        read_buffer 0
+        write_buffer 0
+        read_timeout 20m
+      }
+    }
+  '';
 }
