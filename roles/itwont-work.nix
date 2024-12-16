@@ -1,0 +1,58 @@
+{ config, pkgs, lib, ... }:
+
+let
+  app = "itwont-work";
+  domain = "itwont.work";
+  appDir = "/var/www/${domain}";
+in
+
+{
+  users.users.nico = {
+    description = "Nico";
+    isNormalUser = true;
+    shell = pkgs.bash;
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIES6FqJ23JNJcHTfKMPSbdPYcRcMecZWWNKyHLUbVXfB nico@itwont.work"
+    ];
+  };
+
+  services.phpfpm.pools.${app} = {
+    user = app;
+    settings = {
+      "listen.owner" = config.services.caddy.user;
+      "pm" = "dynamic";
+      "pm.max_children" = 32;
+      "pm.max_requests" = 500;
+      "pm.start_servers" = 2;
+      "pm.min_spare_servers" = 2;
+      "pm.max_spare_servers" = 5;
+      "php_admin_value[error_log]" = "stderr";
+      "php_admin_flag[log_errors]" = true;
+      "catch_workers_output" = true;
+    };
+    phpEnv."PATH" = lib.makeBinPath [ pkgs.php ];
+  };
+  users.users.${app} = {
+    isSystemUser = true;
+    createHome = true;
+    homeMode = "755";
+    home = appDir;
+    group = app;
+  };
+  users.groups.${app} = {};
+
+  services.caddy.virtualHosts."itwont.work".extraConfig = ''
+    import blockbots
+    encode zstd gzip
+    root * ${appDir}/public
+    header * X-Frame-Options SAMEORIGIN
+    header * X-XXS-Protection "1; mode=block"
+    header * X-Content-Type-Options nosniff
+    php_fastcgi unix/${config.services.phpfpm.pools.${app}.socket}
+    file_server
+
+    log {
+      output file /var/log/caddy/itwont.work-access.log
+    }
+  '';
+}

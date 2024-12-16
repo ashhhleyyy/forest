@@ -189,6 +189,7 @@
         ./roles/coredns
         ./roles/gts-sandbox.nix
         ./roles/iceshrimp.nix
+        ./roles/itwont-work.nix
         ./roles/keycloak.nix
         ./roles/mc-proxy.nix
         ./roles/podman.nix
