@@ -1,7 +1,14 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   services.caddy = {
     enable = true;
     email = "shorks@ashhhleyyy.dev";
+
+    globalConfig = ''
+      servers {
+        metrics
+      }
+    '';
+
     extraConfig = ''
     (blockbots) {
       respond @badbots "Fuck you" 410 {
@@ -60,6 +67,10 @@
         log {
           output file /var/log/caddy/gerrit.shorks.gay-access.log
         }
+      '';
+
+      "http://${config.networking.hostName}.ash.ley:9101".extraConfig = ''
+        metrics
       '';
     };
   };
