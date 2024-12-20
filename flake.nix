@@ -38,6 +38,11 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
+    aci = {
+      url = "git+https://git.ashhhleyyy.dev/ash/aci";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
+
     vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -59,6 +64,7 @@
     home-manager-stable, home-manager-unstable,
     nixos-generators,
     fsh,
+    aci,
     vscode-extensions,
     agenix,
     niri-flake,
@@ -69,6 +75,7 @@
     overlays = [
       fsh.overlays.default
       vscode-extensions.overlays.default
+      aci.overlays.default
     ];
     overlays-module = ({ nixpkgs, ... }: {
       nixpkgs.overlays = overlays;
@@ -181,6 +188,7 @@
       system = "x86_64-linux";
       modules = [
         overlays-module
+        aci.nixosModules.default
         agenix.nixosModules.default
         ./modules
 

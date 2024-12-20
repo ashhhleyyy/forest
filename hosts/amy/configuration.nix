@@ -45,5 +45,7 @@
   };
   services.resolved.enable = true;
 
+  services.aci-backend.enable = true;
+
   system.stateVersion = "23.11";
 }
