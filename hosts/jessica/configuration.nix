@@ -45,5 +45,11 @@
   };
   services.resolved.enable = true;
 
+  networking.firewall.allowedTCPPorts = [ 80 443 ];
+  services.caddy = {
+    enable = true;
+    email = "infra@ashhhleyyy.dev";
+  };
+
   system.stateVersion = "24.11";
 }

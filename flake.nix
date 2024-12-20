@@ -200,6 +200,7 @@
         ./roles/itwont-work.nix
         ./roles/keycloak.nix
         ./roles/mc-proxy.nix
+        ./roles/munin-node.nix
         ./roles/podman.nix
         ./roles/postgres.nix
         ./roles/shorks-web.nix
@@ -228,6 +229,12 @@
         ./modules
 
         ./hosts/jessica/configuration.nix
+
+        ./roles/jenkins.nix
+
+        ./roles/munin-node.nix
+        ./roles/munin-server.nix
+
         ./roles/podman.nix
         home-manager-stable.nixosModules.home-manager
         {
@@ -285,16 +292,17 @@
         format = "qcow";
       };
     };
-
-    devShells.x86_64-linux.default = let
-      pkgs = import nixpkgs-unstable {
-        system = "x86_64-linux";
-      };
-    in
-      pkgs.mkShell {
+  } //
+  (let
+    pkgs = import nixpkgs-unstable {
+      system = "x86_64-linux";
+    };
+  in
+  {
+    devShells.x86_64-linux.default = pkgs.mkShell {
       nativeBuildInputs = with pkgs; [
         agenix.packages.${system}.default
       ];
     };
-  };
+  });
 }
