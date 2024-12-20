@@ -219,6 +219,30 @@
       ];
     };
 
+    nixosConfigurations.jessica = nixpkgs-stable.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        overlays-module
+        aci.nixosModules.default
+        agenix.nixosModules.default
+        ./modules
+
+        ./hosts/jessica/configuration.nix
+        ./roles/podman.nix
+        home-manager-stable.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.ash = { ... }: {
+            imports = [
+              fsh.homeModules.fsh
+              ./home/ash
+            ];
+          };
+        }
+      ];
+    };
+
     nixosConfigurations.emira = nixpkgs-unstable.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
