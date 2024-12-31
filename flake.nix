@@ -235,6 +235,8 @@
         ./roles/munin-node.nix
         ./roles/munin-server.nix
 
+        ./roles/uptime-kuma.nix
+
         ./roles/podman.nix
         home-manager-stable.nixosModules.home-manager
         {
