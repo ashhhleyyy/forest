@@ -7,6 +7,7 @@
     gnome.gnome-sudoku
     dino
     thunderbird
+    vlc
 #    zed-editor
   ];
 

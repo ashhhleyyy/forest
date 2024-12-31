@@ -82,6 +82,7 @@
     (catppuccin-sddm.override {
       flavor = "mocha";
     })
+    libimobiledevice
   ];
 
   boot.extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
