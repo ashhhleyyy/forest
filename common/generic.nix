@@ -4,6 +4,7 @@
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.trusted-users = [ "@wheel" "deploy" ];
 
   boot.tmp.cleanOnBoot = true;
   boot.supportedFilesystems = [ "ntfs" ];
@@ -37,6 +38,20 @@
     hashedPassword = "$y$j9T$YZw49GYsZi6pm5MH3W2gX1$BKPBL3g4jAWUJP0WY0lRrBLorxzcENVqGTG0dAly3v7";
     extraGroups = [ "wheel" "audio" "dialout" "adbusers" ];
   };
+
+  users.groups.deploy = {};
+  users.users.deploy = {
+    description = "Deploy";
+    group = "deploy";
+    isNormalUser = false;
+    isSystemUser = true;
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDOfH436QTUDSNGd254ADoyBKNRL4Y+abCeWXLt5liW3 deploy@ashhhleyyy.dev"
+    ];
+  };
+  security.sudo.extraRules = [
+    { users = [ "deploy" ]; commands = [ { command = "ALL"; options = [ "NOPASSWD" ]; } ]; }
+  ];
 
   security.doas.enable = true;
   security.doas.wheelNeedsPassword = false;

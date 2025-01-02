@@ -21,7 +21,6 @@
 
   console.keyMap = "uk";
 
-  nix.settings.trusted-users = [ "@wheel" ];
 
   nixpkgs.config.allowUnfree = true;
 
