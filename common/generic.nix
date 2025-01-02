@@ -45,6 +45,7 @@
     group = "deploy";
     isNormalUser = false;
     isSystemUser = true;
+    shell = pkgs.bash;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDOfH436QTUDSNGd254ADoyBKNRL4Y+abCeWXLt5liW3 deploy@ashhhleyyy.dev"
     ];
