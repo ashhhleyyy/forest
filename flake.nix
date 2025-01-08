@@ -205,7 +205,6 @@
         ./roles/postgres.nix
         ./roles/shorks-web.nix
         ./roles/youtrack.nix
-        ./roles/zulip.nix
         home-manager-stable.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
@@ -234,6 +233,8 @@
 
         ./roles/munin-node.nix
         ./roles/munin-server.nix
+
+        ./roles/soju.nix
 
         ./roles/uptime-kuma.nix
 
