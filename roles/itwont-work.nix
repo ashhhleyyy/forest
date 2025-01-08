@@ -31,6 +31,10 @@ in
       "catch_workers_output" = true;
     };
     phpEnv."PATH" = lib.makeBinPath [ pkgs.php ];
+    phpOptions = ''
+    upload_max_filesize = 128M
+    post_max_size = 128M
+    '';
   };
   users.users.${app} = {
     isSystemUser = true;
