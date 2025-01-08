@@ -5,4 +5,8 @@
     listen = ["irc+insecure://100.97.123.128"];
     adminSocket.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    soju
+  ];
 }
