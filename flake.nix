@@ -229,6 +229,7 @@
 
         ./hosts/jessica/configuration.nix
 
+        ./roles/grafana.nix
         ./roles/jenkins.nix
 
         ./roles/munin-node.nix
