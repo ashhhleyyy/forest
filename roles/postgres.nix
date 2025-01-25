@@ -53,5 +53,5 @@
     startAt = "*-*-* 03:00:00";
   };
 
-  forest.backups.paths = ["/var/backups/postgresql"];
+  forest.backups.paths = ["/var/backup/postgresql"];
 }
