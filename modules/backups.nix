@@ -62,9 +62,9 @@ in
   config = mkIf cfg.enable (let
   in
   {
-    age.secrets."restic-key-${config.networking.hostName}".file = "../secrets/restic-key-${config.networking.hostName}.age";
-    age.secrets."restic-rclone-${config.networking.hostName}".file = "../secrets/restic-rclone-${config.networking.hostName}.age";
-    age.secrets."restic-password-${config.networking.hostName}".file = "../secrets/restic-password-${config.networking.hostName}.age";
+    age.secrets."restic-key-${config.networking.hostName}".file = ../secrets/restic-key-${config.networking.hostName}.age;
+    age.secrets."restic-rclone-${config.networking.hostName}".file = ../secrets/restic-rclone-${config.networking.hostName}.age;
+    age.secrets."restic-password-${config.networking.hostName}".file = ../secrets/restic-password-${config.networking.hostName}.age;
 
     services.restic.backups.forest-backup = {
       repository = "rclone:backupserver:.";
