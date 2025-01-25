@@ -35,4 +35,6 @@
       output file /var/log/caddy/account.shorks.gay-access.log
     }
   '';
+
+  services.postgresqlBackup.databases = ["keycloak"];
 }

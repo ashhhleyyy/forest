@@ -49,7 +49,6 @@
 
   services.postgresqlBackup = {
     enable = true;
-    # databases = ["shorks-gay"];
     startAt = "*-*-* 03:00:00";
   };
 

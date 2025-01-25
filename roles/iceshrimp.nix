@@ -44,4 +44,5 @@
   };
 
   services.pg-vacuum.databases = [ "shorks-gay" ];
+  services.postgresqlBackup.databases = ["shorks-gay"];
 }
