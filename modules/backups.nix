@@ -52,7 +52,7 @@ in
       description = lib.mdDoc ''
       Limits the minimum run interval to 12h and only allows the job to run when connected to AC power.
       '';
-    }
+    };
   };
 
   # somewhat inspired by https://github.com/diogotcorreia/dotfiles/blob/f49cda185cef30d8150a08b60112766f4fc95813/modules/services/restic.nix
@@ -104,5 +104,5 @@ in
         startLimitBurst = 1;
         unitConfig.ConditionACPower = "|true"; # | means trigger
       };
-  })
+  });
 }
