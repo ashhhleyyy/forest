@@ -4,7 +4,7 @@
 #    fluffychat
     cachix
     prismlauncher
-    gnome.gnome-sudoku
+    gnome-sudoku
     dino
     thunderbird
     vlc

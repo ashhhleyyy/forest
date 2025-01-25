@@ -7,7 +7,7 @@
     kdePackages.korganizer
     kdePackages.kdepim-runtime
     kdePackages.kaddressbook
-    kdePackages.akonadi-notes
+    #kdePackages.akonadi-notes
     kdePackages.akonadi-mime
     kdePackages.akonadi-search
     kdePackages.akonadi-contacts
