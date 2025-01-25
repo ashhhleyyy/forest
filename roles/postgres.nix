@@ -46,4 +46,12 @@
     enable = true;
     runAsLocalSuperUser = true;
   };
+
+  services.postgresqlBackup = {
+    enable = true;
+    # databases = ["shorks-gay"];
+    startAt = "*-*-* 03:00:00";
+  };
+
+  forest.backups.paths = ["/var/backups/postgresql"];
 }

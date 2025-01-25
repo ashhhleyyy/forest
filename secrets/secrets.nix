@@ -11,4 +11,7 @@ in
   "zulip-redis.age".publicKeys = users ++ systems;
   "zulip-env.age".publicKeys = users ++ systems;
   "gts-sandbox.age".publicKeys = users ++ systems;
+  "restic-key-amy.age".publicKeys = users ++ [amy];
+  "restic-rclone-amy.age".publicKeys = users ++ [amy];
+  "restic-password-amy.age".publicKeys = users ++ [amy];
 }

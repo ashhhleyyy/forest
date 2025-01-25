@@ -37,7 +37,7 @@ in
     };
     onCalendar = mkOption {
       type = types.str;
-      default = "*-*-* 4:00:00";
+      default = "*-*-* 2:00:00";
       description = ''
       The interval between vacuum runs, the default value runs the vacuum job every day at 4am.
 

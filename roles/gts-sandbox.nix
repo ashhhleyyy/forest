@@ -29,4 +29,6 @@
       output file /var/log/caddy/sandbox.isnt-a.top-access.log
     }
   '';
+
+  services.postgresqlBackup.databases = ["gotosocial"];
 }

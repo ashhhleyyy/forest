@@ -45,5 +45,7 @@
 
   services.aci-backend.enable = true;
 
+  forest.backups.enable = true;
+
   system.stateVersion = "23.11";
 }
