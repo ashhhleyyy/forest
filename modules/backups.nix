@@ -5,6 +5,7 @@
 }:
 let
   inherit (lib) mkEnableOption mkOption types mkIf optionalAttrs;
+    inherit (utils.systemdUtils.unitOptions) unitOption;
   cfg = config.forest.backups;
 in
 
