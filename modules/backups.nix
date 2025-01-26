@@ -88,6 +88,7 @@ in
         # ensure data integrity
         "--read-data-subset=2.5%"
       ];
+      timerConfig = cfg.timerConfig;
 
       paths = cfg.paths;
       exclude = cfg.exclude;
