@@ -4,6 +4,7 @@ let
   users = [ ash_fern ];
   
   amy = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHsGEdyz3h9Xn6bmp3v8/SlinWpm7oHtljdScCYJ5iun root@amy";
+  jessica = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGRZxN0RGV/dTNvXiWUu/ECStDHdS8TVoM4YjaB3dEYq root@jessica";
   systems = [ amy ];
 in
 {
@@ -14,4 +15,5 @@ in
   "restic-key-amy.age".publicKeys = users ++ [amy];
   "restic-rclone-amy.age".publicKeys = users ++ [amy];
   "restic-password-amy.age".publicKeys = users ++ [amy];
+  "pds-env.age".publicKeys = users ++ [jessica];
 }
