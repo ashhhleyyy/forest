@@ -12,10 +12,6 @@
   };
 
   services.caddy.virtualHosts."grafana.service.isnt-a.top".extraConfig = ''
-    log {
-      output file /var/log/caddy/grafana.service.isnt-a.top-access.log
-    }
-
     reverse_proxy localhost:3010
   '';
 }

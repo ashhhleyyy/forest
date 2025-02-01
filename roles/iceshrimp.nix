@@ -24,9 +24,6 @@
   services.caddy.virtualHosts = {
     "fedi.shorks.gay".extraConfig = ''
       reverse_proxy 127.0.0.1:3000
-      log {
-        output file /var/log/caddy/fedi.shorks.gay-access.log
-      }
       import blockbots
       import errors
     '';
@@ -35,9 +32,6 @@
       rewrite * /shorksgay{path}
       reverse_proxy https://pool.jortage.com {
         header_up Host {upstream_hostport}
-      }
-      log {
-        output file /var/log/caddy/media.fedi.shorks.gay-access.log
       }
       import blockbots
     '';

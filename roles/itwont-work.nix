@@ -54,9 +54,5 @@ in
     header * X-Content-Type-Options nosniff
     php_fastcgi unix/${config.services.phpfpm.pools.${app}.socket}
     file_server
-
-    log {
-      output file /var/log/caddy/itwont.work-access.log
-    }
   '';
 }

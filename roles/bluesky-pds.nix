@@ -20,14 +20,16 @@
       }
     '';
 
-    virtualHosts."*.pds.ashhhleyyy.dev, pds.ashhhleyyy.dev".extraConfig = ''
-      log {
-        output file /var/log/caddy/pds.ashhhleyyy.dev-access.log
-      }
-      tls {
-        on_demand
-      }
-      reverse_proxy http://localhost:3000
-    '';
+    virtualHosts."pds.ashhhleyyy.dev" = {
+      serverAliases = [
+        "*.pds.ashhhleyyy.dev"
+      ];
+      extraConfig = ''
+        tls {
+          on_demand
+        }
+        reverse_proxy http://localhost:3000
+      '';
+    };
   };
 }

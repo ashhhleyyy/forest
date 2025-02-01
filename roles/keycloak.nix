@@ -30,10 +30,6 @@
 
   services.caddy.virtualHosts."account.shorks.gay".extraConfig = ''
     reverse_proxy 127.0.0.1:8008
-
-    log {
-      output file /var/log/caddy/account.shorks.gay-access.log
-    }
   '';
 
   services.postgresqlBackup.databases = ["keycloak"];

@@ -53,20 +53,12 @@
         header /.well-known/matrix/* Access-Control-Allow-Origin *
         redir /authorize_interaction https://fedi.shorks.gay{uri}
 
-        log {
-          output file /var/log/caddy/shorks.gay-access.log
-        }
-
         import blockbots
         import errors
       '';
 
       "gerrit.shorks.gay".extraConfig = ''
         reverse_proxy 100.123.36.114:8082
-
-        log {
-          output file /var/log/caddy/gerrit.shorks.gay-access.log
-        }
       '';
 
       "http://${config.networking.hostName}.ash.ley:9101".extraConfig = ''
