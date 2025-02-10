@@ -35,7 +35,7 @@
       "sk-ecdsa-sha2-nistp256@openssh.com AAAAInNrLWVjZHNhLXNoYTItbmlzdHAyNTZAb3BlbnNzaC5jb20AAAAIbmlzdHAyNTYAAABBBKx0GvYviMXBGtGN/V3t0uPkT6tmpQhtGbd1GzDoNe75K9ZorsrZaBbJBjg39yCVMkWnWjWYGd7R7GcV3fKeLGoAAAAEc3NoOg== ash@fern"
       "sk-ecdsa-sha2-nistp256@openssh.com AAAAInNrLWVjZHNhLXNoYTItbmlzdHAyNTZAb3BlbnNzaC5jb20AAAAIbmlzdHAyNTYAAABBBGnb4PwF+hL21JY0ytFpkk/WaYM19Xv9efYQGdeba5a2RcElFKoEtklU4SUh+uhwaOz4TP3lWJUMEnfDDpFnmlwAAAAEc3NoOg== ash@alex"
     ];
-    hashedPassword = "$y$j9T$YZw49GYsZi6pm5MH3W2gX1$BKPBL3g4jAWUJP0WY0lRrBLorxzcENVqGTG0dAly3v7";
+    hashedPassword = "$y$j9T$vEWmND1vcYNJh5nGbF7ER/$UIi8pHNUvVAkgpnhA/XDTt6VeDFxIQmGMiOWA4gCj6/";
     extraGroups = [ "wheel" "audio" "dialout" "adbusers" ];
   };
 
