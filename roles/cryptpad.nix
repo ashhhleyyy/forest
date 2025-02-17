@@ -8,6 +8,9 @@
       httpPort = 3002;
       websocketPort = 3003;
       httpAddress = "0.0.0.0"; # this is fine because firewall lol
+      adminKeys = [
+        "[ash@cryptpad.ashhhleyyy.dev/ShpVAzqTPFZuqGhyhqpjBc3fUr4GBhUcaJEUmZqPzOg=]"
+      ];
     };
   };
 }
