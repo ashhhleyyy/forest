@@ -241,6 +241,8 @@
 
         ./roles/bluesky-pds.nix
 
+        ./roles/cryptpad.nix
+
         ./roles/grafana.nix
         ./roles/jenkins.nix
 
