@@ -7,6 +7,7 @@
       blockDailyCheck = true;
       httpPort = 3002;
       websocketPort = 3003;
+      httpAddress = "0.0.0.0"; # this is fine because firewall lol
     };
   };
 }
