@@ -518,6 +518,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-olympus": {
+      "locked": {
+        "lastModified": 1738969182,
+        "narHash": "sha256-n5ySIsndrR5ES73Cpc+NRFk29MpoK2P7xV4FAU5Qyx4=",
+        "owner": "Petingoso",
+        "repo": "nixpkgs",
+        "rev": "880e2b512a76ef1d0865b736f468ff3c66a1ea19",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Petingoso",
+        "ref": "olympus",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1737672001,
@@ -561,6 +577,7 @@
         "lix-module-unstable": "lix-module-unstable",
         "niri-flake": "niri-flake",
         "nixos-generators": "nixos-generators",
+        "nixpkgs-olympus": "nixpkgs-olympus",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "vscode-extensions": "vscode-extensions"

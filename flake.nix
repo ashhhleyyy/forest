@@ -55,6 +55,8 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.nixpkgs-stable.follows = "nixpkgs-stable";
     };
+
+    nixpkgs-olympus.url = "github:Petingoso/nixpkgs/olympus";
   };
 
   outputs = {
@@ -68,6 +70,7 @@
     vscode-extensions,
     agenix,
     niri-flake,
+    nixpkgs-olympus,
     ...
   }:
   let
@@ -76,6 +79,9 @@
       fsh.overlays.default
       vscode-extensions.overlays.default
       aci.overlays.default
+      (final: prev: {
+        inherit (nixpkgs-olympus.legacyPackages.${prev.system}) olympus;
+      })
     ];
     overlays-module = ({ nixpkgs, ... }: {
       nixpkgs.overlays = overlays;
@@ -161,7 +167,7 @@
               ./home/ash/niri.nix
               ./home/ash/obs.nix
               ./home/ash/intellij.nix
-              ./home/ash/lutris.nix
+              ./home/ash/games.nix
               ./home/ash/syncthing.nix
 
               ./home/ash/vscodium.nix
