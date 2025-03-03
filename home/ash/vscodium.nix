@@ -40,6 +40,7 @@
         justusadam.language-haskell
         kdl-org.kdl
         savonet.vscode-liquidsoap
+        denoland.vscode-deno
       ]);
     })
   ];
