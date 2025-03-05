@@ -265,7 +265,7 @@
       After = ["niri.service"];
     };
     Service = {
-      ExecStart = "${pkgs.kwallet-pam}/libexec/pam_kwallet_init";
+      ExecStart = "${pkgs.kdePackages.kwallet-pam}/libexec/pam_kwallet_init";
       Type = "simple";
       Restart = "no";
       Slice = "background.slice";
