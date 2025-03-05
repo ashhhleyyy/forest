@@ -7,7 +7,7 @@
   };
 
   virtualisation.oci-containers.containers.iceshrimp = {
-    image = "git.ashhhleyyy.dev/shorks-gay/iceshrimp:2023.12.11.shorks1";
+    image = "git.ashhhleyyy.dev/shorks-gay/iceshrimp:2023.12.13.shorks1";
     autoStart = false;
     environment = {
       NODE_ENV = "production";
