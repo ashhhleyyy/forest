@@ -7,6 +7,7 @@
         ms-python.debugpy
         ms-vscode.hexeditor
         ms-dotnettools.csharp
+        vadimcn.vscode-lldb
       ] ++ (with pkgs.vscode-marketplace; [
         bbenoist.nix
         tamasfe.even-better-toml
