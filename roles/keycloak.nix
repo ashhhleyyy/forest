@@ -5,9 +5,9 @@
     enable = true;
     themes = {
       shorks = pkgs.fetchgit {
-        rev = "e6c1edaf61d39227b765b873aaef126691b51d2d";
+        rev = "873ad2e9cd6ce69f28b45b755eff2ffb490e440b";
         url = "https://git.ashhhleyyy.dev/shorks-gay/shorks-keycloak.git";
-        hash = "sha256-M5PHrqN+OneWMklr4TDg2qeX0f1b8puNVduofsr24EA=";
+        hash = "sha256-nMZbtrVfp8U11qAmt1Bnu/Qf2qBUErxvf5x4ol2SXuQ=";
       };
     };
     plugins = [
