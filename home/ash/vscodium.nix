@@ -42,6 +42,7 @@
         kdl-org.kdl
         savonet.vscode-liquidsoap
         denoland.vscode-deno
+        prisma.prisma
       ]);
     })
   ];
