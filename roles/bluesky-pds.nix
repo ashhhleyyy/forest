@@ -32,4 +32,6 @@
       '';
     };
   };
+
+  forest.backups.paths = [ "/var/lib/pds" ];
 }

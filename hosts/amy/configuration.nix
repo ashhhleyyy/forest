@@ -44,6 +44,7 @@
   services.resolved.enable = true;
 
   services.aci-backend.enable = true;
+  forest.backups.paths = [ "/var/lib/private/aci-backend" ];
 
   forest.backups.enable = true;
 

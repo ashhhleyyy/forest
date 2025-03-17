@@ -26,4 +26,6 @@
       file_server
     '';
   };
+
+  forest.backups.paths = [ "/var/lib/private/matrix-conduit" ];
 }

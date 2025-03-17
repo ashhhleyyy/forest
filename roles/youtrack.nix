@@ -15,4 +15,6 @@
     encode zstd gzip
     reverse_proxy 127.0.0.1:3002
   '';
+
+  forest.backups.paths = [ "/var/lib/youtrack" ];
 }

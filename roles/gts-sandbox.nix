@@ -27,4 +27,5 @@
   '';
 
   services.postgresqlBackup.databases = ["gotosocial"];
+  forest.backups.paths = [ "/var/lib/gotosocial" ];
 }

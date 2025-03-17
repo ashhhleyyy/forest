@@ -55,4 +55,6 @@ in
     php_fastcgi unix/${config.services.phpfpm.pools.${app}.socket}
     file_server
   '';
+
+  forest.backups.paths = [ appDir ];
 }
