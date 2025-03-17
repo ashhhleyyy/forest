@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
   home.packages = with pkgs; [
-    emacs29
+    emacs30
     ripgrep
   ];
 }

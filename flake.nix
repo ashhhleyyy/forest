@@ -135,7 +135,7 @@
               ./home/ash/desktop.nix
               ./home/ash/emacs.nix
 #              ./home/ash/obs.nix
-              ./home/ash/niri.nix
+              #./home/ash/niri.nix
               ./home/ash/syncthing.nix
               ./home/ash/tpm-fido.nix
               ./home/ash/vscodium.nix
@@ -164,7 +164,7 @@
               ./home/ash/alex.nix
               ./home/ash/desktop.nix
               ./home/ash/emacs.nix
-              ./home/ash/niri.nix
+              #./home/ash/niri.nix
               ./home/ash/obs.nix
               ./home/ash/intellij.nix
               ./home/ash/games.nix
