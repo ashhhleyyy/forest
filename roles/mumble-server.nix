@@ -1,4 +1,4 @@
-{ ... }: {
+{ config, ... }: {
   age.secrets.mumble-server.file = ../secrets/mumble-server.age;
 
   services.murmur = {
