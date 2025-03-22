@@ -87,7 +87,7 @@
       nixpkgs.overlays = overlays;
     });
     pds-overlay-module = ({ nixpkgs, ... }: {
-      imports = ["${nixpkgs-unstable}/nixos/modules//services/web-apps/pds.nix"];
+      imports = ["${nixpkgs-unstable}/nixos/modules/services/web-apps/pds.nix"];
     
       nixpkgs.overlays = [
         (final: prev: {
@@ -251,6 +251,8 @@
 
         ./roles/grafana.nix
         ./roles/jenkins.nix
+
+        ./roles/mumble-server.nix
 
         ./roles/munin-node.nix
         ./roles/munin-server.nix

@@ -16,4 +16,5 @@ in
   "restic-rclone-amy.age".publicKeys = users ++ [amy];
   "restic-password-amy.age".publicKeys = users ++ [amy];
   "pds-env.age".publicKeys = users ++ [jessica];
+  "mumble-server.age".publicKeys = users ++ [jessica];
 }
