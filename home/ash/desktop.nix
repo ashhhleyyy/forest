@@ -8,6 +8,7 @@
     dino
     thunderbird
     vlc
+    unrar # for ark
 #    zed-editor
   ];
 
