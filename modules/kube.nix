@@ -27,13 +27,13 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    age.secrets.k3s-token.file = mkIf (cfg.role == "server") ../secrets/k3s-token.age;
+    age.secrets.k3s-token.file = lib.mkIf (cfg.role == "server") ../secrets/k3s-token.age;
 
     services.k3s = {
       enable = true;
       role = cfg.role;
-      tokenFile = mkIf (cfg.role == "server") config.age.secrets.k3s-token.path;
-      clusterInit = mkIf (cfg.role == "server") true;
+      tokenFile = lib.mkIf (cfg.role == "server") config.age.secrets.k3s-token.path;
+      clusterInit = lib.mkIf (cfg.role == "server") true;
       serverAddr = cfg.serverAddr;
     };
   };
