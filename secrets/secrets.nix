@@ -8,14 +8,14 @@ let
   systems = [ amy ];
 in
 {
-  "keycloakPostgres.age".publicKeys = users ++ systems;
-  "zulip-redis.age".publicKeys = users ++ systems;
-  "zulip-env.age".publicKeys = users ++ systems;
-  "gts-sandbox.age".publicKeys = users ++ systems;
+  "keycloakPostgres.age".publicKeys = users ++ [amy];
+  "zulip-redis.age".publicKeys = users ++ [amy];
+  "zulip-env.age".publicKeys = users ++ [amy];
+  "gts-sandbox.age".publicKeys = users ++ [amy];
   "restic-key-amy.age".publicKeys = users ++ [amy];
   "restic-rclone-amy.age".publicKeys = users ++ [amy];
   "restic-password-amy.age".publicKeys = users ++ [amy];
   "pds-env.age".publicKeys = users ++ [jessica];
   "mumble-server.age".publicKeys = users ++ [jessica];
-  "k3s-token.age".publicKeys = users ++ systems;
+  "k3s-token.age".publicKeys = users ++ [jessica];
 }
