@@ -26,20 +26,15 @@ in
     };
   };
 
-  config = (lib.mkIf (cfg.enable && cfg.role == "server") {
-    age.secrets.k3s-token.file = ../secrets/k3s-token.age;
+  config = lib.mkIf cfg.enable {
+    age.secrets.k3s-token.file = mkIf (cfg.role == "server") ../secrets/k3s-token.age;
 
     services.k3s = {
       enable = true;
-      role = "server";
-      tokenFile = config.age.secrets.k3s-token.path;
-      clusterInit = true;
-    };
-  }) // (lib.mkIf (cfg.enable && cfg.role == "agent") {
-    services.k3s = {
-      enable = true;
-      role = "agent";
+      role = cfg.role;
+      tokenFile = mkIf (cfg.role == "server") config.age.secrets.k3s-token.path;
+      clusterInit = mkIf (cfg.role == "server") true;
       serverAddr = cfg.serverAddr;
     };
-  });
+  };
 }
