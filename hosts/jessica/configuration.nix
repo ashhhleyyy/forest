@@ -49,7 +49,7 @@
     email = "infra@ashhhleyyy.dev";
   };
 
-  forest.k3s = {
+  forest.kube = {
     enable = true;
     role = "server";
   };

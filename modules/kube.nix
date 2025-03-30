@@ -1,4 +1,13 @@
-{ config, lib, ... }: {
+{ config
+  , lib
+  , ...
+}:
+
+let
+  cfg = config.forest.kube;
+in
+
+{
   options.forest.kube = {
     enable = lib.mkEnable {};
 
