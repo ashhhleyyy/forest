@@ -17,4 +17,5 @@ in
   "restic-password-amy.age".publicKeys = users ++ [amy];
   "pds-env.age".publicKeys = users ++ [jessica];
   "mumble-server.age".publicKeys = users ++ [jessica];
+  "k3s-token.age".publicKeys = users ++ systems;
 }

@@ -21,7 +21,6 @@
 
   console.keyMap = "uk";
 
-
   nixpkgs.config.allowUnfree = true;
 
   services.openssh = {
@@ -48,6 +47,11 @@
   services.caddy = {
     enable = true;
     email = "infra@ashhhleyyy.dev";
+  };
+
+  forest.k3s = {
+    enable = true;
+    role = "server";
   };
 
   system.stateVersion = "24.11";
