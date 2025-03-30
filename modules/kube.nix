@@ -1,6 +1,6 @@
 { config
-  , lib
-  , ...
+, lib
+, ...
 }:
 
 let
@@ -9,7 +9,7 @@ in
 
 {
   options.forest.kube = {
-    enable = lib.mkEnable {};
+    enable = lib.mkEnableOption {};
 
     role = lib.mkOption {
       default = "agent";
@@ -26,7 +26,7 @@ in
     };
   };
 
-  config = (mkIf (cfg.enable && cfg.role == "server") {
+  config = (lib.mkIf (cfg.enable && cfg.role == "server") {
     age.secrets.k3s-token.file = ../secrets/k3s-token.age;
 
     services.k3s = {
@@ -35,11 +35,11 @@ in
       tokenFile = config.age.secrets.k3s-token.path;
       clusterInit = true;
     };
-  }) // (mkIf (cfg.enable && cfg.role == "agent") {
+  }) // (lib.mkIf (cfg.enable && cfg.role == "agent") {
     services.k3s = {
       enable = true;
       role = "agent";
       serverAddr = cfg.serverAddr;
-    }
+    };
   });
 }
