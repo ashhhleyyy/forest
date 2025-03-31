@@ -37,6 +37,7 @@ in
       tokenFile = lib.mkIf (cfg.role == "server") config.age.secrets.k3s-token.path;
       clusterInit = lib.mkIf (cfg.role == "server") true;
       serverAddr = cfg.serverAddr;
+      extraFlags = lib.mkIf (cfg.role == "server") ["--disable=traefik"];
     };
   };
 }
