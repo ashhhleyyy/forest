@@ -28,6 +28,7 @@
       key = "83B789081A0878FB";
       signByDefault = true;
     };
+    lfs.enable = true;
   };
 
   programs.gpg = {
