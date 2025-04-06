@@ -14,6 +14,9 @@ in
     packages = with pkgs; [
       php82Packages.composer
     ];
+    extraGroups = [
+      "itwont-work"
+    ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIES6FqJ23JNJcHTfKMPSbdPYcRcMecZWWNKyHLUbVXfB nico@itwont.work"
     ];
