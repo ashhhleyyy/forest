@@ -12,7 +12,7 @@ in
     isNormalUser = true;
     shell = pkgs.bash;
     packages = with pkgs; [
-      composer
+      php82Packages.composer
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIES6FqJ23JNJcHTfKMPSbdPYcRcMecZWWNKyHLUbVXfB nico@itwont.work"
