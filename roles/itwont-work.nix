@@ -23,7 +23,7 @@ in
   };
 
   security.doas.extraRules = [{
-    users = "nico";
+    users = ["nico"];
     runAs = app;
     persist = true;
     cmd = "/etc/profiles/per-user/nico/bin/composer";
