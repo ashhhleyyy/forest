@@ -26,7 +26,6 @@ in
     users = ["nico"];
     runAs = app;
     noPass = true;
-    cmd = "composer";
   }];
 
   services.phpfpm.pools.${app} = {
