@@ -26,7 +26,7 @@ in
     users = ["nico"];
     runAs = app;
     persist = true;
-    cmd = "/etc/profiles/per-user/nico/bin/composer";
+    cmd = "composer";
   }];
 
   services.phpfpm.pools.${app} = {
