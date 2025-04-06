@@ -22,6 +22,13 @@ in
     ];
   };
 
+  security.doas.extraRules = [{
+    users = "nico";
+    runAs = app;
+    persist = true;
+    cmd = "/etc/profiles/per-user/nico/bin/composer";
+  }];
+
   services.phpfpm.pools.${app} = {
     user = app;
     settings = {
