@@ -12,6 +12,7 @@ in
     isNormalUser = true;
     shell = pkgs.bash;
     packages = with pkgs; [
+      php
       php82Packages.composer
     ];
     extraGroups = [
