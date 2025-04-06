@@ -25,7 +25,7 @@ in
   security.doas.extraRules = [{
     users = ["nico"];
     runAs = app;
-    persist = true;
+    noPass = true;
     cmd = "composer";
   }];
 
