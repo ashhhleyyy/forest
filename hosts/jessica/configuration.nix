@@ -47,6 +47,9 @@
   services.caddy = {
     enable = true;
     email = "infra@ashhhleyyy.dev";
+    globalConfig = ''
+    default_bind 127.0.0.1
+    '';
   };
 
   forest.kube = {
