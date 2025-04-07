@@ -10,7 +10,7 @@
     '';
   };
 
-  services.caddy.virtualHosts."munin.service.isnt-a.top".extraConfig = ''
+  services.caddy.virtualHosts."http://munin.service.isnt-a.top".extraConfig = ''
     root * /var/www/munin
     file_server
   '';
