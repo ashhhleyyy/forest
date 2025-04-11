@@ -22,7 +22,6 @@ netdata.kylie	IN	CNAME	kylie.ash.ley.
 gitea.kylie	IN	CNAME	kylie.ash.ley.
 jellyfin.kylie	IN	CNAME	kylie.ash.ley.
 syncthing.kylie	IN	CNAME	kylie.ash.ley.
-ghost-test	CNAME	kylie.ash.ley.
 
 ; Pi Zero (School mode)
 ky	IN	A	100.80.161.44
