@@ -164,6 +164,7 @@
               ./home/ash/alex.nix
               ./home/ash/desktop.nix
               ./home/ash/emacs.nix
+              ./home/ash/gnome-builder.nix
               #./home/ash/niri.nix
               ./home/ash/obs.nix
               ./home/ash/intellij.nix
