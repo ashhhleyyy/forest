@@ -10,7 +10,7 @@
     '';
   };
 
-  services.caddy.virtualHosts."http://localhost:3004".extraConfig = ''
+  services.caddy.virtualHosts.":3004".extraConfig = ''
     root * /var/www/munin
     file_server
   '';
