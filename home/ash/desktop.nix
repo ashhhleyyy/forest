@@ -40,7 +40,7 @@
   services.gpg-agent = {
     enable = true;
     enableFishIntegration = true;
-    pinentryPackage = pkgs.pinentry-qt;
+    pinentry.package = pkgs.pinentry-qt;
     defaultCacheTtl = 31536000;
     maxCacheTtl = 31536000;
   };

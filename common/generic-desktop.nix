@@ -28,7 +28,7 @@
 
   fonts.packages = with pkgs; [
     (nerd-fonts.jetbrains-mono)
-    maple-mono-NF
+    maple-mono.NF
     atkinson-hyperlegible
     liberation_ttf
     ocr-a
