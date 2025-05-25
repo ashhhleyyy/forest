@@ -40,5 +40,11 @@ in
       serverAddr = cfg.serverAddr;
       extraFlags = lib.mkIf (cfg.role == "server") ["--disable=traefik"];
     };
+
+    environment.systemPackages = [ pkgs.nfs-utils ];
+    services.openiscsi = {
+      enable = true;
+      name = "${config.networking.hostName}-initiatorhost";
+    };
   };
 }
