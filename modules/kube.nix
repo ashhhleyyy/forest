@@ -41,7 +41,7 @@ in
       tokenFile = lib.mkIf (cfg.role == "server") config.age.secrets.k3s-token.path;
       clusterInit = lib.mkIf (cfg.role == "server") true;
       serverAddr = cfg.serverAddr;
-      extraFlags = lib.mkIf (cfg.role == "server") ["--disable=traefik"];
+      extraFlags = lib.mkIf (cfg.role == "server") ["--disable=traefik" "--cluster-cidr=10.42.0.0/16,2001:cafe:42::/56" "--service-cidr=10.43.0.0/16,2001:cafe:43::/112"];
     };
 
     services.openiscsi = {
