@@ -50,7 +50,7 @@
   };
 
   forest.kube = {
-    enable = true;
+    enable = false;
     role = "server";
   };
 
