@@ -31,6 +31,10 @@
     lfs.enable = true;
   };
 
+  programs.jujutsu = {
+    enable = true;
+  };
+
   programs.gpg = {
     enable = true;
     mutableKeys = true;
