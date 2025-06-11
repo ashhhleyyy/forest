@@ -10,7 +10,7 @@
   users.users.ash.extraGroups = [ "networkmanager" ];
 
   time.timeZone = "Europe/London";
-  i18n.defaultLocale = "en_GB.utf8";
+  i18n.defaultLocale = "en_GB.UTF-8";
 
   boot.plymouth = {
     enable = true;
