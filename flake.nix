@@ -86,15 +86,6 @@
     overlays-module = ({ nixpkgs, ... }: {
       nixpkgs.overlays = overlays;
     });
-    pds-overlay-module = ({ nixpkgs, ... }: {
-      imports = ["${nixpkgs-unstable}/nixos/modules/services/web-apps/pds.nix"];
-    
-      nixpkgs.overlays = [
-        (final: prev: {
-          inherit (nixpkgs-unstable.legacyPackages.${prev.system}) pds pdsadmin;
-        })
-      ];
-    });
   in
   {
     nixosConfigurations.fern = nixpkgs-unstable.lib.nixosSystem {
@@ -241,7 +232,6 @@
         overlays-module
         aci.nixosModules.default
         agenix.nixosModules.default
-        pds-overlay-module
         ./modules
 
         ./hosts/jessica/configuration.nix
