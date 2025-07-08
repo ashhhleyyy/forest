@@ -9,12 +9,12 @@
     };
 
     lix-module-stable = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.2-1.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     lix-module-unstable = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
+      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.2-1.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
@@ -195,6 +195,7 @@
       system = "x86_64-linux";
       modules = [
         overlays-module
+        lix-module-stable.nixosModules.default
         aci.nixosModules.default
         agenix.nixosModules.default
         ./modules
@@ -232,6 +233,7 @@
         overlays-module
         aci.nixosModules.default
         agenix.nixosModules.default
+        lix-module-stable.nixosModules.default
         ./modules
 
         ./hosts/jessica/configuration.nix
