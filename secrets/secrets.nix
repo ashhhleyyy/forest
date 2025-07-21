@@ -18,4 +18,5 @@ in
   "pds-env.age".publicKeys = users ++ [jessica];
   "mumble-server.age".publicKeys = users ++ [jessica];
   "k3s-token.age".publicKeys = users ++ [jessica];
+  "servfail-token.age".publicKeys = users ++ [jessica];
 }

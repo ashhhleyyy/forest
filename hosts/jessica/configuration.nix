@@ -49,9 +49,12 @@
     email = "infra@ashhhleyyy.dev";
   };
 
-  forest.kube = {
-    enable = true;
-    role = "server";
+  forest = {
+    kube = {
+      enable = true;
+      role = "server";
+    };
+    tls-cert.enable = true;
   };
 
   system.stateVersion = "24.11";
