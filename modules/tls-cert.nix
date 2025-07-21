@@ -28,5 +28,5 @@ in
         dnsPropagationCheck = true;
       };
     };
-  }
+  };
 }
