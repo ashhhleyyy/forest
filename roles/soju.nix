@@ -12,7 +12,7 @@ in
       "irc+insecure://100.97.123.128"
       "ircs://0.0.0.0"
     ];
-    hostname = "${config.networking.hostName}.net.isnt-a.top";
+    hostName = "${config.networking.hostName}.net.isnt-a.top";
     adminSocket.enable = true;
     # we store in the db
     enableMessageLogging = false;
