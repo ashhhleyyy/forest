@@ -1,6 +1,8 @@
 { pkgs, config, ... }:
 
-let tls-dir = config.security.acme.certs."${config.networking.hostName}.net.isnt-a.top".directory;
+let
+  tls-dir = config.security.acme.certs."${config.networking.hostName}.net.isnt-a.top".directory;
+in
 
 {
   services.soju = {
