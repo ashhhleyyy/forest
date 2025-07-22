@@ -12,6 +12,7 @@ in
       "irc+insecure://100.97.123.128"
       "ircs://0.0.0.0"
     ];
+    hostname = "${config.networking.hostName}.net.isnt-a.top";
     adminSocket.enable = true;
     # we store in the db
     enableMessageLogging = false;
@@ -21,6 +22,8 @@ in
     tlsCertificate = "${tls-dir}/fullchain.pem";
     tlsCertificateKey = "${tls-dir}/key.pem";
   };
+
+  systemd.services.soju.serviceConfig.SupplementaryGroups = "acme";
 
   networking.firewall.allowedTCPPorts = [ 6697 ];
 
