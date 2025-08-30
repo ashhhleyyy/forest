@@ -14,7 +14,7 @@ in
       ldapbindaddress = "[::]:3636";
       tls_chain = "${tls-dir}/fullchain.pem";
       tls_key = "${tls-dir}/key.pem";
-      log_level = "default";
+      log_level = "info";
       domain = "sso.ashhhleyyy.dev";
       origin = "https://sso.ashhhleyyy.dev";
       role = "WriteReplica";
