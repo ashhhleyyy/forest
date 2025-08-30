@@ -13,4 +13,6 @@
       ];
     };
   };
+
+  forest.backups.paths = [ "/var/lib/private/cryptpad" ];
 }

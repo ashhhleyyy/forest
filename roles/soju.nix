@@ -30,4 +30,6 @@ in
   environment.systemPackages = with pkgs; [
     soju
   ];
+
+  forest.backups.paths = [ "/var/lib/private/soju" ];
 }

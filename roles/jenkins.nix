@@ -12,4 +12,5 @@
   };
 
   #virtualisation.podman.dockerCompat = config.virtualisation.podman.enable;
+  forest.backups.paths = [ "/var/lib/jenkins" ];
 }

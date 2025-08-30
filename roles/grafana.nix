@@ -10,4 +10,6 @@
       };
     };
   };
+
+  forest.backups.paths = [ "/var/lib/grafana" ];
 }
