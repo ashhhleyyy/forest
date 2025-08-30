@@ -242,7 +242,7 @@
         ./roles/cryptpad.nix
         ./roles/grafana.nix
         ./roles/jenkins.nix
-        ../../roles/kanidm.nix
+        ./roles/kanidm.nix
         ./roles/mumble-server.nix
 
         ./roles/munin-node.nix
