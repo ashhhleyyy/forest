@@ -6,6 +6,8 @@ in
 
 {
   services.kanidm = {
+    package = pkgs.kanidm_1_6;
+
     enableServer = true;
     serverSettings = {
       bindaddress = "[::]:3006";
