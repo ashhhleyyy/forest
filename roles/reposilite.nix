@@ -10,5 +10,5 @@
     };
   };
 
-  # forest.backups.paths = [ "/var/lib/private/reposilite" ];
+  forest.backups.paths = [ "/var/lib/reposilite" ];
 }
