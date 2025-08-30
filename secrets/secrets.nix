@@ -12,9 +12,15 @@ in
   "zulip-redis.age".publicKeys = users ++ [amy];
   "zulip-env.age".publicKeys = users ++ [amy];
   "gts-sandbox.age".publicKeys = users ++ [amy];
+  
   "restic-key-amy.age".publicKeys = users ++ [amy];
   "restic-rclone-amy.age".publicKeys = users ++ [amy];
   "restic-password-amy.age".publicKeys = users ++ [amy];
+
+  "restic-key-jessica.age".publicKeys = users ++ [jessica];
+  "restic-rclone-jessica.age".publicKeys = users ++ [jessica];
+  "restic-password-jessica.age".publicKeys = users ++ [jessica];
+
   "pds-env.age".publicKeys = users ++ [jessica];
   "mumble-server.age".publicKeys = users ++ [jessica];
   "k3s-token.age".publicKeys = users ++ [jessica];

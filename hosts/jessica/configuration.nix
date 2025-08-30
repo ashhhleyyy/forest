@@ -55,6 +55,7 @@
       role = "server";
     };
     tls-cert.enable = true;
+    backups.enable = true;
   };
 
   system.stateVersion = "24.11";
