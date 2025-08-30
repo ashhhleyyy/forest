@@ -250,6 +250,8 @@
         ./roles/munin-node.nix
         ./roles/munin-server.nix
 
+        ./roles/reposilite.nix
+
         ./roles/soju.nix
 
         ./roles/uptime-kuma.nix
