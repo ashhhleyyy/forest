@@ -33,4 +33,6 @@ in
       uri = "https://sso.ashhhleyyy.dev";
     };
   };
+
+  users.users.kanidm.extraGroups = ["acme"];
 }
