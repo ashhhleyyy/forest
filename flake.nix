@@ -239,21 +239,17 @@
         ./hosts/jessica/configuration.nix
 
         ./roles/bluesky-pds.nix
-
         ./roles/cryptpad.nix
-
         ./roles/grafana.nix
         ./roles/jenkins.nix
-
+        ../../roles/kanidm.nix
         ./roles/mumble-server.nix
 
         ./roles/munin-node.nix
         ./roles/munin-server.nix
 
         ./roles/reposilite.nix
-
         ./roles/soju.nix
-
         ./roles/uptime-kuma.nix
 
         ./roles/podman.nix

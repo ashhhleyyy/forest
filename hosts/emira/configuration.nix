@@ -2,7 +2,6 @@
   imports = [
     ../../common/generic.nix
     ../../roles/asterisk.nix
-    ../../roles/kanidm.nix
     ../../roles/coredns
   ];
 
