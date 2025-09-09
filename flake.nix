@@ -240,6 +240,7 @@
 
         ./roles/bluesky-pds.nix
         ./roles/cryptpad.nix
+        ./roles/ergo.nix
         ./roles/grafana.nix
         ./roles/jenkins.nix
         ./roles/kanidm.nix
