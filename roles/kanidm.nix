@@ -36,5 +36,5 @@ in
 
   users.users.kanidm.extraGroups = ["acme"];
 
-  forest.backup.paths = ["/var/lib/kanidm/backups/"];
+  forest.backups.paths = ["/var/lib/kanidm/backups/"];
 }
