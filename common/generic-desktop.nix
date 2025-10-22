@@ -1,7 +1,10 @@
 { config, pkgs, ... }: {
   services.flatpak.enable = true;
 
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    plugins = [ pkgs.networkmanager-openconnect ];
+  };
   services.resolved.enable = true;
   services.avahi = {
     enable = true;
@@ -25,6 +28,8 @@
   };
 
   programs.adb.enable = true;
+
+  services.globalprotect.enable = true;
 
   fonts.packages = with pkgs; [
     (nerd-fonts.jetbrains-mono)

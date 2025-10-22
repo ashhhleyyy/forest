@@ -49,6 +49,7 @@
     drivers = with pkgs; [
       hplip
       samsung-unified-linux-driver
+      foomatic-db-ppds-withNonfreeDb
     ];
   };
 

@@ -39,7 +39,7 @@
     };
 
     aci = {
-      url = "git+https://git.ashhhleyyy.dev/ash/aci";
+      url = "github:ashhhleyyy/aci";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 

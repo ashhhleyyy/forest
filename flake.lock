@@ -10,15 +10,15 @@
       "locked": {
         "lastModified": 1740046354,
         "narHash": "sha256-/118tgurl81LBGEnMaxEwTXcDkOkFozmQWyDyl4bK08=",
-        "ref": "refs/heads/main",
+        "owner": "ashhhleyyy",
+        "repo": "aci",
         "rev": "bc20c36fc25d6a61c7f05aa04a8dfdca31cff1e1",
-        "revCount": 84,
-        "type": "git",
-        "url": "https://git.ashhhleyyy.dev/ash/aci"
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "https://git.ashhhleyyy.dev/ash/aci"
+        "owner": "ashhhleyyy",
+        "repo": "aci",
+        "type": "github"
       }
     },
     "agenix": {
