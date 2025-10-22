@@ -48,7 +48,7 @@
       interface = "ens18";
     };
 
-    networking.nameservers = [
+    nameservers = [
       "1.1.1.1"
       "1.0.0.1"
       "9.9.9.9"
