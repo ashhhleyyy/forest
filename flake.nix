@@ -8,16 +8,6 @@
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
 
-    lix-module-stable = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.2-1.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-    };
-
-    lix-module-unstable = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.2-1.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
     home-manager-stable = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -60,7 +50,6 @@
   outputs = {
     self,
     nixpkgs-stable, nixpkgs-unstable,
-    lix-module-stable, lix-module-unstable,
     home-manager-stable, home-manager-unstable,
     nixos-generators,
     fsh,
@@ -145,7 +134,6 @@
         niri-flake.nixosModules.niri
         ./hosts/loona/configuration.nix
         home-manager.nixosModules.home-manager
-        lix-module-unstable.nixosModules.default
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
@@ -196,7 +184,6 @@
       system = "x86_64-linux";
       modules = [
         overlays-module
-        lix-module-stable.nixosModules.default
         aci.nixosModules.default
         agenix.nixosModules.default
         ./modules
@@ -234,7 +221,6 @@
         overlays-module
         aci.nixosModules.default
         agenix.nixosModules.default
-        lix-module-stable.nixosModules.default
         ./modules
 
         ./hosts/jessica/configuration.nix
