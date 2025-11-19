@@ -32,11 +32,6 @@
     '';
   };
 
-  services.pg-vacuum = {
-    enable = true;
-    package = pkgs.postgresql_18;
-  };
-
   services.prometheus.exporters.postgres = {
     enable = true;
     runAsLocalSuperUser = true;
