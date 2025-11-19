@@ -8,6 +8,8 @@
         ms-vscode.hexeditor
         ms-dotnettools.csharp
         vadimcn.vscode-lldb
+        catppuccin.catppuccin-vsc
+        catppuccin.catppuccin-vsc-icons
       ] ++ (with pkgs.vscode-marketplace; [
         bbenoist.nix
         tamasfe.even-better-toml
@@ -26,8 +28,6 @@
         shopify.ruby-lsp
         polymeilex.wgsl
         tauri-apps.tauri-vscode
-        catppuccin.catppuccin-vsc
-        catppuccin.catppuccin-vsc-icons
         ziglang.vscode-zig
         redhat.java
         vue.volar

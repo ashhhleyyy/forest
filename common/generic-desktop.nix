@@ -29,7 +29,8 @@
 
   programs.adb.enable = true;
 
-  services.globalprotect.enable = true;
+  # TODO: depends on insecure qtwebengine
+  #services.globalprotect.enable = true;
 
   fonts.packages = with pkgs; [
     (nerd-fonts.jetbrains-mono)
