@@ -17,7 +17,6 @@
       min_wal_size = "1GB";
       max_wal_size = "4GB";
     };
-    ensureDatabases = [ "shorks-gay" ];
     enableTCPIP = true;
     authentication = pkgs.lib.mkOverride 10 ''
       #type database DBuser  auth-method
