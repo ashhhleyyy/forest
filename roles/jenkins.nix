@@ -8,7 +8,16 @@
     listenAddress = "0.0.0.0";
     extraGroups = ["podman"];
 
-    packages = [ pkgs.stdenv pkgs.git pkgs.jdk17 pkgs.bash config.programs.ssh.package pkgs.nix pkgs.docker-client ];
+    packages = [
+      pkgs.stdenv
+      pkgs.git
+      pkgs.jdk17
+      pkgs.bash
+      config.programs.ssh.package
+      pkgs.nix
+      pkgs.docker-client
+      pkgs.forgejo-cli
+    ];
   };
 
   #virtualisation.podman.dockerCompat = config.virtualisation.podman.enable;
