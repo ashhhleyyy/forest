@@ -229,6 +229,7 @@
         ./roles/cryptpad.nix
         ./roles/ergo.nix
         ./roles/grafana.nix
+        ./roles/immich.nix
         ./roles/jenkins.nix
         ./roles/kanidm.nix
         ./roles/mumble-server.nix
