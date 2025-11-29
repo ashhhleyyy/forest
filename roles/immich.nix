@@ -6,6 +6,7 @@
   services.immich = {
     enable = true;
     database.enableVectors = false;
+    host = "::";
   };
 
   services.postgresqlBackup.databases = ["immich"];
