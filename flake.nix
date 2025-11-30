@@ -227,7 +227,7 @@
 
         ./roles/bluesky-pds.nix
         ./roles/cryptpad.nix
-        ./roles/ergo.nix
+        #./roles/ergo.nix
         ./roles/grafana.nix
         ./roles/immich.nix
         ./roles/jenkins.nix
