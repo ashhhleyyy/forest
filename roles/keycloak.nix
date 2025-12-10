@@ -14,9 +14,9 @@
       ((pkgs.fetchMavenArtifact {
         groupId = "gay.shorks";
         artifactId = "icecloak";
-        version = "1.1.0+kc.25";
+        version = "1.2.0+kc.26";
         repos = ["https://maven.ashhhleyyy.dev/releases/"];
-        hash = "sha256-ZF1IEmXpIZ+3q983KpWt1dMMF/dei05QZ6KV17kS32I=";
+        hash = "sha256-yUpS07gQ1J/qDuhDZJiFvOoekO37Rk8k/iZH41mXm4E=";
       }).passthru.jar)
     ];
     settings = {
