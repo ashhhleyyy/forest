@@ -48,5 +48,12 @@ in
       enable = true;
       name = "${config.networking.hostName}-initiatorhost";
     };
+
+    environment.etc."rancher/k3s/registries.yaml".text = ''
+      mirrors:
+        "jessica:5000":
+          endpoint:
+            - "http://jessica:5000"
+    '';
   };
 }
