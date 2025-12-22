@@ -227,6 +227,7 @@
 
         ./roles/bluesky-pds.nix
         ./roles/cryptpad.nix
+        ./roles/docker-registry.nix
         #./roles/ergo.nix
         ./roles/grafana.nix
         ./roles/immich.nix
