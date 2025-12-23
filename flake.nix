@@ -45,6 +45,8 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.nixpkgs-stable.follows = "nixpkgs-stable";
     };
+
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs = {
@@ -57,6 +59,7 @@
     vscode-extensions,
     agenix,
     niri-flake,
+    flake-utils,
     ...
   }:
   let
@@ -79,7 +82,6 @@
   in
   {
     nixosConfigurations.fern = nixpkgs-unstable.lib.nixosSystem {
-      system = "x86_64-linux";
       modules = [
         overlays-module
         ./hosts/fern/configuration.nix
@@ -99,7 +101,6 @@
     };
 
     nixosConfigurations.alex = nixpkgs-unstable.lib.nixosSystem {
-      system = "x86_64-linux";
       modules = [
         overlays-module
         niri-flake.nixosModules.niri
@@ -128,7 +129,6 @@
     };
 
     nixosConfigurations.loona = nixpkgs-unstable.lib.nixosSystem {
-      system = "x86_64-linux";
       modules = [
         overlays-module
         niri-flake.nixosModules.niri
@@ -160,7 +160,6 @@
     };
 
     nixosConfigurations.lea = nixpkgs-stable.lib.nixosSystem {
-      system = "x86_64-linux";
       modules = [
         overlays-module
         ./hosts/lea/configuration.nix
@@ -181,7 +180,6 @@
     };
 
     nixosConfigurations.amy = nixpkgs-stable.lib.nixosSystem {
-      system = "x86_64-linux";
       modules = [
         overlays-module
         aci.nixosModules.default
@@ -216,7 +214,6 @@
     };
 
     nixosConfigurations.jessica = nixpkgs-stable.lib.nixosSystem {
-      system = "x86_64-linux";
       modules = [
         overlays-module
         aci.nixosModules.default
@@ -261,7 +258,6 @@
     };
 
     nixosConfigurations.emira = nixpkgs-unstable.lib.nixosSystem {
-      system = "x86_64-linux";
       modules = [
         overlays-module
         ./hosts/emira/configuration.nix
@@ -271,7 +267,6 @@
     };
 
     nixosConfigurations.em = nixpkgs-unstable.lib.nixosSystem {
-      system = "x86_64-linux";
       modules = [
         overlays-module
         niri-flake.nixosModules.niri
@@ -294,7 +289,6 @@
 
     packages.x86_64-linux = {
       emira = nixos-generators.nixosGenerate {
-        system = "x86_64-linux";
         modules = [
           overlays-module
           ./hosts/emira/configuration.nix
@@ -303,15 +297,17 @@
       };
     };
   } //
-  (let
+  flake-utils.lib.eachDefaultSystem (system:
+  let
     pkgs = import nixpkgs-unstable {
-      system = "x86_64-linux";
+      inherit system;
+      overlays = [agenix.overlays.default];
     };
   in
   {
-    devShells.x86_64-linux.default = pkgs.mkShell {
+    devShells.default = pkgs.mkShell {
       nativeBuildInputs = with pkgs; [
-        agenix.packages.${system}.default
+        pkgs.agenix
       ];
     };
   });

@@ -1,7 +1,7 @@
 { pkgs, config, ... }: {  
   age.secrets."pds-env".file = ../secrets/pds-env.age;
 
-  services.pds = {
+  services.bluesky-pds = {
     enable = true;
     pdsadmin.enable = true;
     settings = {
