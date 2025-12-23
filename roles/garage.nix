@@ -34,7 +34,7 @@
       "rpc-secret:${config.age.secrets."garage-rpc-secret".path}"
       "admin-token:${config.age.secrets."garage-admin-token".path}"
     ];
-  }
+  };
 
   forest.backups.paths = [ "/var/lib/garage" ];
 }
