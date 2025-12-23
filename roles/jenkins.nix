@@ -17,6 +17,7 @@
       pkgs.nix
       pkgs.docker-client
       pkgs.forgejo-cli
+      pkgs.awscli2
     ];
   };
 
