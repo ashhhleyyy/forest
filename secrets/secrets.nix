@@ -25,4 +25,7 @@ in
   "mumble-server.age".publicKeys = users ++ [jessica];
   "k3s-token.age".publicKeys = users ++ [jessica];
   "servfail-token.age".publicKeys = users ++ [jessica];
+  "garage-admin-token.age".publicKeys = users ++ [jessica];
+  "garage-rpc-secret.age".publicKeys = users ++ [jessica];
+  "ntfy-url.age".publicKeys = users ++ systems;
 }

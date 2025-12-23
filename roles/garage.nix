@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  age.secrets."garage-rpc-secret".file = ../secrets/garage-rpc-secret.age;
+  age.secrets."garage-admin-token".file = ../secrets/garage-admin-token.age;
+
   services.garage = {
     enable = true;
     package = pkgs.garage_2;
@@ -8,6 +11,7 @@
       replication_factor = 1;
       rpc_bind_addr = "[::]:3901";
       rpc_public_addr = "127.0.0.1:3901";
+      rpc_secret_file = config.age.secrets."garage-rpc-secret".path;
       s3_api = {
         s3_region = "garage";
         api_bind_addr = "[::]:3900";
@@ -20,6 +24,7 @@
       };
       admin = {
         api_bind_addr = "[::]:3903";
+        admin_token_file = config.age.secrets."garage-admin-token".path;
       };
     };
   };
