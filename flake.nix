@@ -229,6 +229,7 @@
         ./roles/cryptpad.nix
         ./roles/docker-registry.nix
         #./roles/ergo.nix
+        ./roles/garage.nix
         ./roles/grafana.nix
         ./roles/immich.nix
         ./roles/jenkins.nix
