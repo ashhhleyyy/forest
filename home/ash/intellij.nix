@@ -1,9 +1,9 @@
 { config, pkgs, ... }: {
   home.packages = with pkgs; [
-    jetbrains.idea-ultimate
+    jetbrains.idea
     jetbrains.phpstorm
     jetbrains.rider
-    jetbrains.pycharm-professional
+    jetbrains.pycharm
     android-studio
     jetbrains-toolbox
   ];
