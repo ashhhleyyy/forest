@@ -142,6 +142,7 @@
               fsh.homeModules.fsh
               ./home/ash
               ./home/ash/alex.nix
+              ./home/ash/binaryninja.nix
               ./home/ash/desktop.nix
               ./home/ash/emacs.nix
               ./home/ash/gnome-builder.nix
