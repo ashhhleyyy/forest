@@ -22,8 +22,10 @@
 
   programs.git = {
     enable = true;
-    userName = "Ashhhleyyy";
-    userEmail = "ash@ashhhleyyy.dev";
+    settings.user = {
+      name = "Ashhhleyyy";
+      email = "ash@ashhhleyyy.dev";
+    };
     signing = {
       key = "83B789081A0878FB";
       signByDefault = true;
@@ -50,5 +52,7 @@
   };
 
   services.ssh-agent.enable = true;
-  programs.ssh.forwardAgent = true;
+  programs.ssh.matchBlocks."*" = {
+    addKeysToAgent = "yes";
+  };
 }
