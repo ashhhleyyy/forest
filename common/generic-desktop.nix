@@ -10,7 +10,7 @@
     enable = true;
     openFirewall = true;
   };
-  users.users.ash.extraGroups = [ "networkmanager" ];
+  users.users.ash.extraGroups = [ "networkmanager" "adbusers" ];
 
   time.timeZone = "Europe/London";
   i18n.defaultLocale = "en_GB.UTF-8";
@@ -27,7 +27,9 @@
     sudo.u2fAuth = true;
   };
 
-  programs.adb.enable = true;
+  environment.systemPackages = with pkgs; [
+    android-tools
+  ];
 
   # TODO: depends on insecure qtwebengine
   #services.globalprotect.enable = true;

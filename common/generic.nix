@@ -38,7 +38,7 @@
       "sk-ecdsa-sha2-nistp256@openssh.com AAAAInNrLWVjZHNhLXNoYTItbmlzdHAyNTZAb3BlbnNzaC5jb20AAAAIbmlzdHAyNTYAAABBBGnb4PwF+hL21JY0ytFpkk/WaYM19Xv9efYQGdeba5a2RcElFKoEtklU4SUh+uhwaOz4TP3lWJUMEnfDDpFnmlwAAAAEc3NoOg== ash@alex"
     ];
     hashedPassword = "$y$j9T$vEWmND1vcYNJh5nGbF7ER/$UIi8pHNUvVAkgpnhA/XDTt6VeDFxIQmGMiOWA4gCj6/";
-    extraGroups = [ "wheel" "audio" "dialout" "adbusers" ];
+    extraGroups = [ "wheel" "audio" "dialout" ];
   };
 
   users.groups.deploy = {};
