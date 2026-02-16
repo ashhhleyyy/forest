@@ -43,7 +43,7 @@ in
       "php_admin_flag[log_errors]" = true;
       "catch_workers_output" = true;
     };
-    phpEnv."PATH" = lib.makeBinPath [ pkgs.php ];
+    phpEnv."PATH" = lib.makeBinPath [ pkgs.php85 ];
     phpOptions = ''
     upload_max_filesize = 128M
     post_max_size = 128M
