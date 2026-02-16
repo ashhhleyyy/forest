@@ -12,8 +12,8 @@ in
     isNormalUser = true;
     shell = pkgs.bash;
     packages = with pkgs; [
-      php
-      php82Packages.composer
+      php85
+      php85Packages.composer
     ];
     extraGroups = [
       "itwont-work"
