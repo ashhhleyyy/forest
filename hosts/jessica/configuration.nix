@@ -62,6 +62,7 @@
   services.resolved.enable = true;
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
+  networking.firewall.allowedUDPPorts = [ 443 ];
   services.caddy = {
     enable = true;
     email = "infra@ashhhleyyy.dev";
