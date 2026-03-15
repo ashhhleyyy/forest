@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
   home.packages = with pkgs; [
     lutris
-    wineWowPackages.stable
+    wineWow64Packages.waylandFull
     # celeste mod manager
     olympus
   ];
