@@ -1,15 +1,18 @@
 { config, pkgs, ... }: {
   home.packages = with pkgs; [
     firefox
-#    fluffychat
     cachix
-    prismlauncher
-    gnome-sudoku
     dino
     thunderbird
     vlc
     unrar # for ark
-#    zed-editor
+    ghidra
+    keepassxc
+    vlc
+    kdePackages.kcolorchooser
+
+    kdePackages.krfb
+    kdePackages.krdc
   ];
 
   programs.direnv.enable = true;
@@ -35,6 +38,12 @@
 
   programs.jujutsu = {
     enable = true;
+    settings = {
+      user = {
+        name = "Ashhhleyyy";
+        email = "ash@ashhhleyyy.dev";
+      };
+    };
   };
 
   programs.gpg = {
@@ -48,7 +57,9 @@
     enableFishIntegration = true;
     pinentry.package = pkgs.pinentry-qt;
     defaultCacheTtl = 31536000;
-    maxCacheTtl = 31536000;
+      maxCacheTtl = 31536000;
+      maxCacheTtlSsh = 31536000;
+      defaultCacheTtlSsh = 31536000;
   };
 
   services.ssh-agent.enable = true;

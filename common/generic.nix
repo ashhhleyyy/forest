@@ -9,7 +9,6 @@
   nix.settings.trusted-users = [ "@wheel" "deploy" ];
 
   boot.tmp.cleanOnBoot = true;
-  boot.supportedFilesystems = [ "ntfs" ];
   nix.settings.auto-optimise-store = true;
 
   services.journald.extraConfig = ''
@@ -70,6 +69,10 @@
     helix
     lsof
     tmux
+    ripgrep
+    bat
+    wget
+    file
   ];
 
   nixpkgs.config.permittedInsecurePackages = [

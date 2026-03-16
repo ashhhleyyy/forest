@@ -33,12 +33,6 @@
     pulse.enable = true;
   };
 
-  security.pam.services = {
-    kde.u2fAuth = true;
-    sddm.u2fAuth = true;
-    doas.u2fAuth = true;
-  };
-
   services = {
     xserver = {
       enable = true;

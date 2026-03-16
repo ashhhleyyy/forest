@@ -4,5 +4,10 @@
     wineWow64Packages.waylandFull
     # celeste mod manager
     olympus
+    melonDS
+    osu-lazer
+    alsa-oss
+    prismlauncher
+    gnome-sudoku
   ];
 }

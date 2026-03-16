@@ -93,7 +93,14 @@
             imports = [
               fsh.homeModules.fsh
               ./home/ash
+              ./home/ash/alex.nix
+              ./home/ash/binaryninja.nix
               ./home/ash/desktop.nix
+              ./home/ash/fern.nix
+              ./home/ash/games.nix
+              ./home/ash/intellij.nix
+              ./home/ash/syncthing.nix
+              ./home/ash/vscodium.nix
             ];
           };
         }
@@ -147,7 +154,6 @@
               ./home/ash/emacs.nix
               ./home/ash/gnome-builder.nix
               #./home/ash/niri.nix
-              ./home/ash/obs.nix
               ./home/ash/intellij.nix
               ./home/ash/games.nix
               ./home/ash/syncthing.nix

@@ -1,6 +1,9 @@
 { config, pkgs, ... }: {
   services.flatpak.enable = true;
 
+  boot.supportedFilesystems = [ "ntfs" ];
+  services.smartd.enable = true;
+
   networking.networkmanager = {
     enable = true;
     plugins = [ pkgs.networkmanager-openconnect ];
@@ -10,6 +13,9 @@
     enable = true;
     openFirewall = true;
   };
+
+  programs.kdeconnect.enable = true;
+
   users.users.ash.extraGroups = [ "networkmanager" "adbusers" ];
 
   time.timeZone = "Europe/London";
@@ -17,18 +23,22 @@
 
   boot.plymouth = {
     enable = true;
-    themePackages = [(pkgs.catppuccin.override { variant = "mocha"; accent = "mauve"; })];
-    theme = "catppuccin-mocha";
+    themePackages = [(pkgs.catppuccin.override { variant = "latte"; accent = "mauve"; })];
+    theme = "catppuccin-latte";
   };
   boot.initrd.systemd.enable = true;
 
   security.pam.services = {
     login.u2fAuth = true;
     sudo.u2fAuth = true;
+    doas.u2fAuth = true;
   };
 
   environment.systemPackages = with pkgs; [
     android-tools
+    smartmontools
+    pciutils
+    usbutils
   ];
 
   # TODO: depends on insecure qtwebengine

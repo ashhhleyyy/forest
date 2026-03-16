@@ -7,6 +7,7 @@
     ../../common/tpm.nix
     ../../roles/libvirt.nix
     #../../roles/niri.nix
+    ../../roles/obs.nix
     ../../roles/podman.nix
     ./hardware-configuration.nix
   ];
@@ -24,12 +25,6 @@
     alsa.support32Bit = true;
     jack.enable = true;
     pulse.enable = true;
-  };
-
-  security.pam.services = {
-    kde.u2fAuth = true;
-    sddm.u2fAuth = true;
-    doas.u2fAuth = true;
   };
 
   services = {

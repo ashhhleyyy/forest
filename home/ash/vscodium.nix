@@ -11,22 +11,26 @@
         catppuccin.catppuccin-vsc
         catppuccin.catppuccin-vsc-icons
       ] ++ (with pkgs.vscode-marketplace; [
-        bbenoist.nix
-        tamasfe.even-better-toml
+        jnoortheen.nix-ide
+        mkhl.direnv
+
         jakebecker.elixir-ls
-        arrterian.nix-env-selector
+        phoenixframework.phoenix
+
+        dart-code.dart-code
+        dart-code.flutter
+
+        tamasfe.even-better-toml
+
         denoland.vscode-deno
         esbenp.prettier-vscode
         llvm-vs-code-extensions.vscode-clangd
-        dart-code.dart-code
-        dart-code.flutter
         golang.go
         rust-lang.rust-analyzer
         svelte.svelte-vscode
-        mkhl.direnv
         njpwerner.autodocstring
         shopify.ruby-lsp
-        polymeilex.wgsl
+        wgsl-analyzer.wgsl-analyzer
         tauri-apps.tauri-vscode
         ziglang.vscode-zig
         redhat.java
@@ -34,7 +38,6 @@
         editorconfig.editorconfig
         arcanis.vscode-zipfs
         jakebecker.elixir-ls
-        phoenixframework.phoenix
         bradlc.vscode-tailwindcss
         myriad-dreamin.tinymist
         haskell.haskell
@@ -43,6 +46,9 @@
         savonet.vscode-liquidsoap
         denoland.vscode-deno
         prisma.prisma
+        pixl-garden.bongocat
+      ]) ++ (with pkgs.open-vsx; [
+        jeanp413.open-remote-ssh
       ]);
     })
   ];
