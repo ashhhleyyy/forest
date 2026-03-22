@@ -248,6 +248,7 @@
         ./roles/reposilite.nix
         ./roles/soju.nix
         ./roles/uptime-kuma.nix
+        ./roles/vaultwarden.nix
 
         ./roles/podman.nix
         home-manager-stable.nixosModules.home-manager
