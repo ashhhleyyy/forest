@@ -4,7 +4,7 @@
   services.vaultwarden = {
     enable = true;
     domain = "pws.ashhhleyyy.dev";
-    settings = {
+    config = {
       SIGNUPS_ALLOWED = false;
       SMTP_HOST = "smtp.migadu.com";
       SMTP_SECURITY = "force_tls";
