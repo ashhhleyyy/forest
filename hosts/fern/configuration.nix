@@ -43,7 +43,7 @@
     enable = true;
     extraPackages = with pkgs; [
       intel-vaapi-driver
-      intel-media-sdk
+      #intel-media-sdk
     ];
   };
 
@@ -71,7 +71,7 @@
 
   system.stateVersion = "26.05";
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "intel-media-sdk-23.2.2"
-  ];
+  #nixpkgs.config.permittedInsecurePackages = [
+  #  "intel-media-sdk-23.2.2"
+  #];
 }

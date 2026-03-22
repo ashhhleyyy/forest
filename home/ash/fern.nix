@@ -3,6 +3,7 @@
     libreoffice-qt
     hunspell
     hunspellDicts.en-gb-large
+    fluffychat
 
     krita
     clementine

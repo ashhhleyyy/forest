@@ -33,6 +33,12 @@
       fsType = "zfs";
     };
 
+  fileSystems."/projects" =
+    { device = "zpool/projects";
+      fsType = "zfs";
+      options = ["zfsutil"];
+    };
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/6421-D20D";
       fsType = "vfat";
