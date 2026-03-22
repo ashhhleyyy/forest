@@ -5,6 +5,7 @@
     enable = true;
     domain = "pws.ashhhleyyy.dev";
     config = {
+      ROCKET_ADDRESS = "::";
       SIGNUPS_ALLOWED = false;
       SMTP_HOST = "smtp.migadu.com";
       SMTP_SECURITY = "force_tls";
