@@ -50,6 +50,7 @@
   hardware.nvidia = {
     open = false;
     modesetting.enable = true;
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
   };
 
   services.printing.enable = true;
