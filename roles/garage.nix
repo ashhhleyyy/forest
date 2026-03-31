@@ -22,7 +22,7 @@
       };
       s3_web = {
         bind_addr = "[::]:3902";
-        root_domain = "web-garage.service.isnt-a.top";
+        root_domain = "sites.ashhhleyyy.dev";
         index = "index.html";
       };
       admin = {
