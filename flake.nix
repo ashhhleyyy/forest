@@ -238,6 +238,7 @@
         ./roles/immich.nix
         ./roles/jenkins.nix
         ./roles/kanidm.nix
+        ./roles/livekit.nix
         ./roles/mumble-server.nix
 
         ./roles/munin-node.nix

@@ -28,6 +28,7 @@ in
   "servfail-token.age".publicKeys = users ++ [jessica];
   "garage-admin-token.age".publicKeys = users ++ [jessica];
   "garage-rpc-secret.age".publicKeys = users ++ [jessica];
+  "livekit-keys.age".publicKeys = users ++ [jessica];
   "vaultwarden.age".publicKeys = users ++ [jessica];
   "ntfy-url.age".publicKeys = users ++ systems;
 }
