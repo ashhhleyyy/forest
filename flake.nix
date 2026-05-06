@@ -244,6 +244,8 @@
         ./roles/munin-node.nix
         ./roles/munin-server.nix
 
+        ./roles/node-red.nix
+
         ./roles/postgres-jessica.nix
 
         ./roles/reposilite.nix
