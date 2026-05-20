@@ -6,7 +6,7 @@
     themes = {
       shorks = pkgs.fetchgit {
         rev = "873ad2e9cd6ce69f28b45b755eff2ffb490e440b";
-        url = "https://git.ashhhleyyy.dev/shorks-gay/shorks-keycloak.git";
+        url = "https://codeberg.org/ashhhleyyy/shorks-keycloak.git";
         hash = "sha256-nMZbtrVfp8U11qAmt1Bnu/Qf2qBUErxvf5x4ol2SXuQ=";
       };
     };
