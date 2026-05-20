@@ -7,7 +7,7 @@
   };
 
   virtualisation.oci-containers.containers.iceshrimp = {
-    image = "jessica:5000/withdrawal:2026.5.1.shorks1";
+    image = "jessica:5000/withdrawal:2026.5.1.shorks2";
     autoStart = false;
     environment = {
       NODE_ENV = "production";
