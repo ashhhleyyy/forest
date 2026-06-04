@@ -67,4 +67,9 @@
   programs.ssh.matchBlocks."*" = {
     addKeysToAgent = "yes";
   };
+  programs.ssh.matchBlocks."ssh.york.ac.uk" = {
+    controlMaster = "auto";
+    controlPath = "~/.ssh/connection_%h_%p_%r";
+    controlPersist = "4h";
+  };
 }
