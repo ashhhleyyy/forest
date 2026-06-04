@@ -47,6 +47,11 @@
     };
 
     flake-utils.url = "github:numtide/flake-utils";
+
+    binary-ninja = {
+      url = "github:jchv/nix-binary-ninja";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs = {
@@ -60,6 +65,7 @@
     agenix,
     niri-flake,
     flake-utils,
+    binary-ninja,
     ...
   }:
   let
@@ -75,6 +81,7 @@
           nix-fast-build
           colmena;
       })
+      binary-ninja.overlays.default
     ];
     overlays-module = ({ nixpkgs, ... }: {
       nixpkgs.overlays = overlays;
