@@ -1,5 +1,9 @@
 { pkgs, config, ... }: {
-  age.secrets.grafana-secret-key.file = ../secrets/grafana-secret-key.age;
+  age.secrets.grafana-secret-key = {
+    file = ../secrets/grafana-secret-key.age;
+    owner = "grafana";
+    group = "grafana";
+  };
 
   services.grafana = {
     enable = true;
