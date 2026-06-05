@@ -6,7 +6,6 @@
 {
   services.immich = {
     enable = true;
-    database.enableVectors = false;
     host = "::";
     machine-learning.environment = {
       IMMICH_PORT = lib.mkForce "3007";
