@@ -1,4 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
+  age.secrets.grafana-secret-key.file = ../secrets/grafana-secret-key.age;
+
   services.grafana = {
     enable = true;
     settings = {
@@ -8,6 +10,7 @@
         domain = "grafana.service.isnt-a.top";
         root_url = "https://grafana.service.isnt-a.top";
       };
+      security.secret_key = "$__file{${config.age.secrets.grafana-secret-key.path}}";
     };
   };
 
