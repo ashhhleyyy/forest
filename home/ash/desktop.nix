@@ -64,10 +64,10 @@
 
   services.ssh-agent.enable = true;
   programs.ssh.enable = true;
-  programs.ssh.matchBlocks."*" = {
+  programs.ssh.settings."*" = {
     addKeysToAgent = "yes";
   };
-  programs.ssh.matchBlocks."ssh.york.ac.uk" = {
+  programs.ssh.settings."ssh.york.ac.uk" = {
     controlMaster = "auto";
     controlPath = "~/.ssh/connection_%h_%p_%r";
     controlPersist = "4h";

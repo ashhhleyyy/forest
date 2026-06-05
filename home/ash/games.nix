@@ -4,7 +4,7 @@
     wineWow64Packages.waylandFull
     # celeste mod manager
     olympus
-    melonDS
+    melonds
     osu-lazer
     alsa-oss
     prismlauncher

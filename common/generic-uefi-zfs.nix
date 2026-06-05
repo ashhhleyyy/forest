@@ -9,4 +9,6 @@
       { devices = [ "nodev"]; path = "/boot"; }
     ];
   };
+
+  boot.zfs.forceImportRoot = false;
 }
