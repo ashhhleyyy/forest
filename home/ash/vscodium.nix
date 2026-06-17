@@ -41,7 +41,6 @@
         bradlc.vscode-tailwindcss
         myriad-dreamin.tinymist
         haskell.haskell
-        justusadam.language-haskell
         kdl-org.kdl
         savonet.vscode-liquidsoap
         denoland.vscode-deno
