@@ -29,6 +29,13 @@
       # ipv6
       host all       all     ::1/128        scram-sha-256
     '';
+
+    ensureDatabases = [ "railing_it" ];
+    ensureUsers."railing_it" = {
+      ensureDBOwnership = true;
+      name = "railing_it";
+    };
+    extensions = ps: [ps.postgis];
   };
 
   services.prometheus.exporters.postgres = {
@@ -41,5 +48,6 @@
     startAt = "*-*-* 03:00:00";
   };
 
+  services.postgresqlBackup.databases = ["railing_it"];
   forest.backups.paths = ["/var/backup/postgresql"];
 }
