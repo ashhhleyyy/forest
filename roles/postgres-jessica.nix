@@ -31,10 +31,10 @@
     '';
 
     ensureDatabases = [ "railing_it" ];
-    ensureUsers."railing_it" = {
+    ensureUsers = [{
       ensureDBOwnership = true;
       name = "railing_it";
-    };
+    }];
     extensions = ps: [ps.postgis];
   };
 
