@@ -21,6 +21,9 @@
     enable = true;
     themeFile = "Catppuccin-Mocha";
     font.name = "JetBrainsMono Nerd Font";
+    settings.auto_reload_config = -1;
+    shellIntegration.enableFishIntegration = true;
+    enableGitIntegration = true;
   };
 
   programs.git = {
