@@ -11,6 +11,7 @@
       adminKeys = [
         "[ash@cryptpad.ashhhleyyy.dev/ShpVAzqTPFZuqGhyhqpjBc3fUr4GBhUcaJEUmZqPzOg=]"
       ];
+      maxUploadSize = 200 * 1024 * 1024;
     };
   };
 
