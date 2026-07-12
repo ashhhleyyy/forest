@@ -9,6 +9,7 @@
     ghidra
     keepassxc
     vlc
+    rpi-imager
     kdePackages.kcolorchooser
 
     kdePackages.krfb
