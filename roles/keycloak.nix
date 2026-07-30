@@ -16,7 +16,7 @@
         artifactId = "icecloak";
         version = "1.3.0+kc.26";
         repos = ["https://maven.ashhhleyyy.dev/releases/"];
-        hash = "sha256-yUpS07gQ1J/qDuhDZJiFvOoekO37Rk8k/iZH41mXm4E=";
+        hash = "sha256-cxCueVJu+rNx+tObZXDNc2fhzQLoC2w2fX3dw/A3A7I=";
       }).passthru.jar)
     ];
     settings = {
