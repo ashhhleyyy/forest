@@ -6,7 +6,7 @@
       address localhost
 
       [amy]
-      address amy.ash.ley
+      address amy.bun-galaxy.ts.net
     '';
   };
 

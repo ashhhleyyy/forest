@@ -61,7 +61,7 @@
         reverse_proxy 100.123.36.114:8082
       '';
 
-      "http://${config.networking.hostName}.ash.ley:9101".extraConfig = ''
+      "http://${config.networking.hostName}.bun-galaxy.ts.net:9101".extraConfig = ''
         metrics
       '';
     };
