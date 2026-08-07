@@ -61,6 +61,7 @@ in
 
   services.caddy.virtualHosts."itwont.work".extraConfig = ''
     import blockbots
+    respond 404
     encode zstd gzip
     root * ${appDir}/public
     header * X-Frame-Options SAMEORIGIN
