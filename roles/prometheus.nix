@@ -47,7 +47,7 @@
             targets = [
               "jessica.bun-galaxy.ts.net:9187"
               "amy.bun-galaxy.ts.net:9187"
-            ]
+            ];
           }
         ];
       }
