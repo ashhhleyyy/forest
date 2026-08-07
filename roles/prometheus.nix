@@ -39,13 +39,26 @@
           }
         ];
       }
+      {
+        job_name = "postgres";
+        scrape_interval = "60s";
+        static_configs = [
+          {
+            targets = [
+              "jessica.bun-galaxy.ts.net:9187"
+              "amy.bun-galaxy.ts.net:9187"
+            ]
+          }
+        ]
+      }
 
       {
         job_name = "kubernetes-pods";
         kubernetes_sd_configs = [
           {
             role = "pod";
-            kubeconfig_file = "/etc/rancher/k3s/k3s.yaml";
+            api_server = "https://jessica.bun-galaxy.ts.net:6443";
+            
           }
         ];
         relabel_configs = [
