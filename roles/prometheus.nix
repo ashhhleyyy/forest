@@ -81,7 +81,7 @@
             action = "replace";
             target_label = "pod";
           }
-        ]
+        ];
       }
     ];
   };
