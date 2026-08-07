@@ -60,13 +60,16 @@ in
   users.groups.${app} = {};
 
   services.caddy.virtualHosts."itwont.work".extraConfig = ''
+    @not-assets {
+      not path *.css *.png *.xml
+    }
     import blockbots
     encode zstd gzip
     root * ${appDir}
     header * X-Frame-Options SAMEORIGIN
     header * X-XXS-Protection "1; mode=block"
     header * X-Content-Type-Options nosniff
-    rewrite * /index.html
+    rewrite @not-assets /index.html
     file_server {
       status 404
     }
