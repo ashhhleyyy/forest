@@ -61,14 +61,15 @@ in
 
   services.caddy.virtualHosts."itwont.work".extraConfig = ''
     import blockbots
-    respond 404
     encode zstd gzip
-    root * ${appDir}/public
+    root * ${appDir}
     header * X-Frame-Options SAMEORIGIN
     header * X-XXS-Protection "1; mode=block"
     header * X-Content-Type-Options nosniff
-    php_fastcgi unix/${config.services.phpfpm.pools.${app}.socket}
-    file_server
+    rewrite * /index.html
+    file_server {
+      status 404
+    }
   '';
 
   forest.backups.paths = [ appDir ];
