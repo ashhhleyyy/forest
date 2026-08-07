@@ -49,7 +49,7 @@
               "amy.bun-galaxy.ts.net:9187"
             ]
           }
-        ]
+        ];
       }
 
       {
