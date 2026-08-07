@@ -18,5 +18,10 @@
     };
   };
 
+  services.grafana-image-renderer = {
+    enable = true;
+    provisionGrafana = true;
+  };
+
   forest.backups.paths = [ "/var/lib/grafana" ];
 }
