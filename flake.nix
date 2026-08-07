@@ -254,6 +254,7 @@
         ./roles/node-red.nix
 
         ./roles/postgres-jessica.nix
+        ./roles/prometheus.nix
 
         ./roles/reposilite.nix
         ./roles/soju.nix
