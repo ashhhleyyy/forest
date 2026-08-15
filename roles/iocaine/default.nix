@@ -22,7 +22,7 @@
           };
           sources = {
             training-corpus = [
-              (pkgs.callPackage ./1984.nix)
+              "${pkgs.callPackage ./1984.nix}"
               # TODO: more input material
             ];
             wordlists = [
