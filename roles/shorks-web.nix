@@ -4,8 +4,10 @@
     email = "shorks@ashhhleyyy.dev";
 
     globalConfig = ''
-      servers {
-        metrics
+      {
+        metrics {
+          per_host
+        }
       }
     '';
 
