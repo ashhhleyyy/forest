@@ -64,6 +64,18 @@
       }
 
       {
+        job_name = "caddy";
+        scrape_interval = "60s";
+        static_configs = [
+          {
+            targets = [
+              "amy.bun-galaxy.ts.net:9101"
+            ];
+          }
+        ];
+      }
+
+      {
         job_name = "kubernetes-pods";
         kubernetes_sd_configs = [
           {
