@@ -28,7 +28,7 @@
             wordlists = [
               "${pkgs.miscfiles}/share/web2"
             ];
-          }
+          };
         };
       };
     };
