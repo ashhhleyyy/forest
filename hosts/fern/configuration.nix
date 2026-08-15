@@ -31,7 +31,7 @@
     xserver = {
       enable = true;
       xkb.layout = "gb";
-      videoDrivers = ["nvidia"];
+      #videoDrivers = ["nvidia"];
     };
     displayManager.plasma-login-manager = {
       enable = true;
@@ -47,11 +47,11 @@
     ];
   };
 
-  hardware.nvidia = {
-    open = false;
-    modesetting.enable = true;
-    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
-  };
+  #hardware.nvidia = {
+  #  open = false;
+  #  modesetting.enable = true;
+  #  package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
+  #};
 
   services.printing.enable = true;
 
