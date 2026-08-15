@@ -18,7 +18,7 @@
         config = {
           ai-robots-txt-path = pkgs.fetchurl {
             url = "https://github.com/ai-robots-txt/ai.robots.txt/raw/2f5d7ccf39b2f95e5163c6debbe7aebfb77edb11/robots.json";
-            hash = "";
+            hash = "sha256-27HZiDiyVSiInxrdQREAm29inWgHC+iw3e9CYrrEDJM=";
           };
           sources = {
             training-corpus = [
