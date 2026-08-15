@@ -13,7 +13,7 @@
         mode = "prometheus";
         persist-path = "qmk-metrics.json";
         persist-interval = "1h";
-      }
+      };
       handler.default = {
         config = {
           ai-robots-txt-path = pkgs.fetchurl {
