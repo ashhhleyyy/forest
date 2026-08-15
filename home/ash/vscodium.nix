@@ -46,6 +46,7 @@
         denoland.vscode-deno
         prisma.prisma
         pixl-garden.bongocat
+        thenuprojectcontributors.vscode-nushell-lang
       ]) ++ (with pkgs.open-vsx; [
         jeanp413.open-remote-ssh
       ]);
