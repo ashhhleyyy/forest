@@ -52,6 +52,11 @@
       url = "github:jchv/nix-binary-ninja";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    nixocaine = {
+      url = "https://git.madhouse-project.org/iocaine/nixocaine/archive/stable.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
   };
 
   outputs = {
@@ -66,6 +71,7 @@
     niri-flake,
     flake-utils,
     binary-ninja,
+    nixocaine,
     ...
   }:
   let
@@ -198,6 +204,8 @@
         overlays-module
         aci.nixosModules.default
         agenix.nixosModules.default
+        nixocaine.nixosModules.default
+
         ./modules
 
         ./hosts/amy/configuration.nix
@@ -205,6 +213,7 @@
         ./roles/coredns
         ./roles/gts-sandbox.nix
         ./roles/iceshrimp.nix
+        ./roles/iocaine
         ./roles/itwont-work.nix
         ./roles/keycloak.nix
         ./roles/mc-proxy.nix

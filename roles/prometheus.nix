@@ -51,6 +51,17 @@
           }
         ];
       }
+      {
+        job_name = "iocaine";
+        scrape_interval = "60s";
+        static_configs = [
+          {
+            targets = [
+              "amy.bun-galaxy.ts.net:42042"
+            ];
+          }
+        ];
+      }
 
       {
         job_name = "kubernetes-pods";
