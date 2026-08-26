@@ -70,6 +70,10 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.clementine.ipod = true;
 
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="0416", ATTRS{idProduct}=="5011", MODE="0664", GROUP="dialout"
+  '';
+
   system.stateVersion = "26.05";
 
   #nixpkgs.config.permittedInsecurePackages = [

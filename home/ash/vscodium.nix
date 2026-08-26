@@ -49,6 +49,7 @@
         thenuprojectcontributors.vscode-nushell-lang
       ]) ++ (with pkgs.open-vsx; [
         jeanp413.open-remote-ssh
+        detachhead.basedpyright
       ]);
     })
   ];

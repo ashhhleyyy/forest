@@ -61,5 +61,6 @@
       install -D -m 0644 $src/LibreBarcode39-Regular.ttf $out/share/fonts/truetype/LibreBarcode39-Regular.ttf
       '';
     })
+    nunito
   ];
 }
