@@ -14,4 +14,8 @@
 
   services.postgresqlBackup.databases = ["immich"];
   forest.backups.paths = [ "/var/lib/immich" ];
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "immich-2.7.5" # TODO: remove when upgrading to nixos 26.11
+  ];
 }
