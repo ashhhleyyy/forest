@@ -2,6 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../common/generic.nix
+    ../../common/generic-unstable.nix
     ../../common/generic-desktop.nix
     ../../common/generic-uefi-zfs.nix
     ../../common/tailscale.nix

@@ -11,11 +11,6 @@
   boot.tmp.cleanOnBoot = true;
   nix.settings.auto-optimise-store = true;
 
-  services.journald.settings.Journal = {
-    SystemMaxUse = "100M";
-    MaxFileSec = "7day";
-  };
-
   programs.fish.enable = true;
   programs.htop = {
     enable = true;

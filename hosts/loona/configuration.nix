@@ -1,6 +1,7 @@
 { config, modulesPath, pkgs, ... }: {
   imports = [
     ../../common/generic.nix
+    ../../common/generic-unstable.nix
     ../../common/generic-desktop.nix
     ../../common/generic-uefi-zfs.nix
     ../../common/tailscale.nix

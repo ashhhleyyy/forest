@@ -2,6 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../common/generic.nix
+    ../../common/generic-stable.nix
     ../../common/server.nix
     ../../common/tailscale.nix
   ];
