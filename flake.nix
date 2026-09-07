@@ -49,7 +49,7 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     binary-ninja = {
-      url = "github:jchv/nix-binary-ninja";
+      url = "github:ashhhleyyy/nix-binary-ninja/update/6.0.10601";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 

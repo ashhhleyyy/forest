@@ -63,11 +63,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1765198317,
-        "narHash": "sha256-IQoB7lK8cJzWG3hEZrPe0Zoa8/1LRwcgTSoX9mpr20E=",
+        "lastModified": 1784612524,
+        "narHash": "sha256-NANXDdXc/qj/2BRLbPcdsnpvaSGZdAFvjjgo8S9Udik=",
         "ref": "refs/heads/main",
-        "rev": "01af515b690125cb0b636a86ab95cace3c0cc8c6",
-        "revCount": 160,
+        "rev": "73ae0f13d4931b704b492c2fd85163cfe5ed9500",
+        "revCount": 169,
         "type": "git",
         "url": "https://git.madhouse-project.org/algernon/avalanche.git"
       },
@@ -84,15 +84,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1787444571,
-        "narHash": "sha256-ys2lEARzMha0aYfTV/fp0Dfz8Rx0WyjVtV3uD3L1tc0=",
-        "owner": "jchv",
+        "lastModified": 1788821550,
+        "narHash": "sha256-7MyQPKe4bli9WlfY4vBb5HKN5fqKUcz4hvEGD/KooPc=",
+        "owner": "ashhhleyyy",
         "repo": "nix-binary-ninja",
-        "rev": "359e2bca44dd7cb0e377ee62229b1f188f2cea8c",
+        "rev": "7bd301d5bfe43b3be4a52ff64978f188d9478019",
         "type": "github"
       },
       "original": {
-        "owner": "jchv",
+        "owner": "ashhhleyyy",
+        "ref": "update/6.0.10601",
         "repo": "nix-binary-ninja",
         "type": "github"
       }
@@ -309,11 +310,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787377438,
-        "narHash": "sha256-Sxu1NLTD/Ern6hFGLlZmtKCSct3YQXZI/lls8RE1XeM=",
+        "lastModified": 1788642154,
+        "narHash": "sha256-sPpQFVaFTDqO/4vvCAhuAhqTgqN/ygu+9eJcs5eB0js=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "65258d5c65a250189fde2e35f490d15e064c4c62",
+        "rev": "fd0956c99c41ae3c13a73a638f1f7e963aebc4ab",
         "type": "github"
       },
       "original": {
@@ -330,11 +331,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787715947,
-        "narHash": "sha256-jT6g5aWwA6TrIUJhqQ9ssm8W5e8vAl2Bv8gddEKKVNU=",
+        "lastModified": 1788651960,
+        "narHash": "sha256-v9wJd32eZ2bvhBzVOd7TIjLQd011P7nwOhjKtWlci5I=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "7690127e7e1c90ab1dcaff525d0dafbeb7e14182",
+        "rev": "2c0350c759688177331b8f5242311fae8877bdb3",
         "type": "github"
       },
       "original": {
@@ -360,15 +361,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1779742069,
-        "narHash": "sha256-adsQuSL4F1mfSsUtLwdgUtHVYessBM31tlBU8Rbbst4=",
-        "rev": "6dab9ec9bc05b8f70e2941ca24d0f4a778dea872",
+        "lastModified": 1787179589,
+        "narHash": "sha256-FkIgrptTiYZwHBa6blFeB4HrgTpMREbW004hKpcAKx0=",
+        "rev": "52bb84da1f3e96e4a83904a79802078eeeb47f5f",
         "type": "tarball",
-        "url": "https://git.madhouse-project.org/api/v1/repos/iocaine/iocaine/archive/6dab9ec9bc05b8f70e2941ca24d0f4a778dea872.tar.gz?rev=6dab9ec9bc05b8f70e2941ca24d0f4a778dea872"
+        "url": "https://git.madhouse-project.org/api/v1/repos/iocaine/iocaine/archive/52bb84da1f3e96e4a83904a79802078eeeb47f5f.tar.gz?rev=52bb84da1f3e96e4a83904a79802078eeeb47f5f"
       },
       "original": {
         "type": "tarball",
-        "url": "https://git.madhouse-project.org/iocaine/iocaine/archive/iocaine-3.5.0.tar.gz"
+        "url": "https://git.madhouse-project.org/iocaine/iocaine/archive/iocaine-3.5.1.tar.gz"
       }
     },
     "nam-shub-of-enki": {
@@ -382,6 +383,7 @@
           "nixocaine",
           "nixpkgs"
         ],
+        "pgpgpg": "pgpgpg",
         "pre-commit-hooks": [
           "nixocaine",
           "pre-commit-hooks"
@@ -392,11 +394,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786960872,
-        "narHash": "sha256-pZwjKKR8CjXEhDyVRUVXbqzrs8JTL10Z8piZryFkrZc=",
+        "lastModified": 1788184591,
+        "narHash": "sha256-SplMSutdS4hcxEu/aqeU727+W7Rn+iEEYc9vZQTRYIE=",
         "ref": "iocaine-3.x",
-        "rev": "463f74f5eb2f7cdd55d25e3d28202061fa90599c",
-        "revCount": 363,
+        "rev": "27c30f7ff8c95db0c37a6bf72d8b7e8d94c31e74",
+        "revCount": 366,
         "type": "git",
         "url": "https://git.madhouse-project.org/iocaine/nam-shub-of-enki"
       },
@@ -489,15 +491,15 @@
           "nixpkgs-stable"
         ],
         "pre-commit-hooks": "pre-commit-hooks",
-        "systems": "systems_7",
+        "systems": "systems_8",
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1786963974,
-        "narHash": "sha256-8FXc8hbRax81dwnaKr6Z4rxOPZxnFNN31eQc+HQWVOU=",
-        "rev": "af16771110aa4f45fae7dc7b890a5c982a376689",
+        "lastModified": 1788186077,
+        "narHash": "sha256-eZjyI9dhyAEIjMyZ2uDyiwAE+asyiH69wEcd/fLc5Pk=",
+        "rev": "e1ce1e28fabd2e27dd95066b9fadc3fecb8b4b42",
         "type": "tarball",
-        "url": "https://git.madhouse-project.org/api/v1/repos/iocaine/nixocaine/archive/af16771110aa4f45fae7dc7b890a5c982a376689.tar.gz?rev=af16771110aa4f45fae7dc7b890a5c982a376689"
+        "url": "https://git.madhouse-project.org/api/v1/repos/iocaine/nixocaine/archive/e1ce1e28fabd2e27dd95066b9fadc3fecb8b4b42.tar.gz?rev=e1ce1e28fabd2e27dd95066b9fadc3fecb8b4b42"
       },
       "original": {
         "type": "tarball",
@@ -559,11 +561,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1787640266,
-        "narHash": "sha256-MrkfE5hF5xx4L/0h5NyJ3xQkKVftwSuKSkFSrvlTxGY=",
+        "lastModified": 1788584326,
+        "narHash": "sha256-Fd3OB8J9JhgliQwOKcqx4M672CInxi1I5VnwsaXeSQo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f4f698677b11021a8f84f452e23ae9ef2427bec3",
+        "rev": "6713828a351efa628b025a1adf7f43cbf8597513",
         "type": "github"
       },
       "original": {
@@ -575,11 +577,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1787498568,
-        "narHash": "sha256-9i/VTdusq/+NM/tz+J1Re+ojkMB8MBf0QshnYfzHz30=",
+        "lastModified": 1788614874,
+        "narHash": "sha256-7QYjT2vHLuX9Z1pdxHXDKCbh1CR3D/2rywB9Tx0MPRg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "56c02bc00adcf003215cc4bd996d6efaf4cff188",
+        "rev": "c043004d1c6985732bcc1cbc5a9c9aecbbb4e0f0",
         "type": "github"
       },
       "original": {
@@ -587,6 +589,39 @@
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
+      }
+    },
+    "pgpgpg": {
+      "inputs": {
+        "nixpkgs": [
+          "nixocaine",
+          "nam-shub-of-enki",
+          "nixpkgs"
+        ],
+        "pre-commit-hooks": [
+          "nixocaine",
+          "nam-shub-of-enki",
+          "pre-commit-hooks"
+        ],
+        "systems": "systems_7",
+        "treefmt-nix": [
+          "nixocaine",
+          "nam-shub-of-enki",
+          "treefmt-nix"
+        ]
+      },
+      "locked": {
+        "lastModified": 1779902333,
+        "narHash": "sha256-FSbxmuFerb6hs24Ety1/YCQd876oDe4wo3Fbjh3Mcoo=",
+        "ref": "refs/heads/main",
+        "rev": "84da504e55c4860a7d72b2c121b7a0ecc5b118ca",
+        "revCount": 8,
+        "type": "git",
+        "url": "https://git.madhouse-project.org/algernon/pgpgpg.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.madhouse-project.org/algernon/pgpgpg.git"
       }
     },
     "pre-commit-hooks": {
@@ -757,6 +792,20 @@
         "type": "indirect"
       }
     },
+    "systems_8": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "id": "systems",
+        "type": "indirect"
+      }
+    },
     "treefmt-nix": {
       "inputs": {
         "nixpkgs": [
@@ -785,11 +834,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1787708809,
-        "narHash": "sha256-g8nkh08udC9gGpHnSb10+yjaw7Ie3bxCz2VmDy1XjRM=",
+        "lastModified": 1788667258,
+        "narHash": "sha256-jG/2WyvvMluKcDXFofsNkTkAQcKTF2eo8tBCQSAwGHY=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
-        "rev": "60132c95fbfebfc9db33217b4eca3b921ff98d38",
+        "rev": "ce9c6c4fd4c31a88dec890aef858a0d6d632efcd",
         "type": "github"
       },
       "original": {
