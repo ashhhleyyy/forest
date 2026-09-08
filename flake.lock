@@ -324,11 +324,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788907794,
-        "narHash": "sha256-HUbkTANVrEd0b7ggcMtHlqNMo/gADpSDEMU769deAsI=",
-        "rev": "cd9f42550f16441a5d760547ae18130c0847673d",
+        "lastModified": 1788908241,
+        "narHash": "sha256-OxseWWl/sywsBxbE0nd6m9wcKo/IGIipoYmiwscWk9o=",
+        "rev": "c6b1be92c6dfb7ea42576a5756027356f3e47417",
         "type": "tarball",
-        "url": "https://codeberg.org/api/v1/repos/ashhhleyyy/git-in/archive/cd9f42550f16441a5d760547ae18130c0847673d.tar.gz?rev=cd9f42550f16441a5d760547ae18130c0847673d"
+        "url": "https://codeberg.org/api/v1/repos/ashhhleyyy/git-in/archive/c6b1be92c6dfb7ea42576a5756027356f3e47417.tar.gz?rev=c6b1be92c6dfb7ea42576a5756027356f3e47417"
       },
       "original": {
         "type": "tarball",
