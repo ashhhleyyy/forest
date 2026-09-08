@@ -58,6 +58,12 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
       inputs.nam-shub-of-enki.url = "git+https://git.madhouse-project.org/iocaine/nam-shub-of-enki?ref=iocaine-3.x";
     };
+
+    git-in = {
+      url = "https://codeberg.org/ashhhleyyy/git-in/archive/trunk.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
   outputs = {
@@ -73,6 +79,7 @@
     flake-utils,
     binary-ninja,
     nixocaine,
+    git-in,
     ...
   }:
   let
@@ -242,6 +249,7 @@
         overlays-module
         aci.nixosModules.default
         agenix.nixosModules.default
+        git-in.nixosModules.default
         ./modules
 
         ./hosts/jessica/configuration.nix
@@ -251,6 +259,7 @@
         ./roles/docker-registry.nix
         #./roles/ergo.nix
         ./roles/garage.nix
+        ./roles/git.nix
         ./roles/grafana.nix
         ./roles/immich.nix
         ./roles/jenkins.nix
