@@ -122,6 +122,21 @@
         "type": "github"
       }
     },
+    "crane_2": {
+      "locked": {
+        "lastModified": 1787326676,
+        "narHash": "sha256-lWhBbBvC05/xwivKBBiM2YNizpmgqCgyOIzomvRuwxs=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "692f7e9ef2ece8125b466f66f2af532b3edaed0d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
     "darwin": {
       "inputs": {
         "nixpkgs": [
@@ -296,6 +311,28 @@
         "owner": "ashhhleyyy",
         "repo": "fsh",
         "type": "github"
+      }
+    },
+    "git-in": {
+      "inputs": {
+        "crane": "crane_2",
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs-stable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788907245,
+        "narHash": "sha256-uDDsJ45vpxzxaZbaqdS1wgifv6uYjBN58753VBT24h8=",
+        "rev": "92e3a362181936afcca9fd0094ccb9e0775d22c8",
+        "type": "tarball",
+        "url": "https://codeberg.org/api/v1/repos/ashhhleyyy/git-in/archive/92e3a362181936afcca9fd0094ccb9e0775d22c8.tar.gz?rev=92e3a362181936afcca9fd0094ccb9e0775d22c8"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://codeberg.org/ashhhleyyy/git-in/archive/trunk.tar.gz"
       }
     },
     "home-manager": {
@@ -727,6 +764,7 @@
         "binary-ninja": "binary-ninja",
         "flake-utils": "flake-utils_3",
         "fsh": "fsh",
+        "git-in": "git-in",
         "home-manager-stable": "home-manager-stable",
         "home-manager-unstable": "home-manager-unstable",
         "niri-flake": "niri-flake",
