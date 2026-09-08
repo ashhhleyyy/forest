@@ -54,6 +54,6 @@
       repository name="website" path = "/var/lib/git-in/website.git/" {
         group "web"
       }
-    ''
+    '';
   };
 }
