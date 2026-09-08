@@ -88,6 +88,7 @@
       fsh.overlays.default
       vscode-extensions.overlays.default
       aci.overlays.default
+      git-in.overlays.default
       (final: prev: {
         inherit (prev.lixPackageSets.stable)
           nixpkgs-review
