@@ -6,6 +6,8 @@
   };
   age.secrets.rclone-copyparty.file = ../secrets/rclone-copyparty.age;
 
+  environment.systemPackages = [ pkgs.rclone ];
+
   fileSystems."/mnt/copyparty" = {
     device = "copyparty:/";
     fsType = "rclone";
