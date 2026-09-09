@@ -4,7 +4,7 @@
     owner = "copyparty";
     group = "copyparty";
   };
-  age.secrets.rclone-copyparty.file = ../secrets/rclone-copyparty.nix;
+  age.secrets.rclone-copyparty.file = ../secrets/rclone-copyparty.age;
 
   fileSystems."/mnt/copyparty" = {
     device = "copyparty:/";
