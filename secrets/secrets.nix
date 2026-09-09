@@ -34,4 +34,7 @@ in
   "livekit-keys.age".publicKeys = users ++ [jessica];
   "vaultwarden.age".publicKeys = users ++ [jessica];
   "ntfy-url.age".publicKeys = users ++ systems;
+
+  "copyparty-ash.age".publicKeys = users ++ [jessica];
+  "rclone-copyparty.age".publicKeys = users ++ [jessica];
 }

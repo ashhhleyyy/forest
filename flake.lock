@@ -98,6 +98,29 @@
         "type": "github"
       }
     },
+    "copyparty": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs-stable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788840090,
+        "narHash": "sha256-X9esxhmOHPuDC65S2g3qfR+YlJsDvWp6UXzVLkzRp7I=",
+        "owner": "9001",
+        "repo": "copyparty",
+        "rev": "bfc3cff8482a70653ad380bd94660013d2569ff5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "9001",
+        "repo": "copyparty",
+        "type": "github"
+      }
+    },
     "crane": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -762,6 +785,7 @@
         "aci": "aci",
         "agenix": "agenix",
         "binary-ninja": "binary-ninja",
+        "copyparty": "copyparty",
         "flake-utils": "flake-utils_3",
         "fsh": "fsh",
         "git-in": "git-in",

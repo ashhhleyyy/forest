@@ -64,6 +64,12 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
       inputs.flake-utils.follows = "flake-utils";
     };
+
+    copyparty = {
+      url = "github:9001/copyparty";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
   outputs = {
@@ -80,6 +86,7 @@
     binary-ninja,
     nixocaine,
     git-in,
+    copyparty,
     ...
   }:
   let
@@ -89,6 +96,8 @@
       vscode-extensions.overlays.default
       aci.overlays.default
       git-in.overlays.default
+      copyparty.overlays.default
+      binary-ninja.overlays.default
       (final: prev: {
         inherit (prev.lixPackageSets.stable)
           nixpkgs-review
@@ -96,7 +105,6 @@
           nix-fast-build
           colmena;
       })
-      binary-ninja.overlays.default
     ];
     overlays-module = ({ nixpkgs, ... }: {
       nixpkgs.overlays = overlays;
@@ -251,11 +259,13 @@
         aci.nixosModules.default
         agenix.nixosModules.default
         git-in.nixosModules.default
+        copyparty.nixosModules.default
         ./modules
 
         ./hosts/jessica/configuration.nix
 
         ./roles/bluesky-pds.nix
+        ./roles/copyparty.nix
         ./roles/cryptpad.nix
         ./roles/docker-registry.nix
         #./roles/ergo.nix
