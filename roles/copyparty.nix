@@ -9,7 +9,7 @@
   environment.systemPackages = [ pkgs.rclone ];
 
   fileSystems."/mnt/copyparty" = {
-    device = "copyparty:/";
+    device = "copyparty:/home";
     fsType = "rclone";
     options = [
       "nodev"
