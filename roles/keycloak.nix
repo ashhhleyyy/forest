@@ -35,7 +35,7 @@
     tls {
       client_auth {
         mode verify_if_given
-        trust_pool file ${./keycloak/ca.pem}
+        trust_pool file ${./keycloak/auth-ca.pem}
       }
     }
     vars cert_header ""
