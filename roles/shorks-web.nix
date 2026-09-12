@@ -9,10 +9,6 @@
       }
     '';
 
-    logFormat = ''
-      level DEBUG
-    '';
-
     extraConfig = ''
     (blockbots) {
       respond @badbots "Fuck you" 410 {
