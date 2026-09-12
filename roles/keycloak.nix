@@ -3,6 +3,9 @@
 
   services.keycloak = {
     enable = true;
+    package = pkgs.keycloak.overrideAttrs (finalAttrs: previousAttrs: {
+      buildPhase = lib.replaceString "bin/kc.sh build" "bin/kc.sh build --spi-x509cert-lookup--provider=rfc9440" previousAttrs.buildPhase
+    });
     themes = {
       shorks = pkgs.fetchgit {
         rev = "873ad2e9cd6ce69f28b45b755eff2ffb490e440b";
@@ -29,7 +32,18 @@
   };
 
   services.caddy.virtualHosts."account.shorks.gay".extraConfig = ''
-    reverse_proxy 127.0.0.1:8008
+    tls {
+      client_auth {
+        mode verify_if_given
+        trust_pool file ${./keycloak/ca.pem}
+      }
+    }
+    vars cert_header ""
+    @certavailable vars_regexp {tls_client_certificate_der_base64} .+
+    vars @certavailable cert_header ":{tls_client_certificate_der_base64}:"
+    reverse_proxy 127.0.0.1:8008 {
+      header_up Client-Cert {vars.cert_header}
+    }
   '';
 
   services.postgresqlBackup.databases = ["keycloak"];
