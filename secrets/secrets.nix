@@ -6,6 +6,7 @@ let
   
   amy = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHsGEdyz3h9Xn6bmp3v8/SlinWpm7oHtljdScCYJ5iun root@amy";
   jessica = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGRZxN0RGV/dTNvXiWUu/ECStDHdS8TVoM4YjaB3dEYq root@jessica";
+  fern = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJco6L1wBvp9occ6qykIPI0OzqzkDKopNri2XnWlqhmM root@fern";
   systems = [ amy ];
 in
 {
@@ -21,6 +22,10 @@ in
   "restic-key-jessica.age".publicKeys = users ++ [jessica];
   "restic-rclone-jessica.age".publicKeys = users ++ [jessica];
   "restic-password-jessica.age".publicKeys = users ++ [jessica];
+
+  "restic-key-fern.age".publicKeys = users ++ [fern];
+  "restic-rclone-fern.age".publicKeys = users ++ [fern];
+  "restic-password-fern.age".publicKeys = users ++ [fern];
 
   "pds-env.age".publicKeys = users ++ [jessica];
   "mumble-server.age".publicKeys = users ++ [jessica];

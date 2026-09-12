@@ -75,6 +75,8 @@
     SUBSYSTEM=="usb", ATTRS{idVendor}=="0416", ATTRS{idProduct}=="5011", MODE="0664", GROUP="dialout"
   '';
 
+  forest.backups.paths = [ "/projects" ];
+
   system.stateVersion = "26.05";
 
   #nixpkgs.config.permittedInsecurePackages = [

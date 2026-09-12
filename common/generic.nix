@@ -1,6 +1,7 @@
 { pkgs, ... }: rec {
   imports = [
     ./cachix.nix
+    ../modules
   ];
 
   nix.package = pkgs.lixPackageSets.stable.lix;

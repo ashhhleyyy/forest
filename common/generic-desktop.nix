@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   services.flatpak.enable = true;
 
   boot.supportedFilesystems = [ "ntfs" ];
@@ -34,15 +34,21 @@
     doas.u2fAuth = true;
   };
 
+  services.udev.packages = with pkgs; [
+    yubikey-personalization
+  ];
+
+  services.pcscd.enable = true;
+
   environment.systemPackages = with pkgs; [
     android-tools
     smartmontools
     pciutils
     usbutils
+    opensc
   ];
 
-  # TODO: depends on insecure qtwebengine
-  #services.globalprotect.enable = true;
+  services.p11-kit-server.enable = true;
 
   fonts.packages = with pkgs; [
     (nerd-fonts.jetbrains-mono)
@@ -63,4 +69,25 @@
     })
     nunito
   ];
+
+  services.openssh.generateHostKeys = true;
+  age.identityPaths = map (e: e.path) (
+    lib.filter (e: e.type == "rsa" || e.type == "ed25519") config.services.openssh.hostKeys
+  );
+
+  forest.backups = {
+    enable = true;
+    paths = [ "/home/ash" ];
+    exclude = [
+      "/home/*/.cache"
+      "/home/*/.gradle"
+      "node_modules/"
+      "*.iso"
+      "*.img"
+      "*.3ds"
+      "/home/*/.local/share/Steam/steamapps/common/"
+    ];
+    personal = true;
+    timerConfig.OnCalendar = "*-*-* 00:00:00";
+  };
 }

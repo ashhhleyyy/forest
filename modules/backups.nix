@@ -88,6 +88,7 @@ in
         # ensure data integrity
         "--read-data-subset=2.5%"
       ];
+      extraBackupArgs = ["--exclude-caches"];
       timerConfig = cfg.timerConfig;
 
       paths = cfg.paths;

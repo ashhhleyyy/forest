@@ -114,6 +114,7 @@
     nixosConfigurations.fern = nixpkgs-unstable.lib.nixosSystem {
       modules = [
         overlays-module
+        agenix.nixosModules.default
         ./hosts/fern/configuration.nix
         home-manager.nixosModules.home-manager
         {
@@ -140,6 +141,7 @@
     nixosConfigurations.alex = nixpkgs-unstable.lib.nixosSystem {
       modules = [
         overlays-module
+        agenix.nixosModules.default
         niri-flake.nixosModules.niri
         ./hosts/alex/configuration.nix
         home-manager.nixosModules.home-manager
@@ -223,8 +225,6 @@
         agenix.nixosModules.default
         nixocaine.nixosModules.default
 
-        ./modules
-
         ./hosts/amy/configuration.nix
         ./roles/conduit.nix
         ./roles/coredns
@@ -260,7 +260,6 @@
         agenix.nixosModules.default
         git-in.nixosModules.default
         copyparty.nixosModules.default
-        ./modules
 
         ./hosts/jessica/configuration.nix
 
