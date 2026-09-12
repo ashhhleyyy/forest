@@ -4,7 +4,7 @@
   services.keycloak = {
     enable = true;
     package = pkgs.keycloak.overrideAttrs (finalAttrs: previousAttrs: {
-      buildPhase = lib.replaceString "bin/kc.sh build" "bin/kc.sh build --spi-x509cert-lookup--provider=rfc9440" previousAttrs.buildPhase
+      buildPhase = lib.replaceString "bin/kc.sh build" "bin/kc.sh build --spi-x509cert-lookup--provider=rfc9440" previousAttrs.buildPhase;
     });
     themes = {
       shorks = pkgs.fetchgit {
