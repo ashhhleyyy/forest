@@ -58,6 +58,42 @@
     common.deploy-user.enable = true;
     profiles.server.enable = true;
     services = {
+      cryptpad = {
+        enable = true;
+        origins = {
+          safe = "https://cryptpad-sandbox.ashhhleyyy.dev";
+          unsafe = "https://cryptpad.ashhhleyyy.dev";
+        };
+        adminKeys = [
+          "[ash@cryptpad.ashhhleyyy.dev/ShpVAzqTPFZuqGhyhqpjBc3fUr4GBhUcaJEUmZqPzOg=]"
+        ];
+      };
+      garage = {
+        enable = true;
+        domains = {
+          s3 = "s3-garage.service.isnt-a.top";
+          web = "sites.ashhhleyyy.dev";
+        };
+        secrets = {
+          rpc = ../../secrets/garage-rpc-secret.age;
+          adminToken = ../../secrets/garage-admin-token.age;
+        };
+      };
+      git-in.enable = true;
+      grafana = {
+        enable = true;
+        hostname = "grafana.service.isnt-a.top";
+        renderer.enable = true;
+      };
+      immich.enable = true;
+      jenkins.enable = true;
+      kanidm = {
+        server = {
+          enable = true;
+          origin = "https://sso.ashhhleyyy.dev";
+        };
+        client.enable = true;
+      };
       kube = {
         enable = true;
         role = "server";
@@ -76,8 +112,18 @@
         };
       };
       node-red.enable = true;
+      pds = {
+        enable = true;
+        hostname = "pds.ashhhleyyy.dev";
+        environmentFile = ../../secrets/pds-env.age;
+      };
+      reposilite.enable = true;
       uptime-kuma.enable = true;
       tailscale.enable = true;
+      vaultwarden = {
+        enable = true;
+        environmentFile = ../../secrets/vaultwarden.age;
+      };
     };
     tools.podman.enable = true;
     util.tls-cert.enable = true;

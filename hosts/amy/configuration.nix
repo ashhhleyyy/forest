@@ -56,6 +56,16 @@
     common.deploy-user.enable = true;
     profiles.server.enable = true;
     services = {
+      conduit = {
+        enable = true;
+        serverName = "shorks.gay";
+        frontends.enable = true;
+      };
+      gotosocial = {
+        enable = true;
+        host = "sandbox.isnt-a.top";
+        caddy.enable = true;
+      };
       munin.enable = true;
       tailscale.enable = true;
     };

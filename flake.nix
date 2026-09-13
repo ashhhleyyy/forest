@@ -223,8 +223,6 @@
         nixocaine.nixosModules.default
 
         ./hosts/amy/configuration.nix
-        ./roles/conduit.nix
-        ./roles/gts-sandbox.nix
         ./roles/iceshrimp.nix
         ./roles/iocaine
         ./roles/itwont-work.nix
@@ -254,25 +252,13 @@
 
         ./hosts/jessica/configuration.nix
 
-        ./roles/bluesky-pds.nix
         ./roles/copyparty.nix
-        ./roles/cryptpad.nix
         ./roles/docker-registry.nix
         #./roles/ergo.nix
-        ./roles/garage.nix
-        ./roles/git.nix
-        ./roles/grafana.nix
-        ./roles/immich.nix
-        ./roles/jenkins.nix
-        ./roles/kanidm.nix
         ./roles/mumble-server.nix
-
         ./roles/postgres-jessica.nix
         ./roles/prometheus.nix
-
-        ./roles/reposilite.nix
         ./roles/soju.nix
-        ./roles/vaultwarden.nix
 
         home-manager-stable.nixosModules.home-manager
         {
