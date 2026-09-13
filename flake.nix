@@ -202,7 +202,6 @@
     nixosConfigurations.lea = nixpkgs-stable.lib.nixosSystem {
       modules = base-modules ++ [
         ./hosts/lea/configuration.nix
-        ./roles/coredns
         ./roles/postgres.nix
         home-manager-stable.nixosModules.home-manager
         {
@@ -226,17 +225,14 @@
 
         ./hosts/amy/configuration.nix
         ./roles/conduit.nix
-        ./roles/coredns
         ./roles/gts-sandbox.nix
         ./roles/iceshrimp.nix
         ./roles/iocaine
         ./roles/itwont-work.nix
         ./roles/keycloak.nix
-        ./roles/mc-proxy.nix
         ./roles/munin-node.nix
         ./roles/postgres.nix
         ./roles/shorks-web.nix
-        ./roles/youtrack.nix
         home-manager-stable.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
@@ -298,13 +294,6 @@
             ];
           };
         }
-      ];
-    };
-
-    nixosConfigurations.emira = nixpkgs-unstable.lib.nixosSystem {
-      modules = base-modules ++ [
-        ./hosts/emira/configuration.nix
-        agenix.nixosModules.default
       ];
     };
 
