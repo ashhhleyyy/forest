@@ -9,7 +9,9 @@
   environment.systemPackages = [
     (
       let
-        newPostgres = pkgs.postgresql_18;
+        newPostgres = pkgs.postgresql_18.withPackages (pp: [
+          pp.pgroonga
+        ]);
         cfg = config.services.postgresql;
       in
       pkgs.writeScriptBin "upgrade-pg-cluster" ''
