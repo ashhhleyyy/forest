@@ -70,7 +70,7 @@
         enable = true;
         server = {
           enable = true;
-          hosts = {
+          nodes = {
             amy = "amy.bun-galaxy.ts.net";
           };
         };
