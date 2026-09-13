@@ -1,6 +1,5 @@
 { config, pkgs, ... }: {
   imports = [
-    ../../common/generic.nix
     ../../roles/asterisk.nix
     ../../roles/coredns
   ];
@@ -11,6 +10,8 @@
     dhcpcd.extraConfig = "nohook resolv.conf";
   };
   networking.firewall.enable = false;
+
+  forest.boot.qemu.enable = true;
 
   system.stateVersion = "22.11";
 }

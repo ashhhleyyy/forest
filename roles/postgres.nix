@@ -37,7 +37,7 @@
     '';
   };
 
-  services.pg-vacuum = {
+  forest.services.pg-vacuum = {
     enable = true;
     package = pkgs.postgresql_14;
   };

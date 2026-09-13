@@ -3,7 +3,7 @@
 with lib;
 
 let
-  cfg = config.services.pg-vacuum;
+  cfg = config.forest.services.pg-vacuum;
   vacuumScript = pkgs.writeShellScript "vacuum-postgresql-databases" ''
   set -eu -o pipefail
 
@@ -16,7 +16,7 @@ let
   '';
 in
 {
-  options.services.pg-vacuum = {
+  options.forest.services.pg-vacuum = {
     enable = mkOption {
       type = types.bool;
       default = false;

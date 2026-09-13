@@ -5,11 +5,11 @@
 }:
 
 let
-  cfg = config.services.p11-kit-server;
+  cfg = config.forest.services.p11-kit-server;
 in
 
 {
-  options.services.p11-kit-server = {
+  options.forest.services.p11-kit-server = {
     enable = lib.mkEnableOption {};
     package = lib.mkPackageOption pkgs "p11-kit" {};
   };

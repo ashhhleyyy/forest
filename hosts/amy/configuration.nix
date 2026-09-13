@@ -1,26 +1,11 @@
 { ... }: {
   imports = [
     ./hardware-configuration.nix
-    ../../common/generic.nix
-    ../../common/generic-stable.nix
-    ../../common/server.nix
-    ../../common/tailscale.nix
   ];
 
   zramSwap.enable = true;
   networking.hostName = "amy";
   networking.domain = "net.isnt-a.top";
-
-  time.timeZone = "Europe/London";
-
-  i18n.defaultLocale = "en_GB.UTF-8";
-
-  #services.xserver = {
-  #  layout = "gb";
-  #  xkbVariant = "";
-  #};
-
-  console.keyMap = "uk";
 
   nixpkgs.config.allowUnfree = true;
 
@@ -63,9 +48,16 @@
   services.resolved.enable = true;
 
   services.aci-backend.enable = true;
-  forest.backups.paths = [ "/var/lib/private/aci-backend" ];
-
-  forest.backups.enable = true;
+  forest = {
+    backups = {
+      enable = true;
+      paths = [ "/var/lib/private/aci-backend" ];
+    };
+    common.deploy-user.enable = true;
+    profiles.server.enable = true;
+    services.tailscale.enable = true;
+    tools.podman.enable = true;
+  };
 
   system.stateVersion = "23.11";
 }

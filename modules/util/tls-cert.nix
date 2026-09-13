@@ -4,16 +4,15 @@
   ...
 }:
 let
-  inherit (lib) mkEnableOption types mkIf;
-  cfg = config.forest.tls-cert;
+  cfg = config.forest.util.tls-cert;
 in
 
 {
-  options.forest.tls-cert = {
-    enable = mkEnableOption "tls-cert";
+  options.forest.util.tls-cert = {
+    enable = lib.mkEnableOption "tls-cert";
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     age.secrets."servfail-token".file = ../secrets/servfail-token.age;
 
     security.acme = {

@@ -37,7 +37,7 @@
     '';
   };
 
-  services.pg-vacuum.databases = [ "shorks-gay" ];
+  forest.services.pg-vacuum.databases = [ "shorks-gay" ];
   services.postgresqlBackup.databases = ["shorks-gay"];
   forest.backups.paths = ["/home/ash/shorks-gay/"];
 }

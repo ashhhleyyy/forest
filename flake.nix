@@ -109,11 +109,14 @@
     overlays-module = ({ nixpkgs, ... }: {
       nixpkgs.overlays = overlays;
     });
+    base-modules = [
+      overlays-module
+      ./modules
+    ];
   in
   {
     nixosConfigurations.fern = nixpkgs-unstable.lib.nixosSystem {
-      modules = [
-        overlays-module
+      modules = base-modules ++ [
         agenix.nixosModules.default
         ./hosts/fern/configuration.nix
         home-manager.nixosModules.home-manager
@@ -139,8 +142,7 @@
     };
 
     nixosConfigurations.alex = nixpkgs-unstable.lib.nixosSystem {
-      modules = [
-        overlays-module
+      modules = base-modules ++ [
         agenix.nixosModules.default
         niri-flake.nixosModules.niri
         ./hosts/alex/configuration.nix
@@ -168,8 +170,7 @@
     };
 
     nixosConfigurations.loona = nixpkgs-unstable.lib.nixosSystem {
-      modules = [
-        overlays-module
+      modules = base-modules ++ [
         niri-flake.nixosModules.niri
         ./hosts/loona/configuration.nix
         home-manager.nixosModules.home-manager
@@ -199,8 +200,7 @@
     };
 
     nixosConfigurations.lea = nixpkgs-stable.lib.nixosSystem {
-      modules = [
-        overlays-module
+      modules = base-modules ++ [
         ./hosts/lea/configuration.nix
         ./roles/coredns
         ./roles/postgres.nix
@@ -219,8 +219,7 @@
     };
 
     nixosConfigurations.amy = nixpkgs-stable.lib.nixosSystem {
-      modules = [
-        overlays-module
+      modules = base-modules ++ [
         aci.nixosModules.default
         agenix.nixosModules.default
         nixocaine.nixosModules.default
@@ -235,7 +234,6 @@
         ./roles/keycloak.nix
         ./roles/mc-proxy.nix
         ./roles/munin-node.nix
-        ./roles/podman.nix
         ./roles/postgres.nix
         ./roles/shorks-web.nix
         ./roles/youtrack.nix
@@ -254,8 +252,7 @@
     };
 
     nixosConfigurations.jessica = nixpkgs-stable.lib.nixosSystem {
-      modules = [
-        overlays-module
+      modules = base-modules ++ [
         aci.nixosModules.default
         agenix.nixosModules.default
         git-in.nixosModules.default
@@ -290,7 +287,6 @@
         ./roles/uptime-kuma.nix
         ./roles/vaultwarden.nix
 
-        ./roles/podman.nix
         home-manager-stable.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
@@ -306,17 +302,14 @@
     };
 
     nixosConfigurations.emira = nixpkgs-unstable.lib.nixosSystem {
-      modules = [
-        overlays-module
+      modules = base-modules ++ [
         ./hosts/emira/configuration.nix
         agenix.nixosModules.default
-        ./common/generic-qemu.nix
       ];
     };
 
     nixosConfigurations.em = nixpkgs-unstable.lib.nixosSystem {
-      modules = [
-        overlays-module
+      modules = base-modules ++ [
         niri-flake.nixosModules.niri
         ./hosts/em/configuration.nix
         home-manager-unstable.nixosModules.home-manager

@@ -5,11 +5,11 @@
 }:
 
 let
-  cfg = config.forest.kube;
+  cfg = config.forest.services.kube;
 in
 
 {
-  options.forest.kube = {
+  options.forest.services.kube = {
     enable = lib.mkEnableOption {};
 
     role = lib.mkOption {

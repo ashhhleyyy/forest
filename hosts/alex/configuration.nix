@@ -1,14 +1,8 @@
 { config, pkgs, ... }: {
   imports = [
-    ../../common/generic.nix
-    ../../common/generic-desktop.nix
-    ../../common/generic-uefi.nix
-    ../../common/tailscale.nix
-    ../../common/tpm.nix
     ../../roles/kodi.nix
     ../../roles/libvirt.nix
     ../../roles/niri.nix
-    ../../roles/podman.nix
     ./hardware-config.nix
   ];
 
@@ -18,6 +12,15 @@
       preLVM = true;
       allowDiscards = true;
     };
+  };
+  forest = {
+    common.boot.systemd-boot.enable = true;
+    profiles.desktop = {
+      enable = true;
+      tpm.enable = true;
+    };
+    services.tailscale.enable = true;
+    tools.podman.enable = true;
   };
 
   networking.hostName = "alex";

@@ -1,17 +1,24 @@
 { config, modulesPath, pkgs, ... }: {
   imports = [
-    ../../common/generic.nix
-    ../../common/generic-unstable.nix
-    ../../common/generic-desktop.nix
-    ../../common/generic-uefi-zfs.nix
-    ../../common/tailscale.nix
-    ../../common/tpm.nix
     ../../roles/libvirt.nix
     #../../roles/niri.nix
     ../../roles/obs.nix
-    ../../roles/podman.nix
     ./hardware-configuration.nix
   ];
+
+  forest = {
+    boot.grub = {
+      enable = true;
+      uefi.enable = true;
+      zfs.enable = true;
+    };
+    profiles.desktop = {
+      enable = true;
+      tpm.enable = true;
+    };
+    services.tailscale.enable = true;
+    tools.podman.enable = true;
+  };
 
   networking.hostName = "loona";
   networking.hostId = "df9469a3";

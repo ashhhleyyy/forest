@@ -4,14 +4,13 @@
   imports =
     [
       ./hardware-configuration.nix
-      ../../common/generic.nix
-      ../../common/server.nix
-      ../../common/tailscale.nix
     ];
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sdb";
-  boot.loader.grub.useOSProber = true;
+  forest = {
+    boot.grub.enable = true;
+    profiles.server.enable = true;
+    tools.podman.enable = true;
+  };
 
   services.smartd.enable = true;
   
@@ -21,8 +20,6 @@
     layout = "gb";
     xkbVariant = "";
   };
-
-  console.keyMap = "uk";
 
   nixpkgs.config.allowUnfree = true;
 

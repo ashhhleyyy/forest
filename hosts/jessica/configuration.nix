@@ -1,26 +1,11 @@
 { ... }: {
   imports = [
     ./hardware-configuration.nix
-    ../../common/generic.nix
-    ../../common/generic-stable.nix
-    ../../common/server.nix
-    ../../common/tailscale.nix
   ];
 
   zramSwap.enable = true;
   networking.hostName = "jessica";
   networking.domain = "net.isnt-a.top";
-
-  time.timeZone = "Europe/London";
-
-  i18n.defaultLocale = "en_GB.UTF-8";
-
-  #services.xserver = {
-  #  layout = "gb";
-  #  xkbVariant = "";
-  #};
-
-  console.keyMap = "uk";
 
   nixpkgs.config.allowUnfree = true;
 
@@ -28,7 +13,6 @@
     enable = true;
     openFirewall = false;
   };
-#  networking.firewall.allowedTCPPorts = [ 22 ];
 
   networking = {
     interfaces = {
@@ -70,12 +54,18 @@
   };
 
   forest = {
-    kube = {
-      enable = true;
-      role = "server";
-    };
-    tls-cert.enable = true;
     backups.enable = true;
+    common.deploy-user.enable = true;
+    profiles.server.enable = true;
+    services = {
+      kube = {
+        enable = true;
+        role = "server";
+      };
+      tailscale.enable = true;
+    };
+    tools.podman.enable = true;
+    util.tls-cert.enable = true;
   };
 
   system.stateVersion = "24.11";

@@ -1,16 +1,24 @@
 { config, pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
-    ../../common/generic.nix
-    ../../common/generic-unstable.nix
-    ../../common/generic-desktop.nix
-    ../../common/generic-uefi-zfs.nix
-    ../../common/tailscale.nix
-    ../../common/tpm.nix
     ../../roles/libvirt.nix
     ../../roles/obs.nix
-    ../../roles/podman.nix
   ];
+
+  forest = {
+    backups.paths = [ "/projects" ];
+    boot.grub = {
+      enable = true;
+      uefi.enable = true;
+      zfs.enable = true;
+    };
+    profiles.desktop = {
+      enable = true;
+      tpm.enable = true;
+    };
+    services.tailscale.enable = true;
+    tools.podman.enable = true;
+  };
 
   networking.hostName = "fern";
   networking.hostId = "e905d5d3";
@@ -74,8 +82,6 @@
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTRS{idVendor}=="0416", ATTRS{idProduct}=="5011", MODE="0664", GROUP="dialout"
   '';
-
-  forest.backups.paths = [ "/projects" ];
 
   system.stateVersion = "26.05";
 
