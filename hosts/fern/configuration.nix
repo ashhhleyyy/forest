@@ -1,7 +1,6 @@
 { config, pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
-    ../../roles/libvirt.nix
   ];
 
   forest = {
@@ -17,7 +16,10 @@
     };
     programs.obs.enable = true;
     services.tailscale.enable = true;
-    tools.podman.enable = true;
+    tools = {
+      libvirt.enable = true;
+      podman.enable = true;
+    };
   };
 
   networking.hostName = "fern";

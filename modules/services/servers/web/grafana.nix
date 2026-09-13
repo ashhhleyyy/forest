@@ -16,16 +16,16 @@ in
 
   config = lib.mkIf cfg.enable {
     age.secrets.grafana-secret-key = {
-      file = ../../../secrets/grafana-secret-key.age;
+      file = ../../../../secrets/grafana-secret-key.age;
       owner = "grafana";
       group = "grafana";
     };
     age.secrets.grafana-renderer-token = lib.mkIf cfg.renderer.enable {
-      file = ../../../secrets/grafana-renderer-token.age;
+      file = ../../../../secrets/grafana-renderer-token.age;
       owner = "grafana";
       group = "grafana";
     };
-    age.secrets.grafana-renderer-environ.file = lib.mkIf cfg.renderer.enable ../../../secrets/grafana-renderer-environ.age;
+    age.secrets.grafana-renderer-environ.file = lib.mkIf cfg.renderer.enable ../../../../secrets/grafana-renderer-environ.age;
 
     services.grafana = {
       enable = true;

@@ -1,6 +1,5 @@
 { config, modulesPath, pkgs, ... }: {
   imports = [
-    ../../roles/libvirt.nix
     #../../roles/niri.nix
     ../../roles/obs.nix
     ./hardware-configuration.nix
@@ -18,7 +17,10 @@
     };
     programs.obs.enable = true;
     services.tailscale.enable = true;
-    tools.podman.enable = true;
+    tools = {
+      libvirt.enable = true;
+      podman.enable = true;
+    };
   };
 
   networking.hostName = "loona";

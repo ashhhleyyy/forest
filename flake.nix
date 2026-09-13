@@ -247,12 +247,8 @@
         ./hosts/jessica/configuration.nix
 
         ./roles/copyparty.nix
-        ./roles/docker-registry.nix
         #./roles/ergo.nix
-        ./roles/mumble-server.nix
         ./roles/postgres-jessica.nix
-        ./roles/prometheus.nix
-        ./roles/soju.nix
 
         home-manager-stable.nixosModules.home-manager
         {

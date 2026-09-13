@@ -1,7 +1,6 @@
 { ... }: {
   imports = [
-    ./desktop
-    ./infra
     ./servers
+    ./soju.nix
   ];
 }

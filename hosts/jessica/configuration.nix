@@ -68,6 +68,7 @@
           "[ash@cryptpad.ashhhleyyy.dev/ShpVAzqTPFZuqGhyhqpjBc3fUr4GBhUcaJEUmZqPzOg=]"
         ];
       };
+      docker-registry.enable = true;
       garage = {
         enable = true;
         domains = {
@@ -102,6 +103,7 @@
         enable = true;
         keyFile = ../../secrets/livekit-keys.age;
       };
+      mumble.enable = true;
       munin = {
         enable = true;
         server = {
@@ -117,7 +119,9 @@
         hostname = "pds.ashhhleyyy.dev";
         environmentFile = ../../secrets/pds-env.age;
       };
+      prometheus.enable = true;
       reposilite.enable = true;
+      soju.enable = true;
       uptime-kuma.enable = true;
       tailscale.enable = true;
       vaultwarden = {
