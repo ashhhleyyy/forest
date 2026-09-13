@@ -1,6 +1,7 @@
 { ... }: {
   imports = [
-    ./servers
+    ./mumble.nix
     ./soju.nix
+    ./web
   ];
 }
