@@ -201,24 +201,6 @@
       ];
     };
 
-    nixosConfigurations.lea = nixpkgs-stable.lib.nixosSystem {
-      modules = base-modules ++ [
-        ./hosts/lea/configuration.nix
-        ./roles/postgres.nix
-        home-manager-stable.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.ash = { ... }: {
-            imports = [
-              fsh.homeModules.fsh
-              ./home/ash
-            ];
-          };
-        }
-      ];
-    };
-
     nixosConfigurations.amy = nixpkgs-stable.lib.nixosSystem {
       modules = base-modules ++ [
         ./hosts/amy/configuration.nix
