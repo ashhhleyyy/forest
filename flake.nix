@@ -92,12 +92,13 @@
   let
     home-manager = home-manager-unstable;
     overlays = [
-      fsh.overlays.default
-      vscode-extensions.overlays.default
       aci.overlays.default
-      git-in.overlays.default
-      copyparty.overlays.default
       binary-ninja.overlays.default
+      copyparty.overlays.default
+      fsh.overlays.default
+      git-in.overlays.default
+      nixocaine.overlays.default
+      vscode-extensions.overlays.default
       (final: prev: {
         inherit (prev.lixPackageSets.stable)
           nixpkgs-review
@@ -111,13 +112,18 @@
     });
     base-modules = [
       overlays-module
+      aci.nixosModules.default
+      agenix.nixosModules.default
+      copyparty.nixosModules.default
+      git-in.nixosModules.default
+      niri-flake.nixosModules.niri
+      nixocaine.nixosModules.default
       ./modules
     ];
   in
   {
     nixosConfigurations.fern = nixpkgs-unstable.lib.nixosSystem {
       modules = base-modules ++ [
-        agenix.nixosModules.default
         ./hosts/fern/configuration.nix
         home-manager.nixosModules.home-manager
         {
@@ -143,8 +149,6 @@
 
     nixosConfigurations.alex = nixpkgs-unstable.lib.nixosSystem {
       modules = base-modules ++ [
-        agenix.nixosModules.default
-        niri-flake.nixosModules.niri
         ./hosts/alex/configuration.nix
         home-manager.nixosModules.home-manager
         {
@@ -170,7 +174,6 @@
 
     nixosConfigurations.loona = nixpkgs-unstable.lib.nixosSystem {
       modules = base-modules ++ [
-        niri-flake.nixosModules.niri
         ./hosts/loona/configuration.nix
         home-manager.nixosModules.home-manager
         {
@@ -218,10 +221,6 @@
 
     nixosConfigurations.amy = nixpkgs-stable.lib.nixosSystem {
       modules = base-modules ++ [
-        aci.nixosModules.default
-        agenix.nixosModules.default
-        nixocaine.nixosModules.default
-
         ./hosts/amy/configuration.nix
         ./roles/iceshrimp.nix
         ./roles/iocaine
@@ -245,11 +244,6 @@
 
     nixosConfigurations.jessica = nixpkgs-stable.lib.nixosSystem {
       modules = base-modules ++ [
-        aci.nixosModules.default
-        agenix.nixosModules.default
-        git-in.nixosModules.default
-        copyparty.nixosModules.default
-
         ./hosts/jessica/configuration.nix
 
         ./roles/copyparty.nix
@@ -276,7 +270,6 @@
 
     nixosConfigurations.em = nixpkgs-unstable.lib.nixosSystem {
       modules = base-modules ++ [
-        niri-flake.nixosModules.niri
         ./hosts/em/configuration.nix
         home-manager-unstable.nixosModules.home-manager
         {
