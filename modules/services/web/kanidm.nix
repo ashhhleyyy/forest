@@ -57,7 +57,9 @@ in
       };
     };
 
-    users.users.kanidm.extraGroups = lib.mkIf cfg.server.enable ["acme"];
+    users.users.kanidm = lib.mkIf cfg.server.enable {
+      extraGroups = ["acme"];
+    };
 
     forest.backups.paths = lib.mkIf cfg.server.enable ["/var/lib/kanidm/backups/"];
   };
