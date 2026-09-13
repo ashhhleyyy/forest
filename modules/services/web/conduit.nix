@@ -1,11 +1,11 @@
 { config, lib, ... }:
 
 let
-  cfg = config.fern.services.conduit;
+  cfg = config.forest.services.conduit;
 in
 
 {
-  options.fern.services.conduit = {
+  options.forest.services.conduit = {
     enable = lib.mkEnableOption "conduit";
     serverName = lib.mkOption {
       type = lib.types.str;
