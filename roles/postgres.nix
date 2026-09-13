@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
   services.postgresql = {
     enable = true;
-    package = pkgs.postgresql_14;
+    package = pkgs.postgresql_18;
     settings = {
       max_connections = 200;
       shared_buffers = "768MB";

@@ -209,7 +209,6 @@
         ./roles/itwont-work.nix
         ./roles/keycloak.nix
         ./roles/postgres.nix
-        ./roles/postgres-upgrade.nix
         ./roles/shorks-web.nix
         home-manager-stable.nixosModules.home-manager
         {
