@@ -46,13 +46,15 @@
     node.enable = true;
   };
 
-  services.journald.extraConfig = lib.mkIf (config.system.nixos.release == "26.05") ''
-    SystemMaxUse=100M
-    MaxFileSec=7day
-  '';
-
-  services.journald.settings.Journal = lib.mkIf (config.system.nixos.release != "26.05") {
-    SystemMaxUse = "100M";
-    MaxFileSec = "7day";
+  services.journald = if (config.system.nixos.release == "26.05") then {
+    extraConfig = ''
+      SystemMaxUse=100M
+      MaxFileSec=7day
+    '';
+  } else {
+    settings.Journal = {
+      SystemMaxUse = "100M";
+      MaxFileSec = "7day";
+    };
   };
 }
