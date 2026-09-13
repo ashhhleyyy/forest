@@ -28,7 +28,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    age.secrets.k3s-token.file = lib.mkIf (cfg.role == "server") ../secrets/k3s-token.age;
+    age.secrets.k3s-token.file = lib.mkIf (cfg.role == "server") ../../../secrets/k3s-token.age;
 
     environment.systemPackages = lib.mkMerge [
       [ pkgs.nfs-utils ]
