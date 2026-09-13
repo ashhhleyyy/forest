@@ -34,7 +34,7 @@ in
           http_addr = "0.0.0.0";
           http_port = 3010;
           domain = cfg.hostname;
-          root_url = "https://${cfg.hostName}";
+          root_url = "https://${cfg.hostname}";
         };
         security.secret_key = "$__file{${config.age.secrets.grafana-secret-key.path}}";
         rendering.renderer_token = lib.mkIf cfg.renderer.enable "$__file{${config.age.secrets.grafana-renderer-token.path}}";
