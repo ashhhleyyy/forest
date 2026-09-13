@@ -55,7 +55,10 @@
     };
     common.deploy-user.enable = true;
     profiles.server.enable = true;
-    services.tailscale.enable = true;
+    services = {
+      munin.enable = true;
+      tailscale.enable = true;
+    };
     tools.podman.enable = true;
   };
 

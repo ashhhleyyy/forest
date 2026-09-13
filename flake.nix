@@ -229,7 +229,6 @@
         ./roles/iocaine
         ./roles/itwont-work.nix
         ./roles/keycloak.nix
-        ./roles/munin-node.nix
         ./roles/postgres.nix
         ./roles/shorks-web.nix
         home-manager-stable.nixosModules.home-manager
@@ -267,9 +266,6 @@
         ./roles/jenkins.nix
         ./roles/kanidm.nix
         ./roles/mumble-server.nix
-
-        ./roles/munin-node.nix
-        ./roles/munin-server.nix
 
         ./roles/postgres-jessica.nix
         ./roles/prometheus.nix

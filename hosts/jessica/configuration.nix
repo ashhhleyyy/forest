@@ -66,6 +66,15 @@
         enable = true;
         keyFile = ../../secrets/livekit-keys.age;
       };
+      munin = {
+        enable = true;
+        server = {
+          enable = true;
+          hosts = {
+            amy = "amy.bun-galaxy.ts.net";
+          };
+        };
+      };
       node-red.enable = true;
       uptime-kuma.enable = true;
       tailscale.enable = true;
