@@ -13,7 +13,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    age.secrets."servfail-token".file = ../secrets/servfail-token.age;
+    age.secrets."servfail-token".file = ../../secrets/servfail-token.age;
 
     security.acme = {
       acceptTerms = true;
