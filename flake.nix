@@ -157,7 +157,6 @@
               ./home/ash/alex.nix
               ./home/ash/desktop.nix
               ./home/ash/emacs.nix
-#              ./home/ash/obs.nix
               #./home/ash/niri.nix
               ./home/ash/syncthing.nix
               ./home/ash/tpm-fido.nix
@@ -267,20 +266,16 @@
         ./roles/immich.nix
         ./roles/jenkins.nix
         ./roles/kanidm.nix
-        ./roles/livekit.nix
         ./roles/mumble-server.nix
 
         ./roles/munin-node.nix
         ./roles/munin-server.nix
-
-        ./roles/node-red.nix
 
         ./roles/postgres-jessica.nix
         ./roles/prometheus.nix
 
         ./roles/reposilite.nix
         ./roles/soju.nix
-        ./roles/uptime-kuma.nix
         ./roles/vaultwarden.nix
 
         home-manager-stable.nixosModules.home-manager

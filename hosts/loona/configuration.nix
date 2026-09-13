@@ -16,6 +16,7 @@
       enable = true;
       tpm.enable = true;
     };
+    programs.obs.enable = true;
     services.tailscale.enable = true;
     tools.podman.enable = true;
   };

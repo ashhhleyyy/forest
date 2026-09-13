@@ -2,7 +2,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../roles/libvirt.nix
-    ../../roles/obs.nix
   ];
 
   forest = {
@@ -16,6 +15,7 @@
       enable = true;
       tpm.enable = true;
     };
+    programs.obs.enable = true;
     services.tailscale.enable = true;
     tools.podman.enable = true;
   };

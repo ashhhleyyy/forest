@@ -62,6 +62,12 @@
         enable = true;
         role = "server";
       };
+      livekit = {
+        enable = true;
+        keyFile = ../../secrets/livekit-keys.age;
+      };
+      node-red.enable = true;
+      uptime-kuma.enable = true;
       tailscale.enable = true;
     };
     tools.podman.enable = true;
