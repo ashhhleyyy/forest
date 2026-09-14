@@ -11,6 +11,7 @@
     ./itwont-work.nix
     ./jenkins.nix
     ./kanidm.nix
+    ./keycloak.nix
     ./livekit.nix
     ./node-red.nix
     ./pds.nix
