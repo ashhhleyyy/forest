@@ -67,6 +67,13 @@
         caddy.enable = true;
       };
       munin.enable = true;
+      pg-vacuum.enable = true;
+      postgresql = {
+        enable = true;
+        package = pkgs.postgresql_18;
+        settings = import ./postgres-tuning.nix;
+        databases = ["shorks-gay"];
+      };
       tailscale.enable = true;
     };
     tools.podman.enable = true;

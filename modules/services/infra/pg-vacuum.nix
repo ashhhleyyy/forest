@@ -17,14 +17,7 @@ let
 in
 {
   options.forest.services.pg-vacuum = {
-    enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = ''
-      Enable the PostgreSQL vacuum service and timer.
-      services.postgresql.enable must also be set to true.
-      '';
-    };
+    enable = mkEnableOption "postgresql vacuum";
     package = mkPackageOption pkgs "postgresql" {
       example = "postgresql_15";
     };

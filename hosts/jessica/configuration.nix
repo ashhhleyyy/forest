@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -118,6 +118,19 @@
         enable = true;
         hostname = "pds.ashhhleyyy.dev";
         environmentFile = ../../secrets/pds-env.age;
+      };
+      postgresql = {
+        enable = true;
+        package = pkgs.postgresql_18;
+        settings = import ./postgres-tuning.nix;
+        databases = [
+          "railing_it"
+        ];
+        users = [{
+          ensureDBOwnership = true;
+          name = "railing_it";
+        }];
+        extensions = ps: [ps.postgis];
       };
       prometheus.enable = true;
       reposilite.enable = true;

@@ -34,7 +34,8 @@
       email = "ash@ashhhleyyy.dev";
     };
     signing = {
-      key = "83B789081A0878FB";
+      format = "ssh";
+      key = "~/.ssh/id_ed25519_sk-git-signing";
       signByDefault = true;
     };
     lfs.enable = true;

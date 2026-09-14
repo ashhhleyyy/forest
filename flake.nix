@@ -208,7 +208,6 @@
         ./roles/iocaine
         ./roles/itwont-work.nix
         ./roles/keycloak.nix
-        ./roles/postgres.nix
         ./roles/shorks-web.nix
         home-manager-stable.nixosModules.home-manager
         {
@@ -230,7 +229,6 @@
 
         ./roles/copyparty.nix
         #./roles/ergo.nix
-        ./roles/postgres-jessica.nix
 
         home-manager-stable.nixosModules.home-manager
         {
