@@ -1,6 +1,8 @@
 { config, lib, pkgs, ... }:
 
-let cfg = config.forest.services.iceshrimp-js;
+let
+  cfg = config.forest.services.iceshrimp-js;
+in
 
 {
   options.forest.services.iceshrimp-js = {
