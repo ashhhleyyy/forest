@@ -10,9 +10,7 @@ let
   systems = [ amy ];
 in
 {
-  "keycloakPostgres.age".publicKeys = users ++ [amy];
-  "zulip-redis.age".publicKeys = users ++ [amy];
-  "zulip-env.age".publicKeys = users ++ [amy];
+  "keycloak-postgres-password.age".publicKeys = users ++ [amy];
   "gts-sandbox.age".publicKeys = users ++ [amy];
   
   "restic-key-amy.age".publicKeys = users ++ [amy];
@@ -40,6 +38,6 @@ in
   "vaultwarden.age".publicKeys = users ++ [jessica];
   "ntfy-url.age".publicKeys = users ++ systems;
 
-  "copyparty-ash.age".publicKeys = users ++ [jessica];
-  "rclone-copyparty.age".publicKeys = users ++ [jessica];
+  # "copyparty-ash.age".publicKeys = users ++ [jessica];
+  # "rclone-copyparty.age".publicKeys = users ++ [jessica];
 }

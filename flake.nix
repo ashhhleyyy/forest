@@ -64,12 +64,6 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
       inputs.flake-utils.follows = "flake-utils";
     };
-
-    copyparty = {
-      url = "github:9001/copyparty";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-      inputs.flake-utils.follows = "flake-utils";
-    };
   };
 
   outputs = {
@@ -86,7 +80,6 @@
     binary-ninja,
     nixocaine,
     git-in,
-    copyparty,
     ...
   }:
   let
@@ -94,7 +87,6 @@
     overlays = [
       aci.overlays.default
       binary-ninja.overlays.default
-      copyparty.overlays.default
       fsh.overlays.default
       git-in.overlays.default
       nixocaine.overlays.default
@@ -114,7 +106,6 @@
       overlays-module
       aci.nixosModules.default
       agenix.nixosModules.default
-      copyparty.nixosModules.default
       git-in.nixosModules.default
       niri-flake.nixosModules.niri
       nixocaine.nixosModules.default
@@ -204,11 +195,7 @@
     nixosConfigurations.amy = nixpkgs-stable.lib.nixosSystem {
       modules = base-modules ++ [
         ./hosts/amy/configuration.nix
-        ./roles/iceshrimp.nix
         ./roles/iocaine
-        ./roles/itwont-work.nix
-        ./roles/keycloak.nix
-        ./roles/shorks-web.nix
         home-manager-stable.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
@@ -227,7 +214,7 @@
       modules = base-modules ++ [
         ./hosts/jessica/configuration.nix
 
-        ./roles/copyparty.nix
+        # ./roles/copyparty.nix
         #./roles/ergo.nix
 
         home-manager-stable.nixosModules.home-manager

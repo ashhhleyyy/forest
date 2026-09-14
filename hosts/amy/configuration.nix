@@ -66,6 +66,18 @@
         host = "sandbox.isnt-a.top";
         caddy.enable = true;
       };
+      iceshrimp-js = {
+        enable = true;
+        caddy.enable = true;
+      };
+      itwont-work.enable = true;
+      keycloak = {
+        enable = true;
+        authCaFile = ./keycloak-auth-ca.pem;
+        caddy.enable = true;
+        hostname = "account.shorks.gay";
+        passwordFile = ../../secrets/keycloak-postgres-password.age;
+      };
       munin.enable = true;
       pg-vacuum.enable = true;
       postgresql = {
@@ -73,6 +85,10 @@
         package = pkgs.postgresql_18;
         settings = import ./postgres-tuning.nix;
         databases = ["shorks-gay"];
+      };
+      shorks-web = {
+        enable = true;
+        openFirewall = true;
       };
       tailscale.enable = true;
     };
