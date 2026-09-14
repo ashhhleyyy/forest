@@ -23,7 +23,7 @@ in
       default = [];
     };
     users = lib.mkOption {
-      type = lib.types.listOf lib.types.submodule {
+      type = lib.types.listOf (lib.types.submodule {
         options = {
           name = lib.mkOption {
             type = lib.types.str;
@@ -41,7 +41,7 @@ in
             '';
           };
         };
-      };
+      });
       default = [];
     };
     extensions = lib.mkOption {
