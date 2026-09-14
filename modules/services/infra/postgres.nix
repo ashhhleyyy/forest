@@ -59,7 +59,7 @@ in
       package = cfg.package;
       settings = cfg.settings;
       ensureDatabases = cfg.databases;
-      ensureUsers = cfg.ensureUsers;
+      ensureUsers = cfg.users;
       enableTCPIP = true;
       authentication = pkgs.lib.mkOverride 10 ''
         #type database DBuser  auth-method
