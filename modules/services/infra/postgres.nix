@@ -25,14 +25,14 @@ in
     users = lib.mkOption {
       type = lib.types.listof lib.types.submodule {
         options = {
-          name = mkOption {
-            type = types.str;
+          name = lib.mkOption {
+            type = lib.types.str;
             description = ''
               Name of the user to ensure.
             '';
           };
-          ensureDBOwnership = mkOption {
-            type = types.bool;
+          ensureDBOwnership = lib.mkOption {
+            type = lib.types.bool;
             default = false;
             description = ''
               Grants the user ownership to a database with the same name.
@@ -44,7 +44,7 @@ in
       };
       default = [];
     };
-    extensions = mkOption {
+    extensions = lib.mkOption {
       type = with lib.types; coercedTo (listOf path) (path: _ignorePg: path) (functionTo (listOf path));
       default = _: [ ];
       description = ''
