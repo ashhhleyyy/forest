@@ -11,7 +11,7 @@ in
       example = "postgresql_18";
     };
     settings = lib.mkOption {
-      type = lib.types.attrsOf (oneOf [
+      type = lib.types.attrsOf (lib.types.oneOf [
         lib.types.bool
         lib.types.float
         lib.types.int
