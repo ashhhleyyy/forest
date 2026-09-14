@@ -23,7 +23,7 @@ in
       settings = {
         host = cfg.host;
         port = 3001;
-        trusted-proxies = ["100.64.0.0/10"];
+        trusted-proxies = ["127.0.0.1/32"];
         bind-address = "0.0.0.0";
         accounts-registration-open = true;
         accounts-reason-required = true;
