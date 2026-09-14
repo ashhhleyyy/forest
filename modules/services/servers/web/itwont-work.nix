@@ -12,7 +12,7 @@ in
     enable = lib.mkEnableOption "itwont-work";
   };
 
-  config lib.mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     users.users.nico = {
       description = "Nico";
       isNormalUser = true;
