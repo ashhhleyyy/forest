@@ -47,7 +47,10 @@ in
         };
         service = {
           ENABLE_INTERNAL_SIGNIN = false;
-          DISABLE_REGISTRATION = true;
+          DISABLE_REGISTRATION = false;
+        };
+        "service.explore" = {
+          REQUIRE_SIGNIN_VIEW = true;
         };
         actions = {
           ENABLED = true;
