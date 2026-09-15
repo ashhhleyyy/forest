@@ -45,7 +45,10 @@ in
           HTTP_PORT = 3002;
           SSH_PORT = 22;
         };
-        service.DISABLE_REGISTRATION = true;
+        service = {
+          ENABLE_INTERNAL_SIGNIN = false;
+          DISABLE_REGISTRATION = true;
+        };
         actions = {
           ENABLED = true;
           DEFAULT_ACTIONS_URL = "github";
