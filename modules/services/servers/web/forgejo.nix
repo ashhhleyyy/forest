@@ -72,7 +72,7 @@ in
       };
       secrets = {
         mailer.PASSWD = config.age.secrets.forgejo-mailer-password.path;
-        email.incoming.PASSWORD = config.age.secrets.forgejo-mailer-password.path;
+        "email.incoming".PASSWORD = config.age.secrets.forgejo-mailer-password.path;
       };
       dump = {
         enable = true;
