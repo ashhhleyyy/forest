@@ -1,6 +1,5 @@
 { config, lib, ... }:
 
-
 let
   cfg = config.forest.services.forgejo;
 in
@@ -25,7 +24,7 @@ in
         '';
       };
     };
-    caddy.enable = lib.mkEnableOption = "forgejo caddy vhost";
+    caddy.enable = lib.mkEnableOption "forgejo caddy vhost";
   };
 
   config = lib.mkIf cfg.enable {
