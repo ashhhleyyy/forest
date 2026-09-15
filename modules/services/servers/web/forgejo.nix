@@ -45,10 +45,7 @@ in
           HTTP_PORT = 3002;
           SSH_PORT = 22;
         };
-        service = {
-          ENABLE_INTERNAL_SIGNIN = false;
-          DISABLE_REGISTRATION = false;
-        };
+        service.ALLOW_ONLY_EXTERNAL_REGISTRATION = true;
         "service.explore" = {
           REQUIRE_SIGNIN_VIEW = true;
         };
