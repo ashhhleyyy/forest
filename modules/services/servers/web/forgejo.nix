@@ -57,7 +57,7 @@ in
           FROM = cfg.email.from;
           USER = cfg.email.from;
         };
-        email.incoming = {
+        "email.incoming" = {
           ENABLED = true;
           REPLY_TO_ADDRESS = cfg.email.reply-to;
           HOST = "imap.migadu.com";
