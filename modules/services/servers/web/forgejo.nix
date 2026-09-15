@@ -45,7 +45,11 @@ in
           HTTP_PORT = 3002;
           SSH_PORT = 22;
         };
-        service.ALLOW_ONLY_EXTERNAL_REGISTRATION = true;
+        service = {
+          ALLOW_ONLY_EXTERNAL_REGISTRATION = true;
+          ENABLE_NOTIFY_MAIL = true;
+          REGISTER_EMAIL_CONFIRM = true;
+        };
         "service.explore" = {
           REQUIRE_SIGNIN_VIEW = true;
         };
