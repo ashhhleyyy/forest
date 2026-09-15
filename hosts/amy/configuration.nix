@@ -54,7 +54,7 @@
           reply-to = "eduwoem-git+%{token}@ashhhleyyy.dev";
           passwordFile = ../../secrets/forgejo-mailer-password.age;
         };
-        # caddy.enable = true;
+        caddy.enable = true;
       };
       gotosocial = {
         enable = true;
