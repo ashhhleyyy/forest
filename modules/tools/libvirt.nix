@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.forest.tools.libvirt;
@@ -18,7 +23,7 @@ in
         swtpm.enable = true;
       };
     };
-    users.users.ash.extraGroups = ["libvirtd"];
+    users.users.ash.extraGroups = [ "libvirtd" ];
     virtualisation.spiceUSBRedirection.enable = true;
   };
 }

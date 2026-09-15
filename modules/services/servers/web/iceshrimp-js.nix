@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.forest.services.iceshrimp-js;
@@ -50,7 +55,7 @@ in
     };
 
     forest.services.pg-vacuum.databases = [ "shorks-gay" ];
-    services.postgresqlBackup.databases = ["shorks-gay"];
-    forest.backups.paths = ["/home/ash/shorks-gay/"];
+    services.postgresqlBackup.databases = [ "shorks-gay" ];
+    forest.backups.paths = [ "/home/ash/shorks-gay/" ];
   };
 }

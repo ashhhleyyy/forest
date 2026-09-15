@@ -34,7 +34,7 @@
         path = "/mnt/copyparty";
         access = {
           r = "*";
-          rw = ["ash"];
+          rw = [ "ash" ];
         };
         flags = {
           e2d = true;
@@ -46,8 +46,8 @@
       "/priv" = {
         path = "/mnt/copyparty/priv";
         access = {
-          r = [];
-          rw = ["ash"];
+          r = [ ];
+          rw = [ "ash" ];
         };
         flags = {
           e2d = true;

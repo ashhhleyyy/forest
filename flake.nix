@@ -66,212 +66,221 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs-stable, nixpkgs-unstable,
-    home-manager-stable, home-manager-unstable,
-    nixos-generators,
-    fsh,
-    aci,
-    vscode-extensions,
-    agenix,
-    niri-flake,
-    flake-utils,
-    binary-ninja,
-    nixocaine,
-    git-in,
-    ...
-  }:
-  let
-    home-manager = home-manager-unstable;
-    overlays = [
-      aci.overlays.default
-      binary-ninja.overlays.default
-      fsh.overlays.default
-      git-in.overlays.default
-      nixocaine.overlays.default
-      vscode-extensions.overlays.default
-      (final: prev: {
-        inherit (prev.lixPackageSets.stable)
-          nixpkgs-review
-          nix-eval-jobs
-          nix-fast-build
-          colmena;
-      })
-    ];
-    overlays-module = ({ nixpkgs, ... }: {
-      nixpkgs.overlays = overlays;
-    });
-    base-modules = [
-      overlays-module
-      aci.nixosModules.default
-      agenix.nixosModules.default
-      git-in.nixosModules.default
-      niri-flake.nixosModules.niri
-      nixocaine.nixosModules.default
-      ./modules
-    ];
-  in
-  {
-    nixosConfigurations.fern = nixpkgs-unstable.lib.nixosSystem {
-      modules = base-modules ++ [
-        ./hosts/fern/configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.ash = { ... }: {
-            imports = [
-              fsh.homeModules.fsh
-              ./home/ash
-              ./home/ash/alex.nix
-              ./home/ash/binaryninja.nix
-              ./home/ash/desktop.nix
-              ./home/ash/fern.nix
-              ./home/ash/games.nix
-              ./home/ash/intellij.nix
-              ./home/ash/syncthing.nix
-              ./home/ash/vscodium.nix
-            ];
-          };
-        }
+  outputs =
+    {
+      self,
+      nixpkgs-stable,
+      nixpkgs-unstable,
+      home-manager-stable,
+      home-manager-unstable,
+      nixos-generators,
+      fsh,
+      aci,
+      vscode-extensions,
+      agenix,
+      niri-flake,
+      flake-utils,
+      binary-ninja,
+      nixocaine,
+      git-in,
+      ...
+    }:
+    let
+      home-manager = home-manager-unstable;
+      overlays = [
+        aci.overlays.default
+        binary-ninja.overlays.default
+        fsh.overlays.default
+        git-in.overlays.default
+        nixocaine.overlays.default
+        vscode-extensions.overlays.default
+        (final: prev: {
+          inherit (prev.lixPackageSets.stable)
+            nixpkgs-review
+            nix-eval-jobs
+            nix-fast-build
+            colmena
+            ;
+        })
       ];
-    };
-
-    nixosConfigurations.alex = nixpkgs-unstable.lib.nixosSystem {
-      modules = base-modules ++ [
-        ./hosts/alex/configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.ash = { ... }: {
-            imports = [
-              fsh.homeModules.fsh
-              ./home/ash
-              ./home/ash/alex.nix
-              ./home/ash/desktop.nix
-              ./home/ash/emacs.nix
-              #./home/ash/niri.nix
-              ./home/ash/syncthing.nix
-              ./home/ash/tpm-fido.nix
-              ./home/ash/vscodium.nix
-              ./home/ash/zoom.nix
-            ];
-          };
+      overlays-module = (
+        { nixpkgs, ... }: {
+          nixpkgs.overlays = overlays;
         }
+      );
+      base-modules = [
+        overlays-module
+        aci.nixosModules.default
+        agenix.nixosModules.default
+        git-in.nixosModules.default
+        niri-flake.nixosModules.niri
+        nixocaine.nixosModules.default
+        ./modules
       ];
-    };
-
-    nixosConfigurations.loona = nixpkgs-unstable.lib.nixosSystem {
-      modules = base-modules ++ [
-        ./hosts/loona/configuration.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.ash = { ... }: {
-            imports = [
-              fsh.homeModules.fsh
-              ./home/ash
-              ./home/ash/alex.nix
-              ./home/ash/binaryninja.nix
-              ./home/ash/desktop.nix
-              ./home/ash/emacs.nix
-              ./home/ash/gnome-builder.nix
-              #./home/ash/niri.nix
-              ./home/ash/intellij.nix
-              ./home/ash/games.nix
-              ./home/ash/syncthing.nix
-
-              ./home/ash/vscodium.nix
-              ./home/ash/zoom.nix
-            ];
-          };
-        }
-      ];
-    };
-
-    nixosConfigurations.amy = nixpkgs-stable.lib.nixosSystem {
-      modules = base-modules ++ [
-        ./hosts/amy/configuration.nix
-        ./roles/iocaine
-        home-manager-stable.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.ash = { ... }: {
-            imports = [
-              fsh.homeModules.fsh
-              ./home/ash
-            ];
-          };
-        }
-      ];
-    };
-
-    nixosConfigurations.jessica = nixpkgs-stable.lib.nixosSystem {
-      modules = base-modules ++ [
-        ./hosts/jessica/configuration.nix
-
-        # ./roles/copyparty.nix
-        #./roles/ergo.nix
-
-        home-manager-stable.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.ash = { ... }: {
-            imports = [
-              fsh.homeModules.fsh
-              ./home/ash
-            ];
-          };
-        }
-      ];
-    };
-
-    nixosConfigurations.em = nixpkgs-unstable.lib.nixosSystem {
-      modules = base-modules ++ [
-        ./hosts/em/configuration.nix
-        home-manager-unstable.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.ash = { ... }: {
-            imports = [
-              fsh.homeModules.fsh
-              ./home/ash
-              ./home/ash/niri.nix
-              ./home/ash/desktop.nix
-            ];
-          };
-        }
-      ];
-    };
-
-    packages.x86_64-linux = {
-      emira = nixos-generators.nixosGenerate {
-        modules = [
-          overlays-module
-          ./hosts/emira/configuration.nix
+    in
+    {
+      nixosConfigurations.fern = nixpkgs-unstable.lib.nixosSystem {
+        modules = base-modules ++ [
+          ./hosts/fern/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.ash = { ... }: {
+              imports = [
+                fsh.homeModules.fsh
+                ./home/ash
+                ./home/ash/alex.nix
+                ./home/ash/binaryninja.nix
+                ./home/ash/desktop.nix
+                ./home/ash/fern.nix
+                ./home/ash/games.nix
+                ./home/ash/intellij.nix
+                ./home/ash/syncthing.nix
+                ./home/ash/vscodium.nix
+              ];
+            };
+          }
         ];
-        format = "qcow";
       };
-    };
-  } //
-  flake-utils.lib.eachDefaultSystem (system:
-  let
-    pkgs = import nixpkgs-unstable {
-      inherit system;
-      overlays = [agenix.overlays.default];
-    };
-  in
-  {
-    devShells.default = pkgs.mkShell {
-      nativeBuildInputs = with pkgs; [
-        pkgs.agenix
-      ];
-    };
-  });
+
+      nixosConfigurations.alex = nixpkgs-unstable.lib.nixosSystem {
+        modules = base-modules ++ [
+          ./hosts/alex/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.ash = { ... }: {
+              imports = [
+                fsh.homeModules.fsh
+                ./home/ash
+                ./home/ash/alex.nix
+                ./home/ash/desktop.nix
+                ./home/ash/emacs.nix
+                #./home/ash/niri.nix
+                ./home/ash/syncthing.nix
+                ./home/ash/tpm-fido.nix
+                ./home/ash/vscodium.nix
+                ./home/ash/zoom.nix
+              ];
+            };
+          }
+        ];
+      };
+
+      nixosConfigurations.loona = nixpkgs-unstable.lib.nixosSystem {
+        modules = base-modules ++ [
+          ./hosts/loona/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.ash = { ... }: {
+              imports = [
+                fsh.homeModules.fsh
+                ./home/ash
+                ./home/ash/alex.nix
+                ./home/ash/binaryninja.nix
+                ./home/ash/desktop.nix
+                ./home/ash/emacs.nix
+                ./home/ash/gnome-builder.nix
+                #./home/ash/niri.nix
+                ./home/ash/intellij.nix
+                ./home/ash/games.nix
+                ./home/ash/syncthing.nix
+
+                ./home/ash/vscodium.nix
+                ./home/ash/zoom.nix
+              ];
+            };
+          }
+        ];
+      };
+
+      nixosConfigurations.amy = nixpkgs-stable.lib.nixosSystem {
+        modules = base-modules ++ [
+          ./hosts/amy/configuration.nix
+          ./roles/iocaine
+          home-manager-stable.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.ash = { ... }: {
+              imports = [
+                fsh.homeModules.fsh
+                ./home/ash
+              ];
+            };
+          }
+        ];
+      };
+
+      nixosConfigurations.jessica = nixpkgs-stable.lib.nixosSystem {
+        modules = base-modules ++ [
+          ./hosts/jessica/configuration.nix
+
+          # ./roles/copyparty.nix
+          #./roles/ergo.nix
+
+          home-manager-stable.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.ash = { ... }: {
+              imports = [
+                fsh.homeModules.fsh
+                ./home/ash
+              ];
+            };
+          }
+        ];
+      };
+
+      nixosConfigurations.em = nixpkgs-unstable.lib.nixosSystem {
+        modules = base-modules ++ [
+          ./hosts/em/configuration.nix
+          home-manager-unstable.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.ash = { ... }: {
+              imports = [
+                fsh.homeModules.fsh
+                ./home/ash
+                ./home/ash/niri.nix
+                ./home/ash/desktop.nix
+              ];
+            };
+          }
+        ];
+      };
+
+      packages.x86_64-linux = {
+        emira = nixos-generators.nixosGenerate {
+          modules = [
+            overlays-module
+            ./hosts/emira/configuration.nix
+          ];
+          format = "qcow";
+        };
+      };
+    }
+    // flake-utils.lib.eachDefaultSystem (
+      system:
+      let
+        pkgs = import nixpkgs-unstable {
+          inherit system;
+          overlays = [ agenix.overlays.default ];
+        };
+      in
+      {
+        devShells.default = pkgs.mkShell {
+          nativeBuildInputs = with pkgs; [
+            pkgs.agenix
+            nixfmt-tree
+          ];
+        };
+      }
+    );
 }

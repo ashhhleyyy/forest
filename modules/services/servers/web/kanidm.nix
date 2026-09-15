@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   tls-dir = config.security.acme.certs."${config.networking.hostName}.net.isnt-a.top".directory;
@@ -40,7 +45,7 @@ in
           domain = "sso.ashhhleyyy.dev";
           origin = cfg.server.origin;
           role = "WriteReplica";
-          http_client_address_info."x-forward-for" = [];
+          http_client_address_info."x-forward-for" = [ ];
           online_backup = {
             path = "/var/lib/kanidm/backups/";
             schedule = "0 3 * * *";
@@ -58,9 +63,9 @@ in
     };
 
     users.users.kanidm = lib.mkIf cfg.server.enable {
-      extraGroups = ["acme"];
+      extraGroups = [ "acme" ];
     };
 
-    forest.backups.paths = lib.mkIf cfg.server.enable ["/var/lib/kanidm/backups/"];
+    forest.backups.paths = lib.mkIf cfg.server.enable [ "/var/lib/kanidm/backups/" ];
   };
 }

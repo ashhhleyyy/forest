@@ -17,10 +17,12 @@
   networking = {
     interfaces = {
       ens18 = {
-        ipv6.addresses = [{
-          address = "2a02:c202:2191:6731:0000:0000:0000:0001";
-          prefixLength = 64;
-        }];
+        ipv6.addresses = [
+          {
+            address = "2a02:c202:2191:6731:0000:0000:0000:0001";
+            prefixLength = 64;
+          }
+        ];
       };
     };
     defaultGateway6 = {
@@ -67,7 +69,7 @@
         enable = true;
         package = pkgs.postgresql_18;
         settings = import ./postgres-tuning.nix;
-        databases = ["shorks-gay"];
+        databases = [ "shorks-gay" ];
       };
       shorks-web = {
         enable = true;

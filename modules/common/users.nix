@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   authorizedKeys = [
@@ -20,10 +25,14 @@ in
       shell = pkgs.fish;
       openssh.authorizedKeys.keys = authorizedKeys;
       hashedPassword = "$y$j9T$vEWmND1vcYNJh5nGbF7ER/$UIi8pHNUvVAkgpnhA/XDTt6VeDFxIQmGMiOWA4gCj6/";
-      extraGroups = [ "wheel" "audio" "dialout" ];
+      extraGroups = [
+        "wheel"
+        "audio"
+        "dialout"
+      ];
     };
 
-    users.groups.deploy = lib.mkIf config.forest.common.deploy-user.enable {};
+    users.groups.deploy = lib.mkIf config.forest.common.deploy-user.enable { };
     users.users.deploy = lib.mkIf config.forest.common.deploy-user.enable {
       description = "Deploy";
       group = "deploy";
@@ -35,7 +44,15 @@ in
       ];
     };
     security.sudo.extraRules = lib.mkIf config.forest.common.deploy-user.enable [
-      { users = [ "deploy" ]; commands = [ { command = "ALL"; options = [ "NOPASSWD" ]; } ]; }
+      {
+        users = [ "deploy" ];
+        commands = [
+          {
+            command = "ALL";
+            options = [ "NOPASSWD" ];
+          }
+        ];
+      }
     ];
 
     security.doas.enable = true;

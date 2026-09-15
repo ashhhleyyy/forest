@@ -1,4 +1,9 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -9,8 +14,14 @@
 
   nix.package = pkgs.lixPackageSets.stable.lix;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.trusted-users = [ "@wheel" "deploy" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+  nix.settings.trusted-users = [
+    "@wheel"
+    "deploy"
+  ];
 
   boot.tmp.cleanOnBoot = true;
   nix.settings.auto-optimise-store = true;
@@ -21,7 +32,8 @@
     settings = {
       hide_kernel_threads = true;
       hide_userland_threads = true;
-      "screen:Main" = "PID USER PRIORITY NICE M_VIRT M_RESIDENT M_SHARE STATE PERCENT_CPU PERCENT_MEM TIME IO_RATE Command";
+      "screen:Main" =
+        "PID USER PRIORITY NICE M_VIRT M_RESIDENT M_SHARE STATE PERCENT_CPU PERCENT_MEM TIME IO_RATE Command";
       column_meters_1 = "Tasks LoadAverage Uptime DiskIO NetworkIO Systemd";
     };
   };
@@ -46,15 +58,19 @@
     node.enable = true;
   };
 
-  services.journald = if (config.system.nixos.release == "26.05") then {
-    extraConfig = ''
-      SystemMaxUse=100M
-      MaxFileSec=7day
-    '';
-  } else {
-    settings.Journal = {
-      SystemMaxUse = "100M";
-      MaxFileSec = "7day";
-    };
-  };
+  services.journald =
+    if (config.system.nixos.release == "26.05") then
+      {
+        extraConfig = ''
+          SystemMaxUse=100M
+          MaxFileSec=7day
+        '';
+      }
+    else
+      {
+        settings.Journal = {
+          SystemMaxUse = "100M";
+          MaxFileSec = "7day";
+        };
+      };
 }

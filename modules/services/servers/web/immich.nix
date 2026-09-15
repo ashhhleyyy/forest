@@ -18,7 +18,7 @@ in
       };
     };
 
-    services.postgresqlBackup.databases = ["immich"];
+    services.postgresqlBackup.databases = [ "immich" ];
     forest.backups.paths = [ "/var/lib/immich" ];
 
     nixpkgs.config.permittedInsecurePackages = [

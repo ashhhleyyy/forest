@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.forest.services.keycloak;
@@ -30,9 +35,13 @@ in
 
     services.keycloak = {
       enable = true;
-      package = pkgs.keycloak.overrideAttrs (finalAttrs: previousAttrs: {
-        buildPhase = lib.replaceString "bin/kc.sh build" "bin/kc.sh build --spi-x509cert-lookup--provider=rfc9440" previousAttrs.buildPhase;
-      });
+      package = pkgs.keycloak.overrideAttrs (
+        finalAttrs: previousAttrs: {
+          buildPhase =
+            lib.replaceString "bin/kc.sh build" "bin/kc.sh build --spi-x509cert-lookup--provider=rfc9440"
+              previousAttrs.buildPhase;
+        }
+      );
       themes = {
         shorks = pkgs.fetchgit {
           rev = "873ad2e9cd6ce69f28b45b755eff2ffb490e440b";
@@ -45,9 +54,10 @@ in
           groupId = "gay.shorks";
           artifactId = "icecloak";
           version = "1.3.0+kc.26";
-          repos = ["https://maven.ashhhleyyy.dev/releases/"];
+          repos = [ "https://maven.ashhhleyyy.dev/releases/" ];
           hash = "sha256-cxCueVJu+rNx+tObZXDNc2fhzQLoC2w2fX3dw/A3A7I=";
-        }).passthru.jar)
+        }).passthru.jar
+        )
       ];
       settings = {
         hostname = cfg.hostname;
@@ -73,6 +83,6 @@ in
       }
     '';
 
-    services.postgresqlBackup.databases = ["keycloak"];
+    services.postgresqlBackup.databases = [ "keycloak" ];
   };
 }

@@ -1,18 +1,24 @@
-{ pkgs, lib, config, utils, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  utils,
+  ...
+}:
 
 with lib;
 
 let
   cfg = config.forest.services.pg-vacuum;
   vacuumScript = pkgs.writeShellScript "vacuum-postgresql-databases" ''
-  set -eu -o pipefail
+    set -eu -o pipefail
 
-  for database in "$@"
-  do
-      echo "Vacuuming $database..."
-      echo 'VACUUM ANALYZE;' | psql $database
-      echo "Finished vacuuming $database"
-  done
+    for database in "$@"
+    do
+        echo "Vacuuming $database..."
+        echo 'VACUUM ANALYZE;' | psql $database
+        echo "Finished vacuuming $database"
+    done
   '';
 in
 {
@@ -23,18 +29,18 @@ in
     };
     databases = mkOption {
       type = types.listOf types.str;
-      default = [];
+      default = [ ];
       description = ''
-      List of databases to perform the vacuuming on. Must not be empty if enable is set to true.
+        List of databases to perform the vacuuming on. Must not be empty if enable is set to true.
       '';
     };
     onCalendar = mkOption {
       type = types.str;
       default = "*-*-* 2:00:00";
       description = ''
-      The interval between vacuum runs, the default value runs the vacuum job every day at 4am.
+        The interval between vacuum runs, the default value runs the vacuum job every day at 4am.
 
-      The format is described in systemd.time(7).
+        The format is described in systemd.time(7).
       '';
     };
   };
@@ -62,7 +68,7 @@ in
 
     systemd.timers.pg-vacuum = {
       description = "Vacuum PostgreSQL databases";
-      wantedBy = ["timers.target"];
+      wantedBy = [ "timers.target" ];
       timerConfig = {
         Unit = "pg-vacuum.service";
         OnCalendar = cfg.onCalendar;

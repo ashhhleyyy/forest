@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   cfg = config.forest.tools.podman;
@@ -21,6 +26,6 @@ in
     environment.systemPackages = with pkgs; [
       podman-compose
     ];
-    networking.firewall.trustedInterfaces = ["podman0"];
+    networking.firewall.trustedInterfaces = [ "podman0" ];
   };
 }

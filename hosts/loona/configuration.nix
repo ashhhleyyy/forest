@@ -1,4 +1,10 @@
-{ config, modulesPath, pkgs, ... }: {
+{
+  config,
+  modulesPath,
+  pkgs,
+  ...
+}:
+{
   imports = [
     #../../roles/niri.nix
     ../../roles/obs.nix
@@ -61,7 +67,7 @@
 
   hardware.bluetooth.enable = true;
   hardware.rtl-sdr.enable = true;
-  users.users.ash.extraGroups = ["plugdev"];
+  users.users.ash.extraGroups = [ "plugdev" ];
   hardware.usb-modeswitch.enable = true;
   services.udev.packages = with pkgs; [
     platformio-core
@@ -84,7 +90,9 @@
     ];
   };
 
-  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+  };
   environment.systemPackages = with pkgs; [
     (catppuccin-sddm.override {
       flavor = "mocha";

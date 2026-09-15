@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   tls-dir = config.security.acme.certs."${config.networking.hostName}.net.isnt-a.top".directory;

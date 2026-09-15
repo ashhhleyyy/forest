@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   cfg = config.forest.profiles.desktop;
@@ -31,11 +36,19 @@ in
 
     programs.kdeconnect.enable = true;
 
-    users.users.ash.extraGroups = [ "networkmanager" "adbusers" ];
+    users.users.ash.extraGroups = [
+      "networkmanager"
+      "adbusers"
+    ];
 
     boot.plymouth = {
       enable = true;
-      themePackages = [(pkgs.catppuccin.override { variant = "latte"; accent = "mauve"; })];
+      themePackages = [
+        (pkgs.catppuccin.override {
+          variant = "latte";
+          accent = "mauve";
+        })
+      ];
       theme = "catppuccin-latte";
     };
     boot.initrd.systemd.enable = true;
@@ -76,7 +89,7 @@ in
           hash = "sha256-2Tqpjb+wBrfawgdRdrL+rfJeYLsnwMhfDkwIBt2HWkE=";
         };
         installPhase = ''
-        install -D -m 0644 $src/LibreBarcode39-Regular.ttf $out/share/fonts/truetype/LibreBarcode39-Regular.ttf
+          install -D -m 0644 $src/LibreBarcode39-Regular.ttf $out/share/fonts/truetype/LibreBarcode39-Regular.ttf
         '';
       })
       nunito

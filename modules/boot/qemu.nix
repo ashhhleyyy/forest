@@ -1,4 +1,9 @@
-{ modulesPath, lib, config, ... }:
+{
+  modulesPath,
+  lib,
+  config,
+  ...
+}:
 
 let
   cfg = config.forest.boot.qemu;

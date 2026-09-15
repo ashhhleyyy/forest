@@ -4,6 +4,6 @@
   };
   config = lib.mkIf config.forest.services.tailscale.enable {
     services.tailscale.enable = true;
-    networking.firewall.trustedInterfaces = ["tailscale0"];
+    networking.firewall.trustedInterfaces = [ "tailscale0" ];
   };
 }

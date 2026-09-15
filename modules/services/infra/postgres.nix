@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.forest.services.postgresql;
@@ -11,38 +16,42 @@ in
       example = "postgresql_18";
     };
     settings = lib.mkOption {
-      type = lib.types.attrsOf (lib.types.oneOf [
-        lib.types.bool
-        lib.types.float
-        lib.types.int
-        lib.types.str
-      ]);
+      type = lib.types.attrsOf (
+        lib.types.oneOf [
+          lib.types.bool
+          lib.types.float
+          lib.types.int
+          lib.types.str
+        ]
+      );
     };
     databases = lib.mkOption {
       type = lib.types.listOf lib.types.str;
-      default = [];
+      default = [ ];
     };
     users = lib.mkOption {
-      type = lib.types.listOf (lib.types.submodule {
-        options = {
-          name = lib.mkOption {
-            type = lib.types.str;
-            description = ''
-              Name of the user to ensure.
-            '';
+      type = lib.types.listOf (
+        lib.types.submodule {
+          options = {
+            name = lib.mkOption {
+              type = lib.types.str;
+              description = ''
+                Name of the user to ensure.
+              '';
+            };
+            ensureDBOwnership = lib.mkOption {
+              type = lib.types.bool;
+              default = false;
+              description = ''
+                Grants the user ownership to a database with the same name.
+                This database must be defined manually in
+                [](#opt-forest.services.postgresql.databases).
+              '';
+            };
           };
-          ensureDBOwnership = lib.mkOption {
-            type = lib.types.bool;
-            default = false;
-            description = ''
-              Grants the user ownership to a database with the same name.
-              This database must be defined manually in
-              [](#opt-forest.services.postgresql.databases).
-            '';
-          };
-        };
-      });
-      default = [];
+        }
+      );
+      default = [ ];
     };
     extensions = lib.mkOption {
       type = with lib.types; coercedTo (listOf path) (path: _ignorePg: path) (functionTo (listOf path));
@@ -85,6 +94,6 @@ in
       databases = cfg.databases;
     };
 
-    forest.backups.paths = ["/var/backup/postgresql"];
+    forest.backups.paths = [ "/var/backup/postgresql" ];
   };
 }

@@ -23,7 +23,7 @@ in
       settings = {
         host = cfg.host;
         port = 3001;
-        trusted-proxies = ["127.0.0.1/32"];
+        trusted-proxies = [ "127.0.0.1/32" ];
         bind-address = "0.0.0.0";
         accounts-registration-open = true;
         accounts-reason-required = true;
@@ -36,7 +36,7 @@ in
       reverse_proxy 127.0.0.1:3001
     '';
 
-    services.postgresqlBackup.databases = ["gotosocial"];
+    services.postgresqlBackup.databases = [ "gotosocial" ];
     forest.backups.paths = [ "/var/lib/gotosocial" ];
   };
 }

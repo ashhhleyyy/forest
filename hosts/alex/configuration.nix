@@ -70,7 +70,7 @@
 
   hardware.bluetooth.enable = true;
   hardware.rtl-sdr.enable = true;
-  users.users.ash.extraGroups = ["plugdev"];
+  users.users.ash.extraGroups = [ "plugdev" ];
 
   programs.steam.enable = true;
   nixpkgs.config.allowUnfree = true;

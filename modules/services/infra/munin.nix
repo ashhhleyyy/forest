@@ -1,7 +1,8 @@
-{ config
-, lib
-, pkgs
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  ...
 }:
 
 let
@@ -24,8 +25,8 @@ in
     services.munin-node = {
       enable = true;
       extraConfig = ''
-      cidr_allow 100.64.0.0/10
-      cidr_allow fd7a:115c:a1e0::/48
+        cidr_allow 100.64.0.0/10
+        cidr_allow fd7a:115c:a1e0::/48
       '';
     };
 
@@ -35,10 +36,12 @@ in
         [${config.networking.hostName}]
         address localhost
 
-        ${lib.join "\n" (map ({ name, value }: ''
-          [${name}]
-          address ${value}
-        '') (lib.attrsets.attrsToList cfg.server.nodes))}
+        ${lib.join "\n" (
+          map ({ name, value }: ''
+            [${name}]
+            address ${value}
+          '') (lib.attrsets.attrsToList cfg.server.nodes)
+        )}
       '';
     };
 

@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.forest.services.itwont-work;
@@ -29,11 +34,13 @@ in
       ];
     };
 
-    security.doas.extraRules = [{
-      users = ["nico"];
-      runAs = app;
-      noPass = true;
-    }];
+    security.doas.extraRules = [
+      {
+        users = [ "nico" ];
+        runAs = app;
+        noPass = true;
+      }
+    ];
 
     users.users.${app} = {
       isSystemUser = true;
@@ -42,7 +49,7 @@ in
       home = appDir;
       group = app;
     };
-    users.groups.${app} = {};
+    users.groups.${app} = { };
 
     services.caddy.virtualHosts."itwont.work".extraConfig = ''
       @not-assets {

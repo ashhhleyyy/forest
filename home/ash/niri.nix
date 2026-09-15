@@ -20,7 +20,7 @@
       };
       binds = with config.lib.niri.actions; {
         "Mod+Shift+Slash".action = show-hotkey-overlay;
-        
+
         "Mod+T".action = spawn "kitty";
         "Mod+Space".action = spawn "fuzzel";
         "Super+Alt+L".action = spawn "swaylock";
@@ -65,7 +65,7 @@
         "Mod+Home".action = focus-column-first;
         "Mod+End".action = focus-column-last;
         "Mod+Ctrl+Home".action = move-column-to-first;
-        "Mod+Ctrl+End".action =  move-column-to-last;
+        "Mod+Ctrl+End".action = move-column-to-last;
 
         "Mod+Shift+Left".action = focus-monitor-left;
         "Mod+Shift+Down".action = focus-monitor-down;
@@ -152,91 +152,120 @@
   programs.waybar = {
     enable = true;
     style = ./waybar/style.css;
-    settings = [{
-      "layer" = "top"; # Waybar at top layer
-      "position" = "top"; # Waybar position (top|bottom|left|right)
-      # "width" = 1280; # Waybar width
-      # Choose the order of the modules
-      "modules-left" = [
-        "wlr/workspaces"
-      ];
-      "modules-center" = [
-        # "custom/music"
-      ];
-      "modules-right" = [
-        "wireplumber"
-        "backlight"
-        "battery"
-        "clock"
-        "tray"
-        "custom/lock"
-        "custom/power"
-      ];
-      "wlr/workspaces" = {
+    settings = [
+      {
+        "layer" = "top"; # Waybar at top layer
+        "position" = "top"; # Waybar position (top|bottom|left|right)
+        # "width" = 1280; # Waybar width
+        # Choose the order of the modules
+        "modules-left" = [
+          "wlr/workspaces"
+        ];
+        "modules-center" = [
+          # "custom/music"
+        ];
+        "modules-right" = [
+          "wireplumber"
+          "backlight"
+          "battery"
+          "clock"
+          "tray"
+          "custom/lock"
+          "custom/power"
+        ];
+        "wlr/workspaces" = {
           "disable-scroll" = true;
           "sort-by-name" = true;
           "format" = " {icon} ";
           "format-icons" = {
-              "default" = "";
+            "default" = "";
           };
-      };
-      "tray" = {
+        };
+        "tray" = {
           "icon-size" = 21;
           "spacing" = 10;
-      };
-      # "custom/music" = {
-      #     "format" = "  {}";
-      #     "escape" = true;
-      #     "interval" = 5;
-      #     "tooltip" = false;
-      #     "exec" = "playerctl metadata --format='{{ title }}'";
-      #     "on-click" = "playerctl play-pause";
-      #     "max-length" = 50
-      # };
-      "clock" = {
+        };
+        # "custom/music" = {
+        #     "format" = "  {}";
+        #     "escape" = true;
+        #     "interval" = 5;
+        #     "tooltip" = false;
+        #     "exec" = "playerctl metadata --format='{{ title }}'";
+        #     "on-click" = "playerctl play-pause";
+        #     "max-length" = 50
+        # };
+        "clock" = {
           "timezone" = "Europe/London";
           "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           "format-alt" = " {:%d/%m/%Y}";
           "format" = "󰥔 {:%H:%M}";
-      };
-      "backlight" = {
+        };
+        "backlight" = {
           "device" = "intel_backlight";
           "format" = "{icon}";
-          "format-icons" = ["" "" "" "" "" "" "" "" ""];
-      };
-      "battery" = {
+          "format-icons" = [
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
+        };
+        "battery" = {
           "states" = {
-              "warning" = 30;
-              "critical" = 15;
+            "warning" = 30;
+            "critical" = 15;
           };
           "format" = "{icon}";
           "format-charging" = "{icon} 󰚥";
           "format-plugged" = "󰐧";
           "format-alt" = "{icon}";
-          "format-icons" = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ""];
-      };
-      "wireplumber" = {
+          "format-icons" = [
+            "󰂎"
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
+            ""
+          ];
+        };
+        "wireplumber" = {
           # "scroll-step" = 1, # %, can be a float
           "format" = "{icon} {volume}%";
           "format-muted" = " {volume}%";
           "format-icons" = {
-              "default" = ["" "" " "];
+            "default" = [
+              ""
+              ""
+              " "
+            ];
           };
-      };
-      "wireplumber#source" = {
-        format = " {source}";
-      };
-      "custom/lock" = {
+        };
+        "wireplumber#source" = {
+          format = " {source}";
+        };
+        "custom/lock" = {
           "tooltip" = false;
           "on-click" = "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown";
           "format" = "";
-      };
-      "custom/power" = {
+        };
+        "custom/power" = {
           "tooltip" = false;
           "on-click" = "niri msg action quit";
           "format" = "Logout";
-      };
-    }];
+        };
+      }
+    ];
     systemd.enable = true;
   };
 
@@ -247,9 +276,9 @@
   systemd.user.services."swaybg" = {
     Unit = {
       Description = "swaybg";
-      PartOf = ["graphical-session.target"];
-      After = ["niri.service"];
-      Requisite = ["graphical-session.target"];
+      PartOf = [ "graphical-session.target" ];
+      After = [ "niri.service" ];
+      Requisite = [ "graphical-session.target" ];
     };
     Service = {
       ExecStart = "${pkgs.swaybg}/bin/swaybg -i /home/ash/wallpaper.png";
@@ -260,9 +289,9 @@
   systemd.user.services."pam_kwallet_init" = {
     Unit = {
       Description = "Unlock kwallet on login";
-      PartOf = ["graphical-session.target"];
-      Requisite = ["graphical-session.target"];
-      After = ["niri.service"];
+      PartOf = [ "graphical-session.target" ];
+      Requisite = [ "graphical-session.target" ];
+      After = [ "niri.service" ];
     };
     Service = {
       ExecStart = "${pkgs.kdePackages.kwallet-pam}/libexec/pam_kwallet_init";

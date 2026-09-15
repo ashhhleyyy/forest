@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.forest.services.shorks-web;
@@ -25,36 +30,36 @@ in
       '';
 
       extraConfig = ''
-      (blockbots) {
-        respond @badbots "Fuck you" 410 {
-          close
+        (blockbots) {
+          respond @badbots "Fuck you" 410 {
+            close
+          }
+
+          @badbots {
+            header User-Agent *QQDownload*
+            header User-Agent *TencentTraveler*
+            header User-Agent *Bytespider*
+            header User-Agent *FediList*
+            header User-Agent *oii-research*
+            header User-Agent *openai*
+            header User-Agent *LivelapBot*
+            header User-Agent *ClaudeBot*
+          }
         }
 
-        @badbots {
-          header User-Agent *QQDownload*
-          header User-Agent *TencentTraveler*
-          header User-Agent *Bytespider*
-          header User-Agent *FediList*
-          header User-Agent *oii-research*
-          header User-Agent *openai*
-          header User-Agent *LivelapBot*
-          header User-Agent *ClaudeBot*
-        }
-      }
-
-      (errors) {
-        handle_errors {
-          @502 `{err.status_code} in [502]`
-          handle @502 {
-            rewrite * /{err.status_code}.html
-            #rewrite * /maintenance.html
-            root * /var/www/shorks-gay
-            file_server {
-              status 502
+        (errors) {
+          handle_errors {
+            @502 `{err.status_code} in [502]`
+            handle @502 {
+              rewrite * /{err.status_code}.html
+              #rewrite * /maintenance.html
+              root * /var/www/shorks-gay
+              file_server {
+                status 502
+              }
             }
           }
         }
-      }
       '';
 
       virtualHosts = {
@@ -78,6 +83,10 @@ in
       };
     };
 
-    networking.firewall.allowedTCPPorts = lib.mkIf cfg.openFirewall [ 80 443 29418 ];
+    networking.firewall.allowedTCPPorts = lib.mkIf cfg.openFirewall [
+      80
+      443
+      29418
+    ];
   };
 }

@@ -52,15 +52,16 @@
       SETTING_TOKENIZED_NOREPLY_EMAIL_ADDRESS = "chat+{token}@shorks.gay";
       SETTING_NOREPLY_EMAIL_ADDRESS = "chat@shorks.gay";
       SETTING_INSTALLATION_NAME = "shorks.gay zulip";
-      SETTING_SOCIAL_AUTH_OIDC_ENABLED_IDPS = ''{
-  "keycloak": {
-    "oidc_url": "https://account.shorks.gay/realms/shorks/",
-    "display_name": "shorks.gay account",
-    "display_icon": None,
-    "client_id": "zulip",
-    "secret": get_secret("social_auth_oidc_secret"),
-  }
-}'';
+      SETTING_SOCIAL_AUTH_OIDC_ENABLED_IDPS = ''
+        {
+          "keycloak": {
+            "oidc_url": "https://account.shorks.gay/realms/shorks/",
+            "display_name": "shorks.gay account",
+            "display_icon": None,
+            "client_id": "zulip",
+            "secret": get_secret("social_auth_oidc_secret"),
+          }
+        }'';
 
       ZULIP_AUTH_BACKENDS = "GenericOpenIdConnectBackend";
     };

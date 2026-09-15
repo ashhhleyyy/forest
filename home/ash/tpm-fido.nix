@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
   tpm-fido = pkgs.buildGoModule {
     version = "5f8828b82b58f9badeed65718fca72bc31358c5c";
@@ -12,7 +17,7 @@ let
     vendorHash = "sha256-qm/iDc9tnphQ4qooufpzzX7s4dbnUbR9J5L770qXw8Y=";
     nativeBuildInputs = [ pkgs.makeWrapper ];
     postInstall = ''
-    wrapProgram $out/bin/tpm-fido --prefix PATH : ${lib.makeBinPath [ pkgs.pinentry.gnome3 ]}
+      wrapProgram $out/bin/tpm-fido --prefix PATH : ${lib.makeBinPath [ pkgs.pinentry.gnome3 ]}
     '';
   };
 in
@@ -27,7 +32,7 @@ in
       After = [ "xdg-desktop-autostart.target" ];
     };
     Install = {
-      WantedBy = ["xdg-desktop-autostart.target" ];
+      WantedBy = [ "xdg-desktop-autostart.target" ];
     };
     Service = {
       ExecStart = "${tpm-fido}/bin/tpm-fido";

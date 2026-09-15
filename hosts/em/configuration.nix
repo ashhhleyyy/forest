@@ -1,4 +1,10 @@
-{ config, modulesPath, pkgs, ... }: {
+{
+  config,
+  modulesPath,
+  pkgs,
+  ...
+}:
+{
   imports = [
     ../../common/generic.nix
     (modulesPath + "/profiles/qemu-guest.nix")

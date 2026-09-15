@@ -46,7 +46,8 @@ in
       provisionGrafana = true;
     };
 
-    systemd.services.grafana-image-renderer.serviceConfig.EnvironmentFile = lib.mkIf cfg.renderer.enable config.age.secrets.grafana-renderer-environ.path;
+    systemd.services.grafana-image-renderer.serviceConfig.EnvironmentFile =
+      lib.mkIf cfg.renderer.enable config.age.secrets.grafana-renderer-environ.path;
 
     forest.backups.paths = [ "/var/lib/grafana" ];
   };

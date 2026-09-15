@@ -17,10 +17,12 @@
   networking = {
     interfaces = {
       ens18 = {
-        ipv6.addresses = [{
-          address = "2a02:c202:2235:8198:0000:0000:0000:0001";
-          prefixLength = 64;
-        }];
+        ipv6.addresses = [
+          {
+            address = "2a02:c202:2235:8198:0000:0000:0000:0001";
+            prefixLength = 64;
+          }
+        ];
       };
     };
     defaultGateway6 = {
@@ -30,7 +32,10 @@
   };
   services.resolved.enable = true;
 
-  networking.firewall.allowedTCPPorts = [ 80 443 ];
+  networking.firewall.allowedTCPPorts = [
+    80
+    443
+  ];
   networking.firewall.allowedUDPPorts = [ 443 ];
   services.caddy = {
     enable = true;
@@ -110,11 +115,13 @@
         databases = [
           "railing_it"
         ];
-        users = [{
-          ensureDBOwnership = true;
-          name = "railing_it";
-        }];
-        extensions = ps: [ps.postgis];
+        users = [
+          {
+            ensureDBOwnership = true;
+            name = "railing_it";
+          }
+        ];
+        extensions = ps: [ ps.postgis ];
       };
       prometheus.enable = true;
       reposilite.enable = true;

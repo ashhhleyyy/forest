@@ -62,9 +62,9 @@
     enableFishIntegration = true;
     pinentry.package = pkgs.pinentry-qt;
     defaultCacheTtl = 31536000;
-      maxCacheTtl = 31536000;
-      maxCacheTtlSsh = 31536000;
-      defaultCacheTtlSsh = 31536000;
+    maxCacheTtl = 31536000;
+    maxCacheTtlSsh = 31536000;
+    defaultCacheTtlSsh = 31536000;
   };
 
   services.ssh-agent.enable = true;

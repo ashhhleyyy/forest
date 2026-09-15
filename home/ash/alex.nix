@@ -1,4 +1,10 @@
-{ config, nixpkgs, pkgs, ... }: {
+{
+  config,
+  nixpkgs,
+  pkgs,
+  ...
+}:
+{
   home.packages = with pkgs; [
     obsidian
     libresprite

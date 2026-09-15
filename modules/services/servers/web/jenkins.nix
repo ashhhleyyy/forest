@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.forest.services.jenkins;
@@ -13,7 +18,7 @@ in
     services.jenkins = {
       enable = true;
       listenAddress = "0.0.0.0";
-      extraGroups = ["podman"];
+      extraGroups = [ "podman" ];
 
       packages = with pkgs; [
         stdenv

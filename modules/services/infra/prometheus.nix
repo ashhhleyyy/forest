@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.forest.services.prometheus;
@@ -19,7 +24,7 @@ in
           scrape_interval = "60s";
           static_configs = [
             {
-              targets = ["localhost:9090"];
+              targets = [ "localhost:9090" ];
             }
           ];
         }

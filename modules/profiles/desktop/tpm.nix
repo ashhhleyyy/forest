@@ -18,7 +18,7 @@ in
       members = [ "ash" ];
     };
     services.udev.extraRules = ''
-    KERNEL=="uhid", SUBSYSTEM=="misc", GROUP="uhid", MODE="0660"
+      KERNEL=="uhid", SUBSYSTEM=="misc", GROUP="uhid", MODE="0660"
     '';
   };
 }

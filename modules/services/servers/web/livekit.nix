@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.forest.services.livekit;
@@ -20,7 +25,7 @@ in
 
     services.livekit = {
       enable = true;
-      settings = {};
+      settings = { };
       keyFile = config.age.secrets."livekit-keys".path;
     };
 
