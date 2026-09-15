@@ -49,6 +49,9 @@ in
         "service.explore" = {
           REQUIRE_SIGNIN_VIEW = true;
         };
+        repository = {
+          USE_COMPAT_SSH_URI = false;
+        };
         actions = {
           ENABLED = true;
           DEFAULT_ACTIONS_URL = "github";
