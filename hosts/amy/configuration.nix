@@ -46,6 +46,16 @@
         serverName = "shorks.gay";
         frontends.enable = true;
       };
+      forgejo = {
+        enable = true;
+        hostname = "git.eduwoem.org";
+        email = {
+          from = "eduwoem-git@ashhhleyyy.dev";
+          reply-to = "eduwoem-git+%{token}@ashhhleyyy.dev";
+          passwordFile = ../../secrets/forgejo-mailer-password.age;
+        };
+        # caddy.enable = true;
+      };
       gotosocial = {
         enable = true;
         host = "sandbox.isnt-a.top";

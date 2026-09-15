@@ -41,6 +41,8 @@ in
   "vaultwarden.age".publicKeys = users ++ [ jessica ];
   "ntfy-url.age".publicKeys = users ++ systems;
 
+  "forgejo-mailer-password.age".publicKeys = users ++ [ amy ];
+
   # "copyparty-ash.age".publicKeys = users ++ [jessica];
   # "rclone-copyparty.age".publicKeys = users ++ [jessica];
 }
