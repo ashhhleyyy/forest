@@ -11,6 +11,7 @@ in
 
 {
   imports = [
+    ./niri.nix
     ./tpm.nix
   ];
 
@@ -99,6 +100,18 @@ in
     age.identityPaths = map (e: e.path) (
       lib.filter (e: e.type == "rsa" || e.type == "ed25519") config.services.openssh.hostKeys
     );
+
+    hardware.bluetooth.enable = true;
+
+    services.pulseaudio.enable = false;
+    security.rtkit.enable = true;
+    services.pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
 
     forest.backups = {
       enable = true;

@@ -12,6 +12,7 @@
     };
     profiles.desktop = {
       enable = true;
+      niri.enable = true;
       tpm.enable = true;
     };
     programs.obs.enable = true;
@@ -25,18 +26,6 @@
   networking.hostName = "fern";
   networking.hostId = "e905d5d3";
   networking.firewall.enable = false;
-
-  hardware.bluetooth.enable = true;
-
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
 
   services = {
     xserver = {

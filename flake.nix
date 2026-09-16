@@ -18,11 +18,6 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    nixos-generators = {
-      url = "github:nix-community/nixos-generators";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-
     fsh = {
       url = "github:ashhhleyyy/fsh";
       inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -41,15 +36,20 @@
     agenix.url = "github:ryantm/agenix";
 
     niri-flake = {
-      url = "github:sodiboo/niri-flake";
+      url = "github:epireyn/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.nixpkgs-stable.follows = "nixpkgs-stable";
+    };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     flake-utils.url = "github:numtide/flake-utils";
 
     binary-ninja = {
-      url = "github:ashhhleyyy/nix-binary-ninja/update/6.0.10601";
+      url = "github:jchv/nix-binary-ninja";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
@@ -73,12 +73,12 @@
       nixpkgs-unstable,
       home-manager-stable,
       home-manager-unstable,
-      nixos-generators,
       fsh,
       aci,
       vscode-extensions,
       agenix,
       niri-flake,
+      noctalia,
       flake-utils,
       binary-ninja,
       nixocaine,
@@ -101,6 +101,7 @@
             nix-fast-build
             colmena
             ;
+          inherit (niri-flake.packages.${prev.stdenv.hostPlatform.system}) xwayland-satellite-stable;
         })
       ];
       overlays-module = (
@@ -129,6 +130,7 @@
             home-manager.users.ash = { ... }: {
               imports = [
                 fsh.homeModules.fsh
+                # inputs.noctalia.homeModules.default
                 ./home/ash
                 ./home/ash/alex.nix
                 ./home/ash/binaryninja.nix
@@ -136,6 +138,8 @@
                 ./home/ash/fern.nix
                 ./home/ash/games.nix
                 ./home/ash/intellij.nix
+                ./home/ash/noctalia.nix
+                ./home/ash/niri.nix
                 ./home/ash/syncthing.nix
                 ./home/ash/vscodium.nix
               ];
@@ -254,16 +258,6 @@
             };
           }
         ];
-      };
-
-      packages.x86_64-linux = {
-        emira = nixos-generators.nixosGenerate {
-          modules = [
-            overlays-module
-            ./hosts/emira/configuration.nix
-          ];
-          format = "qcow";
-        };
       };
     }
     // flake-utils.lib.eachDefaultSystem (
