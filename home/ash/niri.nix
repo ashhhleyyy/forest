@@ -27,6 +27,18 @@
         path = lib.getExe pkgs.xwayland-satellite-stable;
       };
 
+      window-rules = [
+        {
+          matches = [
+            {
+              app-id = "^app.zen_browser.zen$";
+              title = "^Picture-in-Picture$";
+            }
+          ];
+          open-floating = true;
+        }
+      ];
+
       binds = {
         "Mod+Shift+Slash".action.show-hotkey-overlay = { };
 
