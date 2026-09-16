@@ -39,6 +39,10 @@ in
       database.type = "postgres";
       lfs.enable = true;
       settings = {
+        DEFAULT = {
+          APP_NAME = cfg.hostname;
+        };
+
         server = {
           DOMAIN = cfg.hostname;
           ROOT_URL = "https://${cfg.hostname}/";
