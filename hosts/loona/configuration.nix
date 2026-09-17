@@ -7,7 +7,6 @@
 {
   imports = [
     #../../roles/niri.nix
-    ../../roles/obs.nix
     ./hardware-configuration.nix
   ];
 

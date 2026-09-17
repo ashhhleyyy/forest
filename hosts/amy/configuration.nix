@@ -65,6 +65,7 @@
         enable = true;
         caddy.enable = true;
       };
+      iocaine.enable = true;
       itwont-work.enable = true;
       keycloak = {
         enable = true;

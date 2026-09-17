@@ -1,6 +1,5 @@
 { config, pkgs, ... }: {
   imports = [
-    ../../roles/niri.nix
     ./hardware-config.nix
   ];
 

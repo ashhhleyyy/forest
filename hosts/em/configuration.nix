@@ -8,8 +8,6 @@
   imports = [
     ../../common/generic.nix
     (modulesPath + "/profiles/qemu-guest.nix")
-
-    ../../roles/niri.nix
   ];
 
   forest.profiles.desktop.enable = true;

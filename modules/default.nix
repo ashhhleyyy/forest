@@ -8,4 +8,6 @@
     ./tools
     ./util
   ];
+
+  disabledModules = [ "services/networking/iocaine.nix" ];
 }

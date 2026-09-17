@@ -205,7 +205,6 @@
       nixosConfigurations.amy = nixpkgs-stable.lib.nixosSystem {
         modules = base-modules ++ [
           ./hosts/amy/configuration.nix
-          ./roles/iocaine
           home-manager-stable.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

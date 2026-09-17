@@ -10,7 +10,7 @@ let
   amy = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHsGEdyz3h9Xn6bmp3v8/SlinWpm7oHtljdScCYJ5iun root@amy";
   jessica = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGRZxN0RGV/dTNvXiWUu/ECStDHdS8TVoM4YjaB3dEYq root@jessica";
   fern = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJco6L1wBvp9occ6qykIPI0OzqzkDKopNri2XnWlqhmM root@fern";
-  systems = [ amy ];
+  servers = [ amy jessica ];
 in
 {
   "keycloak-postgres-password.age".publicKeys = users ++ [ amy ];
@@ -39,9 +39,11 @@ in
   "grafana-renderer-environ.age".publicKeys = users ++ [ jessica ];
   "livekit-keys.age".publicKeys = users ++ [ jessica ];
   "vaultwarden.age".publicKeys = users ++ [ jessica ];
-  "ntfy-url.age".publicKeys = users ++ systems;
+  "ntfy-url.age".publicKeys = users ++ servers;
 
   "forgejo-mailer-password.age".publicKeys = users ++ [ amy ];
+
+  "maxmind-geoip-credentials.age".publicKeys = users ++ servers;
 
   # "copyparty-ash.age".publicKeys = users ++ [jessica];
   # "rclone-copyparty.age".publicKeys = users ++ [jessica];
