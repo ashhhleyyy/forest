@@ -9,6 +9,7 @@
     ./grafana.nix
     ./iceshrimp-js.nix
     ./immich.nix
+    ./iocaine
     ./itwont-work.nix
     ./jenkins.nix
     ./kanidm.nix
