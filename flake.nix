@@ -56,7 +56,6 @@
     nixocaine = {
       url = "https://git.madhouse-project.org/iocaine/nixocaine/archive/stable.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs-stable";
-      inputs.nam-shub-of-enki.url = "git+https://git.madhouse-project.org/iocaine/nam-shub-of-enki?ref=iocaine-3.x";
     };
 
     git-in = {
