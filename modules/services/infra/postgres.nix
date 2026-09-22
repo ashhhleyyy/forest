@@ -79,6 +79,7 @@ in
         # ipv6
         host all       all     ::/0           scram-sha-256
       '';
+      extensions = cfg.extensions;
     };
 
     forest.services.pg-vacuum.package = cfg.package;
