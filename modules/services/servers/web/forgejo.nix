@@ -62,6 +62,9 @@ in
         };
         repository = {
           USE_COMPAT_SSH_URI = false;
+          DEFAULT_PUSH_CREATE_PRIVATE = true;
+          ENABLE_PUSH_CREATE_USER = true;
+          ENABLE_PUSH_CREATE_ORG = true;
         };
         actions = {
           ENABLED = true;
