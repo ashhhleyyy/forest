@@ -40,8 +40,8 @@ in
 
     services.caddy.virtualHosts = lib.mkIf cfg.caddy.enable {
       "fedi.shorks.gay".extraConfig = ''
+        import iocaine
         reverse_proxy 127.0.0.1:3000
-        import blockbots
         import errors
       '';
 
