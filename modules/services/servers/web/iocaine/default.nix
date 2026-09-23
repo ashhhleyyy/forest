@@ -23,6 +23,7 @@ in
     services.iocaine = {
       enable = true;
       config = {
+        initial-seed-file = "/run/current-system/boot.json";
         server.default = {
           bind = "127.0.0.1:42069";
           mode = "http";
