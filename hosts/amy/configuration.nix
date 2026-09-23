@@ -50,7 +50,7 @@
         enable = true;
         hostname = "git.eduwoem.org";
         email = {
-          from = "git-noreply@eduwoem.org";
+          from = "noreply-git@eduwoem.org";
           reply-to = "reply-%{token}@git.eduwoem.org";
           user = "git@eduwoem.org";
           passwordFile = ../../secrets/forgejo-mailer-password.age;
