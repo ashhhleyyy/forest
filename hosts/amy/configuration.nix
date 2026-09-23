@@ -50,8 +50,9 @@
         enable = true;
         hostname = "git.eduwoem.org";
         email = {
-          from = "eduwoem-git@ashhhleyyy.dev";
-          reply-to = "eduwoem-git+%{token}@ashhhleyyy.dev";
+          from = "git-noreply@eduwoem.org";
+          reply-to = "reply-%{token}@git.eduwoem.org";
+          user = "git@eduwoem.org";
           passwordFile = ../../secrets/forgejo-mailer-password.age;
         };
         caddy.enable = true;

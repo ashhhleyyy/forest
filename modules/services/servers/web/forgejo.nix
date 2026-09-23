@@ -11,6 +11,9 @@ in
       type = lib.types.str;
     };
     email = {
+      user = lib.mkOption {
+        type = lib.types.str;
+      };
       from = lib.mkOption {
         type = lib.types.str;
       };
@@ -69,7 +72,7 @@ in
           SMTP_ADDR = "smtp.migadu.com";
           SMTP_PORT = 465;
           FROM = cfg.email.from;
-          USER = cfg.email.from;
+          USER = cfg.email.user;
         };
         "email.incoming" = {
           ENABLED = true;
@@ -77,7 +80,7 @@ in
           HOST = "imap.migadu.com";
           PORT = 993;
           USE_TLS = true;
-          USERNAME = cfg.email.from;
+          USERNAME = cfg.email.user;
         };
         oauth2_client = {
           ENABLE_AUTO_REGISTRATION = true;
