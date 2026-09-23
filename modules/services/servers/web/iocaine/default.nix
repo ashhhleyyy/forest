@@ -42,7 +42,7 @@ in
 
             ai-robots-txt-path = pkgs.fetchurl {
               url = "https://github.com/ai-robots-txt/ai.robots.txt/raw/425d1a6207992e5ead73e2dd71fd98283dc7d9b6/robots.json";
-              hash = "";
+              hash = "sha256-3dUfNo8B8w4uPcbwgeSgeGI4qqsI/TWl9w7Fdthu/hc=";
             };
             checks.asn.database-path = "GeoLite2-ASN.mmdb";
 
