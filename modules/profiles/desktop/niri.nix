@@ -32,6 +32,7 @@ in
       extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde ];
       config.niri = {
         "org.freedesktop.impl.portal.Secret" = [ "kwallet" ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
       };
     };
     qt = {
