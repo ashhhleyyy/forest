@@ -12,6 +12,7 @@ in
 {
   options.forest.services.iocaine = {
     enable = lib.mkEnableOption "iocaine";
+    caddy.enable = lib.mkEnableOption "iocaine caddy snippet";
   };
 
   config = lib.mkIf cfg.enable {
@@ -60,5 +61,15 @@ in
         };
       };
     };
+
+    services.caddy.extraConfig = lib.mkIf cfg.caddy.enable ''
+      (iocaine) {
+        @read method GET HEAD
+        reverse_proxy @read ${config.services.iocaine.config.server.default.bind} {
+          @fallback status 421
+          handle_response @fallback
+        }
+      }
+    '';
   };
 }

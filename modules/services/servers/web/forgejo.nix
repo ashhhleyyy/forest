@@ -99,11 +99,7 @@ in
     };
 
     services.caddy.virtualHosts.${cfg.hostname}.extraConfig = lib.mkIf cfg.caddy.enable ''
-      @read method GET HEAD
-      reverse_proxy @read ${config.services.iocaine.config.server.default.bind} {
-        @fallback status 421
-        handle_response @fallback
-      }
+      import iocaine
       reverse_proxy 127.0.0.1:3002
       import errors
     '';

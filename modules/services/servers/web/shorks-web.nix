@@ -64,6 +64,8 @@ in
 
       virtualHosts = {
         "shorks.gay".extraConfig = ''
+          import iocaine
+
           root * /var/www/shorks-gay
           file_server
           respond /.git/* 404
@@ -73,7 +75,6 @@ in
           header /.well-known/matrix/* Access-Control-Allow-Origin *
           redir /authorize_interaction https://fedi.shorks.gay{uri}
 
-          import blockbots
           import errors
         '';
 
