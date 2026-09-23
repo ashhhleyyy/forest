@@ -51,7 +51,7 @@
         hostname = "git.eduwoem.org";
         email = {
           from = "noreply-git@eduwoem.org";
-          reply-to = "reply-%{token}@git.eduwoem.org";
+          reply-to = "git-reply+%{token}@eduwoem.org";
           user = "git@eduwoem.org";
           passwordFile = ../../secrets/forgejo-mailer-password.age;
         };
