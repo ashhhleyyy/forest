@@ -114,11 +114,16 @@
         settings = import ./postgres-tuning.nix;
         databases = [
           "railing_it"
+          "trainy_girl"
         ];
         users = [
           {
             ensureDBOwnership = true;
             name = "railing_it";
+          }
+          {
+            ensureDBOwnership = true;
+            name = "trainy_girl";
           }
         ];
         extensions = ps: [ ps.postgis ];
