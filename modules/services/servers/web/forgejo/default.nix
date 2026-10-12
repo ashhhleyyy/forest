@@ -97,6 +97,9 @@ in
           SHOW_FOOTER_VERSION = false;
           SHOW_FOOTER_TEMPLATE_LOAD_TIME = false;
         };
+        indexer = {
+          REPO_INDEXER_ENABLED = true;
+        };
       };
       secrets = {
         mailer.PASSWD = config.age.secrets.forgejo-mailer-password.path;
