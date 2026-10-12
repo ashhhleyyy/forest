@@ -110,6 +110,7 @@ in
     services.openssh.extraConfig = ''
       Match User forgejo
         PasswordAuthentication no
+        UsePAM no
     '';
 
     forest.backups.paths = [ config.services.forgejo.dump.backupDir ];
