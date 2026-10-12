@@ -27,6 +27,9 @@ in
         '';
       };
     };
+    branding = {
+      eduwoem.enable = lib.mkEnableOption "custom forgejo branding";
+    };
     caddy.enable = lib.mkEnableOption "forgejo caddy vhost";
   };
 
@@ -89,6 +92,11 @@ in
           ENABLE_AUTO_REGISTRATION = true;
           ACCOUNT_LINKING = "login";
         };
+        other = {
+          SHOW_FOOTER_BRANDING = false;
+          SHOW_FOOTER_VERSION = false;
+          SHOW_FOOTER_TEMPLATE_LOAD_TIME = false;
+        };
       };
       secrets = {
         mailer.PASSWD = config.age.secrets.forgejo-mailer-password.path;
@@ -112,6 +120,13 @@ in
         PasswordAuthentication no
         KbdInteractiveAuthentication no
     '';
+
+    systemd.tmpfiles.rules = lib.mkIf cfg.branding.eduwoem.enable [
+      "d '${config.services.forgejo.customDir}/templates' - forgejo forgejo - -"
+      "d '${config.services.forgejo.customDir}/templates/custom' - forgejo forgejo - -"
+      "C+ '${config.services.forgejo.customDir}/templates/home.tmpl' - forgejo forgejo - ${./branding/eduwoem/home.tmpl}"
+      "C+ '${config.services.forgejo.customDir}/templates/custom/extra_links_footer.tmpl' - forgejo forgejo - ${./branding/eduwoem/extra_links_footer.tmpl}"
+    ];
 
     forest.backups.paths = [ config.services.forgejo.dump.backupDir ];
   };

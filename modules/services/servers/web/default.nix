@@ -2,7 +2,7 @@
   imports = [
     ./conduit.nix
     ./cryptpad.nix
-    ./forgejo.nix
+    ./forgejo
     ./garage.nix
     ./git.nix
     ./gotosocial.nix

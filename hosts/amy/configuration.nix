@@ -55,6 +55,7 @@
           user = "git@eduwoem.org";
           passwordFile = ../../secrets/forgejo-mailer-password.age;
         };
+        branding.eduwoem.enable = true;
         caddy.enable = true;
       };
       gotosocial = {
