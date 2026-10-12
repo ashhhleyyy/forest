@@ -129,6 +129,7 @@ in
       "d '${config.services.forgejo.customDir}/templates/custom' - forgejo forgejo - -"
       "C+ '${config.services.forgejo.customDir}/templates/home.tmpl' - forgejo forgejo - ${./branding/eduwoem/home.tmpl}"
       "C+ '${config.services.forgejo.customDir}/templates/custom/extra_links_footer.tmpl' - forgejo forgejo - ${./branding/eduwoem/extra_links_footer.tmpl}"
+      "C+ '${config.services.forgejo.customDir}/templates/home_forgejo.tmpl' - forgejo forgejo - /dev/null"
     ];
 
     forest.backups.paths = [ config.services.forgejo.dump.backupDir ];
