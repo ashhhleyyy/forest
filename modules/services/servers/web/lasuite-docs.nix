@@ -23,6 +23,7 @@ in
       postgresql.createLocally = true;
       redis.createLocally = true;
       domain = cfg.domain;
+      s3Url = "https://s3-garage.service.isnt-a.top/docs-media";
       settings = {
         DJANGO_ALLOWED_HOSTS = cfg.domain;
 
