@@ -12,6 +12,7 @@
     ./iocaine
     ./itwont-work.nix
     ./jenkins.nix
+    ./lasuite-docs.nix
     ./kanidm.nix
     ./keycloak.nix
     ./livekit.nix

@@ -88,6 +88,10 @@
         enable = true;
         role = "server";
       };
+      lasuite-docs = {
+        enable = true;
+        domain = "docs.ashhhleyyy.dev";
+      };
       livekit = {
         enable = true;
         keyFile = ../../secrets/livekit-keys.age;

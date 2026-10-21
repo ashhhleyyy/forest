@@ -41,6 +41,8 @@ in
   "vaultwarden.age".publicKeys = users ++ [ jessica ];
   "ntfy-url.age".publicKeys = users ++ servers;
 
+  "lasuite-docs-env.age".publicKeys = users ++ [ jessica ];
+
   "forgejo-mailer-password.age".publicKeys = users ++ [ amy ];
 
   "maxmind-geoip-credentials.age".publicKeys = users ++ servers;
