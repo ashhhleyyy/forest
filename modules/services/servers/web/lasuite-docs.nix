@@ -23,6 +23,7 @@ in
     redis.createLocally = true;
     enableNginx = false;
     bind = "[::]:4440";
+    domain = cfg.domain;
     settings = {
       DJANGO_ALLOWED_HOSTS = cfg.domain;
 
