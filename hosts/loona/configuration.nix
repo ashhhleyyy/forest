@@ -18,6 +18,7 @@
     };
     profiles.desktop = {
       enable = true;
+      niri.enable = true;
       tpm.enable = true;
     };
     programs.obs.enable = true;
@@ -48,9 +49,8 @@
       enable = true;
       xkb.layout = "gb";
     };
-    displayManager.sddm = {
+    displayManager.plasma-login-manager = {
       enable = true;
-      theme = "catppuccin-mocha";
     };
     desktopManager.plasma6.enable = true;
   };

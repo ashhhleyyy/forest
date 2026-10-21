@@ -114,7 +114,6 @@ in
     };
 
     forest.backups = {
-      enable = true;
       paths = [ "/home/ash" ];
       exclude = [
         "/home/*/.cache"
@@ -126,7 +125,6 @@ in
         "/home/*/.local/share/Steam/steamapps/common/"
       ];
       personal = true;
-      timerConfig.OnCalendar = "*-*-* 00:00:00";
     };
   };
 }

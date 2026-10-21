@@ -34,6 +34,10 @@
               app-id = "^app.zen_browser.zen$";
               title = "^Picture-in-Picture$";
             }
+            {
+              app-id = "^jetbrains-idea$";
+              title = "^Welcome to (.*)$";
+            }
           ];
           open-floating = true;
         }

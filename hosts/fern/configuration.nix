@@ -4,7 +4,11 @@
   ];
 
   forest = {
-    backups.paths = [ "/projects" ];
+    backups = {
+      enable = true;
+      timerConfig.OnCalendar = "*-*-* 00:00:00";
+      paths = [ "/projects" ];
+    };
     boot.grub = {
       enable = true;
       uefi.enable = true;
