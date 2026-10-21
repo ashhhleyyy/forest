@@ -17,28 +17,40 @@ in
     };
   };
 
-  config.services.lasuite-docs = lib.mkIf cfg.enable {
-    enable = true;
-    postgresql.createLocally = true;
-    redis.createLocally = true;
-    enableNginx = false;
-    bind = "[::]:4440";
-    domain = cfg.domain;
-    settings = {
-      DJANGO_ALLOWED_HOSTS = cfg.domain;
+  config = lib.mkIf cfg.enable {
+    services.lasuite-docs = {
+      enable = true;
+      postgresql.createLocally = true;
+      redis.createLocally = true;
+      domain = cfg.domain;
+      settings = {
+        DJANGO_ALLOWED_HOSTS = cfg.domain;
 
-      AWS_S3_ENDPOINT_URL = "https://s3-garage.service.isnt-a.top";
-      AWS_S3_REGION_NAME = "garage";
-      AWS_STORAGE_BUCKET_NAME = "docs-media";
+        AWS_S3_ENDPOINT_URL = "https://s3-garage.service.isnt-a.top";
+        AWS_S3_REGION_NAME = "garage";
+        AWS_STORAGE_BUCKET_NAME = "docs-media";
 
-      OIDC_OP_AUTHORIZATION_ENDPOINT = "https://sso.ashhhleyyy.dev/ui/oauth2";
-      OIDC_OP_JWKS_ENDPOINT = "https://sso.ashhhleyyy.dev/oauth2/openid/docs/public_key.jwk";
-      OIDC_OP_TOKEN_ENDPOINT = "https://sso.ashhhleyyy.dev/oauth2/token";
-      OIDC_OP_USER_ENDPOINT = "https://sso.ashhhleyyy.dev/oauth2/openid/docs/userinfo";
-      OIDC_RP_CLIENT_ID = "docs";
-      OIDC_CREATE_USER = true;
+        OIDC_OP_AUTHORIZATION_ENDPOINT = "https://sso.ashhhleyyy.dev/ui/oauth2";
+        OIDC_OP_JWKS_ENDPOINT = "https://sso.ashhhleyyy.dev/oauth2/openid/docs/public_key.jwk";
+        OIDC_OP_TOKEN_ENDPOINT = "https://sso.ashhhleyyy.dev/oauth2/token";
+        OIDC_OP_USER_ENDPOINT = "https://sso.ashhhleyyy.dev/oauth2/openid/docs/userinfo";
+        OIDC_RP_CLIENT_ID = "docs";
+        OIDC_CREATE_USER = true;
 
-      LOGIN_REDIRECT_URL = "https://docs.ashhhleyyy.dev";
+        LOGIN_REDIRECT_URL = "https://docs.ashhhleyyy.dev";
+      };
+    };
+    services.nginx.virtualHosts.${cfg.domain} = {
+      listen = [
+        {
+          addr = "0.0.0.0";
+          port = 4440;
+        }
+        {
+          addr = "[::]";
+          port = 4440;
+        }
+      ]; 
     };
   };
 }
