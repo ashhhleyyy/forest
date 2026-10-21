@@ -18,12 +18,15 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    age.secrets.lasuite-docs-env.file = ../../../../secrets/lasuite-docs-env.age;
+    
     services.lasuite-docs = {
       enable = true;
       postgresql.createLocally = true;
       redis.createLocally = true;
       domain = cfg.domain;
       s3Url = "https://s3-garage.service.isnt-a.top/docs-media";
+      environmentFile = config.age.secrets.lasuite-docs-env.path;
       settings = {
         DJANGO_ALLOWED_HOSTS = cfg.domain;
 
