@@ -56,7 +56,13 @@ in
           addr = "[::]";
           port = 4440;
         }
-      ]; 
+      ];
+      locations."/api".extraConfig = ''
+      proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
+      '';
+      locations."/admin".extraConfig = ''
+      proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
+      '';
     };
   };
 }
