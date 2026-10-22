@@ -41,6 +41,7 @@ in
         OIDC_RP_CLIENT_ID = "docs";
         OIDC_CREATE_USER = true;
         OIDC_USE_PKCE = true;
+        OIDC_RP_SIGN_ALGO = "ES256";
 
         SECURE_SSL_REDIRECT = false; # our proxy does this, and without, api endpoints continually 301 to themselves
 
