@@ -41,6 +41,8 @@ in
         OIDC_RP_CLIENT_ID = "docs";
         OIDC_CREATE_USER = true;
 
+        SECURE_SSL_REDIRECT = false; # our proxy does this, and without, api endpoints continually 301 to themselves
+
         LOGIN_REDIRECT_URL = "https://docs.ashhhleyyy.dev";
       };
     };
