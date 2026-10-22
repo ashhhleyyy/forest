@@ -40,6 +40,7 @@ in
         OIDC_OP_USER_ENDPOINT = "https://sso.ashhhleyyy.dev/oauth2/openid/docs/userinfo";
         OIDC_RP_CLIENT_ID = "docs";
         OIDC_CREATE_USER = true;
+        OIDC_USE_PKCE = true;
 
         SECURE_SSL_REDIRECT = false; # our proxy does this, and without, api endpoints continually 301 to themselves
 
