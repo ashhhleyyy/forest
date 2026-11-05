@@ -73,6 +73,7 @@
     openocd
   ];
   services.usbmuxd.enable = true;
+  hardware.firmware = [ pkgs.sof-firmware ];
 
   programs.steam.enable = true;
   nixpkgs.config.allowUnfree = true;

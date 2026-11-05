@@ -20,6 +20,10 @@
 
       input = {
         focus-follows-mouse.enable = true;
+        touchpad = {
+          natural-scroll = true;
+          accel-speed = 0.25;
+        };
       };
 
       xwayland-satellite = {
