@@ -52,7 +52,6 @@ in
       ];
       theme = "catppuccin-latte";
     };
-    boot.initrd.systemd.enable = true;
 
     security.pam.services = {
       login.u2fAuth = true;

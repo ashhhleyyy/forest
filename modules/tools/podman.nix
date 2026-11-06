@@ -19,9 +19,14 @@ in
       enable = true;
       dockerSocket.enable = true;
     };
-    virtualisation.containers.registries.insecure = [
-      "jessica:5000"
-    ];
+    virtualisation.containers.registries.settings = {
+      registry = [
+        {
+          prefix = "jessica:5000";
+          insecure = true;
+        }
+      ];
+    };
     virtualisation.oci-containers.backend = "podman";
     environment.systemPackages = with pkgs; [
       podman-compose
