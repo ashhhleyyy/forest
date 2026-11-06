@@ -28,7 +28,7 @@ in
         }
       else
         {
-          settings = lib.mkIf {
+          settings = {
             registry = [
               {
                 prefix = "jessica:5000";
