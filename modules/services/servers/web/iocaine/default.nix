@@ -47,7 +47,7 @@ in
               hash = "sha256-3dUfNo8B8w4uPcbwgeSgeGI4qqsI/TWl9w7Fdthu/hc=";
             };
             checks.asn.database-path = "GeoLite2-ASN.mmdb";
-            checks.custom_agents.allow = [
+            checks.custom-agents.allow = [
               "forgejo-cli/0.6.0 (https://codeberg.org/forgejo-contrib/forgejo-cli/)"
               "WhatsApp/2" # signal uses this UA for link previews
             ];
