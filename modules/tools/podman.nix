@@ -19,14 +19,24 @@ in
       enable = true;
       dockerSocket.enable = true;
     };
-    virtualisation.containers.registries.settings = {
-      registry = [
+    virtualisation.containers.registries =
+      if (config.system.nixos.release == "26.05") then
         {
-          prefix = "jessica:5000";
-          insecure = true;
+          insecure = [
+            "jessica:5000"
+          ];
         }
-      ];
-    };
+      else
+        {
+          settings = lib.mkIf {
+            registry = [
+              {
+                prefix = "jessica:5000";
+                insecure = true;
+              }
+            ];
+          };
+        };
     virtualisation.oci-containers.backend = "podman";
     environment.systemPackages = with pkgs; [
       podman-compose

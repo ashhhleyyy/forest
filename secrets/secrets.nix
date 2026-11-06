@@ -10,7 +10,10 @@ let
   amy = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHsGEdyz3h9Xn6bmp3v8/SlinWpm7oHtljdScCYJ5iun root@amy";
   jessica = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGRZxN0RGV/dTNvXiWUu/ECStDHdS8TVoM4YjaB3dEYq root@jessica";
   fern = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJco6L1wBvp9occ6qykIPI0OzqzkDKopNri2XnWlqhmM root@fern";
-  servers = [ amy jessica ];
+  servers = [
+    amy
+    jessica
+  ];
 in
 {
   "keycloak-postgres-password.age".publicKeys = users ++ [ amy ];

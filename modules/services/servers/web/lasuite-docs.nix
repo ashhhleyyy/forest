@@ -19,7 +19,7 @@ in
 
   config = lib.mkIf cfg.enable {
     age.secrets.lasuite-docs-env.file = ../../../../secrets/lasuite-docs-env.age;
-    
+
     services.lasuite-docs = {
       enable = true;
       postgresql.createLocally = true;
@@ -62,23 +62,23 @@ in
       locations."/api" = {
         recommendedProxySettings = lib.mkForce false;
         extraConfig = ''
-        proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Host $host;
-        proxy_set_header X-Forwarded-Server $hostname;
+          proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
+          proxy_set_header Host $host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header X-Forwarded-Host $host;
+          proxy_set_header X-Forwarded-Server $hostname;
         '';
       };
       locations."/admin" = {
         recommendedProxySettings = lib.mkForce false;
         extraConfig = ''
-        proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Host $host;
-        proxy_set_header X-Forwarded-Server $hostname;
+          proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
+          proxy_set_header Host $host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header X-Forwarded-Host $host;
+          proxy_set_header X-Forwarded-Server $hostname;
         '';
       };
     };
