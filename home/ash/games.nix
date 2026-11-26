@@ -5,7 +5,7 @@
     # celeste mod manager
     olympus
     melonds
-    osu-lazer
+    osu-lazer-bin
     alsa-oss
     prismlauncher
     gnome-sudoku

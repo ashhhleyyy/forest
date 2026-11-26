@@ -42,16 +42,7 @@ in
       "adbusers"
     ];
 
-    boot.plymouth = {
-      enable = true;
-      themePackages = [
-        (pkgs.catppuccin.override {
-          variant = "latte";
-          accent = "mauve";
-        })
-      ];
-      theme = "catppuccin-latte";
-    };
+    services.bootvine.enable = true;
 
     security.pam.services = {
       login.u2fAuth = true;

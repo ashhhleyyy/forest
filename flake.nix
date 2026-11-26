@@ -54,7 +54,7 @@
     };
 
     nixocaine = {
-      url = "https://git.madhouse-project.org/iocaine/nixocaine/archive/stable.tar.gz";
+      url = "git+https://git.madhouse-project.org/iocaine/nixocaine?ref=stable";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
@@ -62,6 +62,11 @@
       url = "https://codeberg.org/ashhhleyyy/git-in/archive/trunk.tar.gz";
       inputs.nixpkgs.follows = "nixpkgs-stable";
       inputs.flake-utils.follows = "flake-utils";
+    };
+
+    bootvine = {
+      url = "git+https://codeberg.org/wvhulle/bootvine";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
 
@@ -82,6 +87,7 @@
       binary-ninja,
       nixocaine,
       git-in,
+      bootvine,
       ...
     }:
     let
@@ -112,6 +118,7 @@
         overlays-module
         aci.nixosModules.default
         agenix.nixosModules.default
+        bootvine.nixosModules.default
         git-in.nixosModules.default
         niri-flake.nixosModules.niri
         nixocaine.nixosModules.default
