@@ -8,14 +8,14 @@ let
 
   pgsqlDriverSrc = pkgs.fetchurl {
     url = "https://jdbc.postgresql.org/download/postgresql-${pgsqlVer}.jar";
-    sha256 = "sha256-SbupwyANT2Suc5A9Vs4b0Jx0UX3+May0R0VQa0/O3lM=";
+    sha256 = "sha256-l3b8pi38hPMS1cGv+Xkfbzz1bVGKjspKOo3KepXviIE=";
   };
 
   pgsqlExtension = pkgs.stdenv.mkDerivation {
     name = "guacamole-auth-jdbc-postgresql-${guacVer}";
     src = pkgs.fetchurl {
       url = "https://dlcdn.apache.org/guacamole/${guacVer}/binary/guacamole-auth-jdbc-${guacVer}.tar.gz";
-      sha256 = "sha256-9Fc2so62ZHt+sNK0gzHhLlpDJmH2ERW2PRoFpb0gJE0=";
+      sha256 = "sha256-l7xf09Z9JcDpikddHf0wigN4WfVJ+sRxcccjt6cDk2Y=";
     };
     phases = "unpackPhase installPhase";
     unpackPhase = ''
@@ -31,7 +31,7 @@ let
     name = "guacamole-auth-sso-openid-${guacVer}";
     src = pkgs.fetchurl {
       url = "https://dlcdn.apache.org/guacamole/${guacVer}/binary/guacamole-auth-sso-${guacVer}.tar.gz";
-      sha256 = "sha256-2Kptu0yRBPbF+reEOyO1DDK4RPZ8lTTjFrjQ5d+M/Oo=";
+      sha256 = "sha256-6VeYRHGsUKh/Ry9Rrsm/fjeK5nziUC/5OAMAEaZw3K4=";
     };
     phases = "unpackPhase installPhase";
     unpackPhase = ''
@@ -53,11 +53,6 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    age.secrets.guacamole-properties = lib.mkIf cfg.renderer.enable {
-      file = ../../../../secrets/guacamole-properties.age;
-      path = "/etc/guacamole/guacamole.properties";
-    };
-
     services = {
       guacamole-server = {
         enable = true;
