@@ -116,5 +116,7 @@ in
       requires = [ "postgresql.service" ];
       after = [ "postgresql.service" ];
     };
+
+    services.tomcat.port = 8081;
   };
 }
