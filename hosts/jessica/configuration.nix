@@ -75,6 +75,7 @@
         hostname = "grafana.service.isnt-a.top";
         renderer.enable = true;
       };
+      guacamole.enable = true;
       immich.enable = true;
       jenkins.enable = true;
       kanidm = {

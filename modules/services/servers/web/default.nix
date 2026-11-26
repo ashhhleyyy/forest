@@ -7,6 +7,7 @@
     ./git.nix
     ./gotosocial.nix
     ./grafana.nix
+    ./guacamole.nix
     ./iceshrimp-js.nix
     ./immich.nix
     ./iocaine
