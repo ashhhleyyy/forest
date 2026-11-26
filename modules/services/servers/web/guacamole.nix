@@ -118,6 +118,6 @@ in
       after = [ "postgresql.service" ];
     };
 
-    services.tomcat.port = 8081;
+    services.tomcat.port = 8088;
   };
 }
