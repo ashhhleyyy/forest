@@ -102,12 +102,13 @@ in
         "tomcat.service"
         "multi-user.target"
       ];
+      serviceConfig.User = "postgres";
       script = ''
         echo "[guacamole-bootstrapper] Info: checking if database 'guacamole' exists but is empty..."
-        output=$(${psql} -U guacamole -c "\dt" 2>&1)
+        output=$(${psql} -d guacamole -c "\dt" 2>&1)
         if [[ $output == "Did not find any relations." ]]; then
           echo "[guacamole-bootstrapper] Info: installing guacamole postgres database schema..."
-          ${cat} ${pgsqlExtension}/schema/*.sql | ${psql} -U guacamole -d guacamole -f -
+          ${cat} ${pgsqlExtension}/schema/*.sql | ${psql} -d guacamole -f -
         fi
       '';
     };
